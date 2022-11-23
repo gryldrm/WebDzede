@@ -308,7 +308,7 @@
                                             <asp:ListItem>1 TB</asp:ListItem>
                                             <asp:ListItem>2 TB</asp:ListItem>
                                         </asp:DropDownList>
-                                        -Seri No:<asp:TextBox ID="txt_cip0" runat="server"></asp:TextBox>
+                                        -HDD-Seri No:<asp:TextBox ID="txt_cip0" runat="server"></asp:TextBox>
                                         <br />
                                         SSD<asp:DropDownList ID="dd_cssd" runat="server">
                                             <asp:ListItem>Seçiniz</asp:ListItem>
@@ -317,7 +317,7 @@
                                             <asp:ListItem>500 GB</asp:ListItem>
                                             <asp:ListItem>1 TB</asp:ListItem>
                                         </asp:DropDownList>
-                                        -Seri No:<asp:TextBox ID="txt_cip1" runat="server"></asp:TextBox>
+                                        -SSD-Seri No:<asp:TextBox ID="txt_cip1" runat="server"></asp:TextBox>
                                         <br />
                                         RAM<asp:DropDownList ID="dd_ram" runat="server">
                                             <asp:ListItem>Seçiniz</asp:ListItem>
