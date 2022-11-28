@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"><br />
 
-    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" Width="100%">
+    <ajaxtoolkit:tabcontainer id="TabContainer1" runat="server" activetabindex="0" width="100%">
 
         <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1">
             <HeaderTemplate>
@@ -36,9 +36,11 @@
                                     <tr>
                                         <td>Birim<asp:DropDownList ID="dd_drm0" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource2" DataTextField="k_birim" DataValueField="k_birim">
                                         </asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT k_birim FROM tbl_per GROUP BY k_birim"></asp:SqlDataSource>
                                         </td>
                                         <td>Durum<asp:DropDownList ID="dd_drm1" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource1" DataTextField="islem" DataValueField="islem">
                                         </asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_drm]"></asp:SqlDataSource>
                                         </td>
                                         <td>Talep Tarih<asp:TextBox ID="dt_1" runat="server" TextMode="Date"></asp:TextBox>
                                             -<asp:TextBox ID="dt_2" runat="server" TextMode="Date"></asp:TextBox>
@@ -177,6 +179,18 @@
                                     <tr>
                                         <td style="vertical-align: top">İşlem<asp:TextBox ID="txt_islem" runat="server"></asp:TextBox>
                                             <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Kaydet" />
+                                            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_drm] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_drm] ( [islem]) VALUES ( ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_drm]" UpdateCommand="UPDATE [tbl_drm] SET [islem] = ? WHERE [id] = ?">
+                                                <DeleteParameters>
+                                                    <asp:Parameter Name="id" Type="Int32" />
+                                                </DeleteParameters>
+                                                <InsertParameters>
+                                                    <asp:ControlParameter ControlID="txt_islem" Name="islem" PropertyName="Text" Type="String" />
+                                                </InsertParameters>
+                                                <UpdateParameters>
+                                                    <asp:Parameter Name="islem" Type="String" />
+                                                    <asp:Parameter Name="id" Type="Int32" />
+                                                </UpdateParameters>
+                                            </asp:SqlDataSource>
                                         </td>
                                         <td>
                                             <asp:GridView ID="GridView4" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="id" DataSourceID="SqlDataSource5">
@@ -190,20 +204,7 @@
                                     </tr>
                                 </table>
                                 <br />
-                                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_drm] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_drm] ( [islem]) VALUES ( ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_drm]" UpdateCommand="UPDATE [tbl_drm] SET [islem] = ? WHERE [id] = ?">
-                                    <DeleteParameters>
-                                        <asp:Parameter Name="id" Type="Int32" />
-                                    </DeleteParameters>
-                                    <InsertParameters>
-                                        <asp:ControlParameter ControlID="txt_islem" Name="islem" PropertyName="Text" Type="String" />
-                                    </InsertParameters>
-                                    <UpdateParameters>
-                                        <asp:Parameter Name="islem" Type="String" />
-                                        <asp:Parameter Name="id" Type="Int32" />
-                                    </UpdateParameters>
-                                </asp:SqlDataSource>
                             </asp:Panel>
-                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT k_birim FROM tbl_per GROUP BY k_birim"></asp:SqlDataSource>
                             <asp:Panel ID="pnlupdate" runat="server" Visible="False">
                                 <table style="width: 100%">
                                     <tr>
@@ -233,8 +234,6 @@
                                 </table>
                             </asp:Panel>
 
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_drm]"></asp:SqlDataSource>
-                   
                             <asp:GridView ID="GridView1" runat="server" class="table table-striped" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="100%">
                                 <Columns>
                                     <asp:CommandField SelectText="İşleme Al" ShowSelectButton="True" />
@@ -285,6 +284,8 @@
                                             <asp:ListItem>Tablet</asp:ListItem>
                                             <asp:ListItem>Yazıcı</asp:ListItem>
                                         </asp:DropDownList>
+
+                                        <asp:SqlDataSource ID="SqlDataSource7" runat="server"></asp:SqlDataSource>
 
                                     </td>
                                     <td class="auto-style30" style="vertical-align: top">Cihaz Marka:</td>
