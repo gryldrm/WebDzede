@@ -465,13 +465,13 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.TextBox txt_cad;
 
         /// <summary>
-        /// txt_cip control.
+        /// dd_cgyer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cip;
+        protected global::System.Web.UI.WebControls.DropDownList dd_cgyer;
 
         /// <summary>
         /// dd_cozllk control.
@@ -501,6 +501,24 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.DropDownList dd_marka;
 
         /// <summary>
+        /// SqlDataSource8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource8;
+
+        /// <summary>
+        /// txt_cip control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_cip;
+
+        /// <summary>
         /// dd_chdd control.
         /// </summary>
         /// <remarks>
@@ -510,15 +528,6 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.DropDownList dd_chdd;
 
         /// <summary>
-        /// txt_cip0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cip0;
-
-        /// <summary>
         /// dd_cssd control.
         /// </summary>
         /// <remarks>
@@ -526,15 +535,6 @@ namespace WebAriza3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dd_cssd;
-
-        /// <summary>
-        /// txt_cip1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cip1;
 
         /// <summary>
         /// dd_ram control.
@@ -555,13 +555,22 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.DropDownList dd_ekart;
 
         /// <summary>
-        /// dd_cgyer control.
+        /// txt_cip0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dd_cgyer;
+        protected global::System.Web.UI.WebControls.TextBox txt_cip0;
+
+        /// <summary>
+        /// txt_cip1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_cip1;
 
         /// <summary>
         /// dt_cgtar control.
@@ -589,15 +598,6 @@ namespace WebAriza3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_ciebys;
-
-        /// <summary>
-        /// lbl_imsj control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_imsj;
 
         /// <summary>
         /// SqlDataSource6 control.

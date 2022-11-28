@@ -1,10 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="Admin2.aspx.cs" Inherits="WebAriza3.Admin2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            width: 278px;
+        }
+    </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"><br />
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
 
-    <ajaxtoolkit:tabcontainer id="TabContainer1" runat="server" activetabindex="0" width="100%">
+    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" Width="100%">
 
         <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1">
             <HeaderTemplate>
@@ -259,71 +265,75 @@
                             Cihaz Kayıt
                         </HeaderTemplate>
                         <ContentTemplate>
-                            <table >
+                            <table>
                                 <tr>
-                                    <td style="vertical-align: top">Cihaz Seri No:</td>
-                                    <td class="auto-style7" style="vertical-align: top">
-                                        <asp:TextBox ID="txt_cseri" runat="server"></asp:TextBox>
+                                    <td style="vertical-align: top">Cihaz Seri No:<asp:TextBox ID="txt_cseri" runat="server" class="form-control" placeholder="Seri No"></asp:TextBox>
                                     </td>
-                                    <td class="auto-style22" style="vertical-align: top">Cihaz Adı:</td>
-                                    <td class="auto-style12" style="vertical-align: top">
-                                        <asp:TextBox ID="txt_cad" runat="server"></asp:TextBox>
+                                    <td style="vertical-align: top">Cihaz Adı:<asp:TextBox ID="txt_cad" runat="server" class="form-control" placeholder="Cihaz Adı"></asp:TextBox>
                                     </td>
-                                    <td class="auto-style5" style="vertical-align: top">İp No:</td>
-                                    <td class="auto-style5" style="vertical-align: top">
-                                        <asp:TextBox ID="txt_cip" runat="server"></asp:TextBox>
-                                        <br />
+                                    <td style="vertical-align: top">&nbsp;</td>
+                                    <td style="vertical-align: top">&nbsp;</td>
+                                    <td class="auto-style1" style="vertical-align: top">Geldiği Yer:<asp:DropDownList ID="dd_cgyer" runat="server" class="form-control" placeholder="">
+                                        <asp:ListItem>Seçiniz</asp:ListItem>
+                                        <asp:ListItem>Diğer</asp:ListItem>
+                                        <asp:ListItem>Efeler İlçe Emniyet</asp:ListItem>
+                                        <asp:ListItem>Asayiş Şube Müdürlüğü</asp:ListItem>
+                                        </asp:DropDownList>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="vertical-align: top" class="auto-style28">Özellikleri:</td>
-                                    <td class="auto-style29" style="vertical-align: top">
-                                        <asp:DropDownList ID="dd_cozllk" runat="server" AutoPostBack="True">
+                                    <td style="vertical-align: top">
+                                        <br />
+                                        Özellikleri:<asp:DropDownList ID="dd_cozllk" runat="server" AutoPostBack="True" class="form-control" DataSourceID="SqlDataSource7" DataTextField="tbl_ozl" DataValueField="tbl_ozl">
                                             <asp:ListItem>Seçiniz</asp:ListItem>
                                             <asp:ListItem>PC</asp:ListItem>
                                             <asp:ListItem>Tablet</asp:ListItem>
                                             <asp:ListItem>Yazıcı</asp:ListItem>
                                         </asp:DropDownList>
-
-                                        <asp:SqlDataSource ID="SqlDataSource7" runat="server"></asp:SqlDataSource>
-
+                                        <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_cozl]"></asp:SqlDataSource>
+                                        <br />
+                                        <br />
+                                        <br />
                                     </td>
-                                    <td class="auto-style30" style="vertical-align: top">Cihaz Marka:</td>
                                     <td style="vertical-align: top">
-                                        <asp:DropDownList ID="dd_marka" runat="server">
+                                        <br />
+                                        Cihaz Marka:<asp:DropDownList ID="dd_marka" runat="server" class="form-control" DataSourceID="SqlDataSource8" DataTextField="tbl_cmrk" DataValueField="tbl_cmrk" placeholder="Cihaz Adı">
                                             <asp:ListItem>Seçin</asp:ListItem>
                                             <asp:ListItem>Hp</asp:ListItem>
                                             <asp:ListItem>Lenova</asp:ListItem>
                                         </asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_mrk]"></asp:SqlDataSource>
+                                        İp No:<asp:TextBox ID="txt_cip" runat="server" class="form-control" placeholder="İp No"></asp:TextBox>
+                                        <br />
                                         <br />
                                     </td>
-                                    <td class="auto-style31" colspan="2" style="vertical-align: top">HDD:<asp:DropDownList ID="dd_chdd" runat="server">
-                                        <asp:ListItem>Seçiniz</asp:ListItem>
-                                        <asp:ListItem>200 GB</asp:ListItem>
-                                        <asp:ListItem>300 GB</asp:ListItem>
-                                        <asp:ListItem>500 GB</asp:ListItem>
-                                        <asp:ListItem>1 TB</asp:ListItem>
-                                        <asp:ListItem>2 TB</asp:ListItem>
-                                    </asp:DropDownList>
-                                        -HDD-Seri No:<asp:TextBox ID="txt_cip0" runat="server"></asp:TextBox>
+                                    <td style="vertical-align: top">
                                         <br />
-                                        SSD<asp:DropDownList ID="dd_cssd" runat="server">
+                                        HDD:<asp:DropDownList ID="dd_chdd" runat="server" class="form-control" placeholder="">
+                                            <asp:ListItem>Seçiniz</asp:ListItem>
+                                            <asp:ListItem>200 GB</asp:ListItem>
+                                            <asp:ListItem>300 GB</asp:ListItem>
+                                            <asp:ListItem>500 GB</asp:ListItem>
+                                            <asp:ListItem>1 TB</asp:ListItem>
+                                            <asp:ListItem>2 TB</asp:ListItem>
+                                        </asp:DropDownList>
+                                        <br />
+                                        SSD:<asp:DropDownList ID="dd_cssd" runat="server" class="form-control" placeholder="">
                                             <asp:ListItem>Seçiniz</asp:ListItem>
                                             <asp:ListItem>240 GB</asp:ListItem>
                                             <asp:ListItem>480 GB</asp:ListItem>
                                             <asp:ListItem>500 GB</asp:ListItem>
                                             <asp:ListItem>1 TB</asp:ListItem>
                                         </asp:DropDownList>
-                                        -SSD-Seri No:<asp:TextBox ID="txt_cip1" runat="server"></asp:TextBox>
                                         <br />
-                                        RAM<asp:DropDownList ID="dd_ram" runat="server">
+                                        RAM:<asp:DropDownList ID="dd_ram" runat="server" class="form-control" placeholder="">
                                             <asp:ListItem>Seçiniz</asp:ListItem>
                                             <asp:ListItem>4 GB</asp:ListItem>
                                             <asp:ListItem>8 GB</asp:ListItem>
                                             <asp:ListItem>16 GB</asp:ListItem>
                                         </asp:DropDownList>
                                         <br />
-                                        Ekran Kartı<asp:DropDownList ID="dd_ekart" runat="server">
+                                        Ekran Kartı:<asp:DropDownList ID="dd_ekart" runat="server" class="form-control" placeholder="">
                                             <asp:ListItem>Seçiniz</asp:ListItem>
                                             <asp:ListItem>Onboard</asp:ListItem>
                                             <asp:ListItem>256 GB</asp:ListItem>
@@ -332,41 +342,25 @@
                                             <asp:ListItem>2048 GB</asp:ListItem>
                                         </asp:DropDownList>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style19" style="vertical-align: top">Geldiği Yer:</td>
-                                    <td class="auto-style9" style="vertical-align: top">
-                                        <asp:DropDownList ID="dd_cgyer" runat="server">
-                                            <asp:ListItem>Seçiniz</asp:ListItem>
-                                            <asp:ListItem>Diğer</asp:ListItem>
-                                            <asp:ListItem>Efeler İlçe Emniyet</asp:ListItem>
-                                            <asp:ListItem>Asayiş Şube Müdürlüğü</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </td>
-                                    <td class="auto-style24" style="vertical-align: top">Geldiği Tarih:</td>
-                                    <td class="auto-style14" style="vertical-align: top">
-                                        <asp:TextBox ID="dt_cgtar" runat="server" TextMode="Date"></asp:TextBox>
-                                    </td>
-                                    <td class="auto-style4" style="vertical-align: top">Arıza Açıklama:</td>
-                                    <td class="auto-style4" style="vertical-align: top">
-                                        <asp:TextBox ID="txt_cariza" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                    <td style="vertical-align: top">
                                         <br />
+                                        -HDD-Seri No:<asp:TextBox ID="txt_cip0" runat="server" class="form-control" placeholder=""></asp:TextBox>
+                                        <br />
+                                        -SSD-Seri No:<asp:TextBox ID="txt_cip1" runat="server" class="form-control" placeholder=""></asp:TextBox>
+                                    </td>
+                                    <td class="auto-style1" style="vertical-align: top">Geldiği Tarih:<asp:TextBox ID="dt_cgtar" runat="server" class="form-control" placeholder="" TextMode="Date"></asp:TextBox>
+                                        <br />
+                                        Arıza Açıklama:<asp:TextBox ID="txt_cariza" runat="server" class="form-control" Height="84px" placeholder="" TextMode="MultiLine"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style19" style="vertical-align: top">Ebys No</td>
-                                    <td class="auto-style9" colspan="4" style="vertical-align: top">
-                                        <asp:TextBox ID="txt_ciebys" runat="server" Width="288px"></asp:TextBox>
+                                    <td style="vertical-align: top">Ebys No:<asp:TextBox ID="txt_ciebys" runat="server" class="form-control" placeholder="" Width="288px"></asp:TextBox>
                                     </td>
-                                    <td class="auto-style4" style="vertical-align: top">&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td class="auto-style19" colspan="5" style="vertical-align: top">
-                                        <asp:Label ID="lbl_imsj" runat="server"></asp:Label>
+                                    <td style="vertical-align: top">&nbsp;</td>
+                                    <td style="vertical-align: top">
                                         <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_chz] WHERE [id] = ?" InsertCommand="INSERT INTO tbl_chz
                          (chz_sn, chz_ad, chz_ip, chz_ozl,chz_mrk, chz_hdd, chz_ssd, chz_ram, chz_ek, chz_gy, chz_gtar, chz_ack,chz_iper,chz_ebys)
-VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
-                                            ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?">
+VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?">
                                             <DeleteParameters>
                                                 <asp:Parameter Name="id" Type="Int32" />
                                             </DeleteParameters>
@@ -410,11 +404,13 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                                             </UpdateParameters>
                                         </asp:SqlDataSource>
                                     </td>
-                                    <td class="auto-style4" style="vertical-align: top; text-align: right;">
-                                        <asp:Button ID="btn_ckayit" runat="server" OnClick="btn_ckayit_Click" Text="Kaydet" />
+                                    <td style="vertical-align: top">&nbsp;</td>
+                                    <td class="auto-style1" style="vertical-align: top">
+                                        <asp:Button ID="btn_ckayit" runat="server" class="form-control" OnClick="btn_ckayit_Click" placeholder="" Text="Kaydet" />
                                     </td>
                                 </tr>
                             </table>
+                            <br />
                         </ContentTemplate>
                     </ajaxToolkit:TabPanel>
                     <ajaxToolkit:TabPanel ID="TabPanel4" runat="server" HeaderText="TabPanel2">
