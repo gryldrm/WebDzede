@@ -91,13 +91,15 @@ namespace WebAriza3
                 try
                 {
                     cmd.ExecuteNonQuery();
-                    lbl_msj.Text = "Kayıt başarılı...";
+                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                                                 "toastr.success('Kayıt başarılı...', ' ')", true);
 
                     datayukle();
                 }
                 catch (OleDbException ex)
                 {
-                    lbl_msj.Text = "Kayıt edilirken hata oluştu...";
+                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                                     "toastr.error('Kayıt edilirken hata oluştu...', ' ')", true);
 
                 }
             }
@@ -117,7 +119,6 @@ namespace WebAriza3
             pnl_drm.Visible = false;
         }
 
-
         protected void Button3_Click(object sender, EventArgs e)
         {
 
@@ -129,7 +130,6 @@ namespace WebAriza3
                 sorgu += " WHERE (birim = '" + dd_drm0.SelectedItem.Text.ToString() + "')";
 
             }
-
 
             if (dd_drm1.SelectedItem.ToString() != "Seçin")
             {
@@ -144,9 +144,6 @@ namespace WebAriza3
 
             }
 
-
-            //    (tlptar >= #11/10/2022#)
-
             if (dt_1.Text != "")
             {
 
@@ -159,7 +156,6 @@ namespace WebAriza3
                     sorgu += " AND     ( tlptar >=#" + dataClass.trh_con(dt_1.Text) + "# )  ";
                 }
             }
-
 
             if (dt_2.Text != "")
             {
@@ -174,8 +170,6 @@ namespace WebAriza3
                     sorgu += " AND    ( tlptar <=#" + dataClass.trh_con(dt_2.Text) + "# )  ";
                 }
             }
-
-
 
             if (dt_3.Text != "")
             {
@@ -205,10 +199,6 @@ namespace WebAriza3
                 }
             }
 
-
-            //baglanti = db_baglanti();
-            //OleDbDataAdapter adaptor;
-
             srg_select += sorgu.ToString() + " ORDER BY id DESC";
             DataTable dt = dataClass.get_tbl(srg_select.ToString());
 
@@ -217,9 +207,7 @@ namespace WebAriza3
             GridView1.DataSource = dt;
             GridView1.DataBind();
 
-            lbl_msj.Text = "";
         }
-
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
@@ -254,12 +242,13 @@ namespace WebAriza3
                 {
                     SqlDataSource3.Insert();
                     txt_scl.Text = "";
-
-                    txt_scl.Text = "";
+                     
                 }
                 else
                 {
-                    lbl_msj.Text = "Kullanıcı rol seçmelisiniz.";
+                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                               "toastr.error('Kullanıcı rol seçmelisiniz.', ' ')", true);
+                    
                 }
             }
 
@@ -280,7 +269,9 @@ namespace WebAriza3
             dt = dataClass.get_tbl("SELECT k_scl FROM tbl_per  WHERE (k_scl = " + txt_scl.Text.ToString() + ")");
             if (dt.Rows.Count > 0)
             {
-                lbl_msj.Text = "Aynı sicile ait kullanıcı bulunmakta...";
+                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                                    "toastr.error('Aynı sicile ait kullanıcı bulunmakta...', ' ')", true);
+                
                 txt_scl.Text = "";
             }
         }
@@ -288,16 +279,17 @@ namespace WebAriza3
         protected void Button4_Click(object sender, EventArgs e)
         {
 
-
             try
             {
                 SqlDataSource4.Insert();
-                lbl_msj.Text = "Kayıt Başarılı...";
+                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                                    "toastr.success('Kayıt Başarılı...', ' ')", true);
             }
             catch (Exception)
             {
 
-                lbl_msj.Text = "Kayıt sırasında hata oluştu...";
+                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                                   "toastr.error('Aynı sicile ait kullanıcı bulunmakta...', ' ')", true);
             }
         }
 
@@ -324,40 +316,38 @@ namespace WebAriza3
             try
             {
                 SqlDataSource5.Insert();
-                lbl_msj.Text = "Kayıt Başarılı...";
+                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                                    "toastr.success('Kayıt Başarılı...', ' ')", true);
             }
             catch (Exception)
             {
 
-                lbl_msj.Text = "Kayıt sırasında hata oluştu...";
+                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                                   "toastr.error('Aynı sicile ait kullanıcı bulunmakta...', ' ')", true);
             }
         }
 
-        
         protected void btn_ckayit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SqlDataSource6.Insert();
+                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                                    "toastr.success('Kayıt Başarılı...', ' ')", true);
+            }
+            catch (Exception)
+            {
 
-            SqlDataSource6.Insert();
-            lbl_imsj.Text = "Kayıt başarılı...";
+                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                                   "toastr.error('Aynı sicile ait kullanıcı bulunmakta...', ' ')", true);
+            }
+
             GridView5.DataBind();
         }
 
         protected void GridView5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //lbl_cidd.Text = "";
-            //lbl_ciserin.Text = "";
-            //txt_ciad.Text = "";
-            //txt_ciipno.Text = "";
-            //lbl_ciozllk.Text = "";
-            //lbl_cimrk.Text = "";
-            //dd_cihdd.Text = "";
-            //dd_cissd.Text = "";
-            //dd_ciram.Text = "";
-            //dd_ciekart.Text = "";
-            //lbl_cigyer.Text = "";
-            //lbl_cigtar.Text = "";
-            //txt_ciack.Text = "";
-
+             
             pnl_ciislem.Visible = true;
             pnl_ciara.Visible = false;
             int secili;
@@ -384,15 +374,12 @@ namespace WebAriza3
 
             txt_ciyistar.Text = row.Cells[14].Text;
 
-
             if (dt.Rows[0][15].ToString() != "")
             {
                 dd_cidrm.Text = dt.Rows[0][15].ToString();
             }
 
-
             txt_ciebys0.Text = dt.Rows[0][20].ToString();
-
 
         }
 
@@ -434,8 +421,9 @@ namespace WebAriza3
                             }
                             catch (OleDbException ex)
                             {
-                                lbl_imsj0.Text = "Kayıt edilirken hata oluştu...";
-
+                                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                               "toastr.error('Kayıt sırasında hata oluştu...', ' ')", true);
+                              
                             }
                         }
                         else
@@ -447,14 +435,15 @@ namespace WebAriza3
                 }
                 else
                 {
-                    lbl_imsj0.Text = "İşlem tarihi seçiniz.";
+                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                               "toastr.error('İşlem tarihi seçiniz.', ' ')", true);
+                  
                 }
             }
             else
             {
                 lbl_imsj0.Text = "Yapılan işlemleri detaylı yazınız.";
             }
-
 
         }
 
@@ -474,7 +463,6 @@ namespace WebAriza3
                 sorgu += " WHERE (chz_sn = '" + txt_caseri.Text.ToString() + "')";
 
             }
-
 
             if (txt_caad.Text != "")
 
@@ -514,8 +502,6 @@ namespace WebAriza3
                 }
             }
 
-            //    (tlptar >= #11/10/2022#)
-
             if (dt_cagt1.Text != "")
             {
 
@@ -529,10 +515,8 @@ namespace WebAriza3
                 }
             }
 
-
             if (dt_cagt2.Text != "")
             {
-
 
                 if (sorgu.ToString() == "")
                 {
@@ -543,8 +527,6 @@ namespace WebAriza3
                     sorgu += " AND    ( chz_gtar  <=#" + dataClass.trh_con(dt_cagt2.Text) + "# )  ";
                 }
             }
-
-
 
             if (dt_cait1.Text != "")
             {
@@ -560,7 +542,6 @@ namespace WebAriza3
                 }
             }
 
-
             if (dt_cait2.Text != "")
             {
 
@@ -574,21 +555,13 @@ namespace WebAriza3
                 }
             }
 
-
-            //baglanti = db_baglanti();
-            //OleDbDataAdapter adaptor;
-
             srg_select += sorgu.ToString() + " ORDER BY id DESC";
             DataTable dt = dataClass.get_tbl(srg_select.ToString());
 
-
-
             GridView5.DataSource = dt;
             GridView5.DataBind();
-            //     baglanti.Close();
-            //     lbl_msj.Text = "";
+     
         }
-
         protected void LinkButton7_Click(object sender, EventArgs e)
         {
             //

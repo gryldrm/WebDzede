@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="Admin2.aspx.cs" Inherits="WebAriza3.Admin2" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
-   
-    </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <br />
-    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" Width="100%">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"><br />
+
+    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" Width="100%">
+
         <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1">
             <HeaderTemplate>
                 Şifre / Yetki İşlemleri
@@ -26,77 +26,8 @@
                             <br />
                         </td>
                         <td>
-                            <asp:Panel ID="pnl_nevi" runat="server" Visible="False">
-                                <h3>NEVİ İŞLEMLERİ </h3>
-                                <table style="width:100%">
-                                    <tr>
-                                        <td style="vertical-align: top">Nevi<asp:TextBox ID="txt_nevi" runat="server"></asp:TextBox>
-                                            &nbsp;Şifre Açıklama<asp:TextBox ID="txt_sifre" runat="server"></asp:TextBox>
-                                            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Kaydet" />
-                                            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_nevi] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_nevi] ( [nevi], [osifre]) VALUES ( ?, ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_nevi]" UpdateCommand="UPDATE [tbl_nevi] SET [nevi] = ?, [osifre] = ? WHERE [id] = ?">
-                                                <DeleteParameters>
-                                                    <asp:Parameter Name="id" Type="Int32" />
-                                                </DeleteParameters>
-                                                <InsertParameters>
-                                                    <asp:ControlParameter ControlID="txt_nevi" Name="nevi" PropertyName="Text" Type="String" />
-                                                    <asp:ControlParameter ControlID="txt_sifre" Name="osifre" PropertyName="Text" Type="String" />
-                                                </InsertParameters>
-                                                <UpdateParameters>
-                                                    <asp:Parameter Name="nevi" Type="String" />
-                                                    <asp:Parameter Name="osifre" Type="String" />
-                                                    <asp:Parameter Name="id" Type="Int32" />
-                                                </UpdateParameters>
-                                            </asp:SqlDataSource>
-                                        </td>
-                                        <td>
-                                            <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="id" DataSourceID="SqlDataSource4" Width="100%">
-                                                <Columns>
-                                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                                                    <asp:BoundField DataField="id" HeaderText="id" ReadOnly="True" SortExpression="id" />
-                                                    <asp:BoundField DataField="nevi" HeaderText="nevi" SortExpression="nevi" />
-                                                    <asp:BoundField DataField="osifre" HeaderText="osifre" SortExpression="osifre" />
-                                                </Columns>
-                                            </asp:GridView>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </asp:Panel>
-                            <asp:Panel ID="pnl_drm" runat="server" Visible="False" Width="100%">
-                                <h3>İŞLEM TANIMLAMA </h3>
-                                <br />
-                                <table style="width:100%">
-                                    <tr>
-                                        <td style="vertical-align: top">
-                                            İşlem<asp:TextBox ID="txt_islem" runat="server"></asp:TextBox>
-                                            <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Kaydet" />
-                                        </td>
-                                        <td>
-                                            <asp:GridView ID="GridView4" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="id" DataSourceID="SqlDataSource5">
-                                                <Columns>
-                                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                                                    <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-                                                    <asp:BoundField DataField="islem" HeaderText="islem" SortExpression="islem" />
-                                                </Columns>
-                                            </asp:GridView>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <br />
-                                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_drm] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_drm] ( [islem]) VALUES ( ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_drm]" UpdateCommand="UPDATE [tbl_drm] SET [islem] = ? WHERE [id] = ?">
-                                    <DeleteParameters>
-                                        <asp:Parameter Name="id" Type="Int32" />
-                                    </DeleteParameters>
-                                    <InsertParameters>
-                                        <asp:ControlParameter ControlID="txt_islem" Name="islem" PropertyName="Text" Type="String" />
-                                    </InsertParameters>
-                                    <UpdateParameters>
-                                        <asp:Parameter Name="islem" Type="String" />
-                                        <asp:Parameter Name="id" Type="Int32" />
-                                    </UpdateParameters>
-                                </asp:SqlDataSource>
-                            </asp:Panel>
                             <asp:Panel ID="pnlarama" runat="server" Visible="False">
-                                <table style="width:100%">
+                                <table style="width: 100%">
                                     <tr>
                                         <td colspan="5">
                                             <h3>ARAMA İŞLEMLERİ </h3>
@@ -104,17 +35,15 @@
                                     </tr>
                                     <tr>
                                         <td>Birim<asp:DropDownList ID="dd_drm0" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource2" DataTextField="k_birim" DataValueField="k_birim">
-                                            </asp:DropDownList>
+                                        </asp:DropDownList>
                                         </td>
-                                        <td>
-                                            Durum<asp:DropDownList ID="dd_drm1" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource1" DataTextField="islem" DataValueField="islem">
-                                            </asp:DropDownList>
+                                        <td>Durum<asp:DropDownList ID="dd_drm1" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource1" DataTextField="islem" DataValueField="islem">
+                                        </asp:DropDownList>
                                         </td>
                                         <td>Talep Tarih<asp:TextBox ID="dt_1" runat="server" TextMode="Date"></asp:TextBox>
                                             -<asp:TextBox ID="dt_2" runat="server" TextMode="Date"></asp:TextBox>
                                         </td>
-                                        <td>
-                                            Bitiş Tarihi<asp:TextBox ID="dt_3" runat="server" TextMode="Date"></asp:TextBox>
+                                        <td>Bitiş Tarihi<asp:TextBox ID="dt_3" runat="server" TextMode="Date"></asp:TextBox>
                                             -<asp:TextBox ID="dt_4" runat="server" TextMode="Date"></asp:TextBox>
                                         </td>
                                         <td class="auto-style3">
@@ -123,37 +52,8 @@
                                     </tr>
                                 </table>
                             </asp:Panel>
-                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT k_birim FROM tbl_per GROUP BY k_birim"></asp:SqlDataSource>
-                            <asp:Panel ID="pnlupdate" runat="server" Visible="False">
-                                <table style="width:100%">
-                                    <tr>
-                                        <td colspan="7" style="vertical-align: top">
-                                            <h3>GÜNCELLEME İŞLEMLERİ </h3>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top">İd</td>
-                                        <td style="vertical-align: top">
-                                            <asp:Label ID="lbl_id" runat="server" ForeColor="Red"></asp:Label>
-                                        </td>
-                                        <td style="vertical-align: top">Durumu<asp:DropDownList ID="dd_drm" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource1" DataTextField="islem" DataValueField="islem">
-                                            </asp:DropDownList>
-                                        </td>
-                                        <td style="vertical-align: top">Yapılan İşlem</td>
-                                        <td style="vertical-align: top">
-                                            <asp:TextBox ID="txt_ack" runat="server" Height="75px" TextMode="MultiLine" Width="214px"></asp:TextBox>
-                                        </td>
-                                        <td style="vertical-align: top">İşlem Tarihi:<asp:TextBox ID="dt_it" runat="server" TextMode="Date"></asp:TextBox>
-                                            <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" BehaviorID="_content_CalendarExtender1" Format="dd/MM/yyyy" PopupButtonID="imgPopup" TargetControlID="dt_it" />
-                                        </td>
-                                        <td style="vertical-align: top">
-                                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary btn-smy" OnClick="Button1_Click" Text="Güncelle" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </asp:Panel>
                             <asp:Panel ID="pnl_kullanici" runat="server" Visible="False">
-                                <table style="width:100%">
+                                <table style="width: 100%">
                                     <tr>
                                         <td colspan="2">
                                             <h3>KULLANICI İŞLEMLERİ </h3>
@@ -235,8 +135,106 @@
                                     </tr>
                                 </table>
                             </asp:Panel>
+                            <asp:Panel ID="pnl_nevi" runat="server" Visible="False">
+                                <h3>NEVİ İŞLEMLERİ </h3>
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td style="vertical-align: top">Nevi<asp:TextBox ID="txt_nevi" runat="server"></asp:TextBox>
+                                            &nbsp;Şifre Açıklama<asp:TextBox ID="txt_sifre" runat="server"></asp:TextBox>
+                                            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Kaydet" />
+                                            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_nevi] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_nevi] ( [nevi], [osifre]) VALUES ( ?, ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_nevi]" UpdateCommand="UPDATE [tbl_nevi] SET [nevi] = ?, [osifre] = ? WHERE [id] = ?">
+                                                <DeleteParameters>
+                                                    <asp:Parameter Name="id" Type="Int32" />
+                                                </DeleteParameters>
+                                                <InsertParameters>
+                                                    <asp:ControlParameter ControlID="txt_nevi" Name="nevi" PropertyName="Text" Type="String" />
+                                                    <asp:ControlParameter ControlID="txt_sifre" Name="osifre" PropertyName="Text" Type="String" />
+                                                </InsertParameters>
+                                                <UpdateParameters>
+                                                    <asp:Parameter Name="nevi" Type="String" />
+                                                    <asp:Parameter Name="osifre" Type="String" />
+                                                    <asp:Parameter Name="id" Type="Int32" />
+                                                </UpdateParameters>
+                                            </asp:SqlDataSource>
+                                        </td>
+                                        <td>
+                                            <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="id" DataSourceID="SqlDataSource4" Width="100%">
+                                                <Columns>
+                                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                                    <asp:BoundField DataField="id" HeaderText="id" ReadOnly="True" SortExpression="id" />
+                                                    <asp:BoundField DataField="nevi" HeaderText="nevi" SortExpression="nevi" />
+                                                    <asp:BoundField DataField="osifre" HeaderText="osifre" SortExpression="osifre" />
+                                                </Columns>
+                                            </asp:GridView>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </asp:Panel>
+                            <asp:Panel ID="pnl_drm" runat="server" Visible="False" Width="100%">
+                                <h3>İŞLEM TANIMLAMA </h3>
+                                <br />
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td style="vertical-align: top">İşlem<asp:TextBox ID="txt_islem" runat="server"></asp:TextBox>
+                                            <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Kaydet" />
+                                        </td>
+                                        <td>
+                                            <asp:GridView ID="GridView4" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="id" DataSourceID="SqlDataSource5">
+                                                <Columns>
+                                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                                    <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                                                    <asp:BoundField DataField="islem" HeaderText="islem" SortExpression="islem" />
+                                                </Columns>
+                                            </asp:GridView>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br />
+                                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_drm] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_drm] ( [islem]) VALUES ( ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_drm]" UpdateCommand="UPDATE [tbl_drm] SET [islem] = ? WHERE [id] = ?">
+                                    <DeleteParameters>
+                                        <asp:Parameter Name="id" Type="Int32" />
+                                    </DeleteParameters>
+                                    <InsertParameters>
+                                        <asp:ControlParameter ControlID="txt_islem" Name="islem" PropertyName="Text" Type="String" />
+                                    </InsertParameters>
+                                    <UpdateParameters>
+                                        <asp:Parameter Name="islem" Type="String" />
+                                        <asp:Parameter Name="id" Type="Int32" />
+                                    </UpdateParameters>
+                                </asp:SqlDataSource>
+                            </asp:Panel>
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT k_birim FROM tbl_per GROUP BY k_birim"></asp:SqlDataSource>
+                            <asp:Panel ID="pnlupdate" runat="server" Visible="False">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td colspan="7" style="vertical-align: top">
+                                            <h3>GÜNCELLEME İŞLEMLERİ </h3>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align: top">İd</td>
+                                        <td style="vertical-align: top">
+                                            <asp:Label ID="lbl_id" runat="server" ForeColor="Red"></asp:Label>
+                                        </td>
+                                        <td style="vertical-align: top">Durumu<asp:DropDownList ID="dd_drm" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource1" DataTextField="islem" DataValueField="islem">
+                                        </asp:DropDownList>
+                                        </td>
+                                        <td style="vertical-align: top">Yapılan İşlem</td>
+                                        <td style="vertical-align: top">
+                                            <asp:TextBox ID="txt_ack" runat="server" Height="75px" TextMode="MultiLine" Width="214px"></asp:TextBox>
+                                        </td>
+                                        <td style="vertical-align: top">İşlem Tarihi:<asp:TextBox ID="dt_it" runat="server" TextMode="Date"></asp:TextBox>
+                                            <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" BehaviorID="_content_CalendarExtender1" Format="dd/MM/yyyy" PopupButtonID="imgPopup" TargetControlID="dt_it" />
+                                        </td>
+                                        <td style="vertical-align: top">
+                                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary btn-smy" OnClick="Button1_Click" Text="Güncelle" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </asp:Panel>
+
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_drm]"></asp:SqlDataSource>
-                            <asp:Label ID="lbl_msj" runat="server" ForeColor="Red"></asp:Label>
+                   
                             <asp:GridView ID="GridView1" runat="server" class="table table-striped" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="100%">
                                 <Columns>
                                     <asp:CommandField SelectText="İşleme Al" ShowSelectButton="True" />
@@ -246,7 +244,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>&nbsp;</td>
+                        <td></td>
                     </tr>
                 </table>
             </ContentTemplate>
@@ -262,14 +260,13 @@
                             Cihaz Kayıt
                         </HeaderTemplate>
                         <ContentTemplate>
-                            <table class="align-text-bottom" style="width:100%">
+                            <table >
                                 <tr>
                                     <td style="vertical-align: top">Cihaz Seri No:</td>
                                     <td class="auto-style7" style="vertical-align: top">
                                         <asp:TextBox ID="txt_cseri" runat="server"></asp:TextBox>
                                     </td>
-                                    <td class="auto-style22" style="vertical-align: top">
-                                        Cihaz Adı:</td>
+                                    <td class="auto-style22" style="vertical-align: top">Cihaz Adı:</td>
                                     <td class="auto-style12" style="vertical-align: top">
                                         <asp:TextBox ID="txt_cad" runat="server"></asp:TextBox>
                                     </td>
@@ -280,17 +277,17 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="vertical-align:top" class="auto-style28">Özellikleri:</td>
-                                    <td class="auto-style29" style="vertical-align:top">
+                                    <td style="vertical-align: top" class="auto-style28">Özellikleri:</td>
+                                    <td class="auto-style29" style="vertical-align: top">
                                         <asp:DropDownList ID="dd_cozllk" runat="server" AutoPostBack="True">
                                             <asp:ListItem>Seçiniz</asp:ListItem>
                                             <asp:ListItem>PC</asp:ListItem>
                                             <asp:ListItem>Tablet</asp:ListItem>
                                             <asp:ListItem>Yazıcı</asp:ListItem>
                                         </asp:DropDownList>
+
                                     </td>
-                                    <td class="auto-style30" style="vertical-align: top">
-                                        Cihaz Marka:</td>
+                                    <td class="auto-style30" style="vertical-align: top">Cihaz Marka:</td>
                                     <td style="vertical-align: top">
                                         <asp:DropDownList ID="dd_marka" runat="server">
                                             <asp:ListItem>Seçin</asp:ListItem>
@@ -299,15 +296,14 @@
                                         </asp:DropDownList>
                                         <br />
                                     </td>
-                                    <td class="auto-style31" colspan="2" style="vertical-align: top">
-                                        HDD:<asp:DropDownList ID="dd_chdd" runat="server">
-                                            <asp:ListItem>Seçiniz</asp:ListItem>
-                                            <asp:ListItem>200 GB</asp:ListItem>
-                                            <asp:ListItem>300 GB</asp:ListItem>
-                                            <asp:ListItem>500 GB</asp:ListItem>
-                                            <asp:ListItem>1 TB</asp:ListItem>
-                                            <asp:ListItem>2 TB</asp:ListItem>
-                                        </asp:DropDownList>
+                                    <td class="auto-style31" colspan="2" style="vertical-align: top">HDD:<asp:DropDownList ID="dd_chdd" runat="server">
+                                        <asp:ListItem>Seçiniz</asp:ListItem>
+                                        <asp:ListItem>200 GB</asp:ListItem>
+                                        <asp:ListItem>300 GB</asp:ListItem>
+                                        <asp:ListItem>500 GB</asp:ListItem>
+                                        <asp:ListItem>1 TB</asp:ListItem>
+                                        <asp:ListItem>2 TB</asp:ListItem>
+                                    </asp:DropDownList>
                                         -HDD-Seri No:<asp:TextBox ID="txt_cip0" runat="server"></asp:TextBox>
                                         <br />
                                         SSD<asp:DropDownList ID="dd_cssd" runat="server">
@@ -337,8 +333,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style19" style="vertical-align:top">Geldiği Yer:</td>
-                                    <td class="auto-style9" style="vertical-align:top">
+                                    <td class="auto-style19" style="vertical-align: top">Geldiği Yer:</td>
+                                    <td class="auto-style9" style="vertical-align: top">
                                         <asp:DropDownList ID="dd_cgyer" runat="server">
                                             <asp:ListItem>Seçiniz</asp:ListItem>
                                             <asp:ListItem>Diğer</asp:ListItem>
@@ -357,18 +353,19 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style19" style="vertical-align:top">Ebys No</td>
-                                    <td class="auto-style9" colspan="4" style="vertical-align:top">
+                                    <td class="auto-style19" style="vertical-align: top">Ebys No</td>
+                                    <td class="auto-style9" colspan="4" style="vertical-align: top">
                                         <asp:TextBox ID="txt_ciebys" runat="server" Width="288px"></asp:TextBox>
                                     </td>
                                     <td class="auto-style4" style="vertical-align: top">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style19" colspan="5" style="vertical-align:top">
+                                    <td class="auto-style19" colspan="5" style="vertical-align: top">
                                         <asp:Label ID="lbl_imsj" runat="server"></asp:Label>
                                         <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_chz] WHERE [id] = ?" InsertCommand="INSERT INTO tbl_chz
                          (chz_sn, chz_ad, chz_ip, chz_ozl,chz_mrk, chz_hdd, chz_ssd, chz_ram, chz_ek, chz_gy, chz_gtar, chz_ack,chz_iper,chz_ebys)
-VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?">
+VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+                                            ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?">
                                             <DeleteParameters>
                                                 <asp:Parameter Name="id" Type="Int32" />
                                             </DeleteParameters>
@@ -424,7 +421,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                             Sorgulama İşlemleri
                         </HeaderTemplate>
                         <ContentTemplate>
-                            <table style="width:100%">
+                            <table style="width: 100%">
                                 <tr>
                                     <td style="vertical-align: top" class="auto-style2">
                                         <asp:LinkButton ID="LinkButton7" runat="server" CssClass="btn btn-primary btn-smy" Width="150px" OnClick="LinkButton7_Click">İşlem Bekleyenler</asp:LinkButton>
@@ -504,7 +501,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                     </td>
                                     <td style="vertical-align: top">
                                         <asp:Panel ID="pnl_ciislem" runat="server" Visible="False">
-                                            <table style="width:100%">
+                                            <table style="width: 100%">
                                                 <tr>
                                                     <td class="auto-style17" style="vertical-align: top">&nbsp; Cihaz Seri No:</td>
                                                     <td class="auto-style7" style="vertical-align: top">
@@ -521,8 +518,8 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="auto-style28" style="vertical-align:top">&nbsp; Özellikleri:</td>
-                                                    <td class="auto-style29" style="vertical-align:top">
+                                                    <td class="auto-style28" style="vertical-align: top">&nbsp; Özellikleri:</td>
+                                                    <td class="auto-style29" style="vertical-align: top">
                                                         <asp:Label ID="lbl_ciozllk" runat="server"></asp:Label>
                                                     </td>
                                                     <td class="auto-style30" style="vertical-align: top">Marka:<asp:Label ID="lbl_cimrk" runat="server"></asp:Label>
@@ -563,8 +560,8 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="auto-style19" style="vertical-align:top">&nbsp; Geldiği Yer:</td>
-                                                    <td class="auto-style9" style="vertical-align:top">
+                                                    <td class="auto-style19" style="vertical-align: top">&nbsp; Geldiği Yer:</td>
+                                                    <td class="auto-style9" style="vertical-align: top">
                                                         <asp:Label ID="lbl_cigyer" runat="server"></asp:Label>
                                                     </td>
                                                     <td class="auto-style24" style="vertical-align: top">Geldiği Tarih:</td>
@@ -577,21 +574,21 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="auto-style19" style="vertical-align:top">&nbsp; EBYS</td>
-                                                    <td class="auto-style9" colspan="3" style="vertical-align:top">
+                                                    <td class="auto-style19" style="vertical-align: top">&nbsp; EBYS</td>
+                                                    <td class="auto-style9" colspan="3" style="vertical-align: top">
                                                         <asp:TextBox ID="txt_ciebys0" runat="server" Enabled="False" Width="288px"></asp:TextBox>
                                                     </td>
                                                     <td class="auto-style4" style="vertical-align: top">&nbsp;</td>
                                                     <td class="auto-style4" style="vertical-align: top">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="6" style="vertical-align:top">
+                                                    <td colspan="6" style="vertical-align: top">
                                                         <hr />
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="auto-style20" style="vertical-align:top">&nbsp; Yapılan İşlem</td>
-                                                    <td class="auto-style21" style="vertical-align:top">
+                                                    <td class="auto-style20" style="vertical-align: top">&nbsp; Yapılan İşlem</td>
+                                                    <td class="auto-style21" style="vertical-align: top">
                                                         <asp:TextBox ID="txt_ciyis" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox>
                                                     </td>
                                                     <td class="auto-style25" style="vertical-align: top">İşlem Tarihi:</td>
@@ -610,27 +607,26 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="auto-style20" style="vertical-align:top">&nbsp;</td>
-                                                    <td class="auto-style21" style="vertical-align:top">&nbsp;</td>
+                                                    <td class="auto-style20" style="vertical-align: top">&nbsp;</td>
+                                                    <td class="auto-style21" style="vertical-align: top">&nbsp;</td>
                                                     <td class="auto-style25" style="vertical-align: top">&nbsp;</td>
                                                     <td class="auto-style26" style="vertical-align: top">&nbsp;</td>
                                                     <td class="auto-style6" style="vertical-align: top">&nbsp;</td>
                                                     <td class="auto-style6" style="vertical-align: top">&nbsp;</td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="3" style="vertical-align:top">
-                                                        &nbsp;
+                                                    <td colspan="3" style="vertical-align: top">&nbsp;
                                                         <asp:Label ID="lbl_cidd" runat="server"></asp:Label>
                                                         <asp:Label ID="lbl_imsj0" runat="server" ForeColor="Red"></asp:Label>
                                                     </td>
-                                                    <td class="auto-style27" style="vertical-align:top">&nbsp;</td>
+                                                    <td class="auto-style27" style="vertical-align: top">&nbsp;</td>
                                                     <td style="vertical-align: top">&nbsp;</td>
                                                     <td style="vertical-align: top; text-align: right;">
                                                         <asp:Button ID="btn_cikyt" runat="server" OnClick="btn_cikyt_Click" Text="Kaydet" />
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="6" style="vertical-align:top">&nbsp;</td>
+                                                    <td colspan="6" style="vertical-align: top">&nbsp;</td>
                                                 </tr>
                                             </table>
                                         </asp:Panel>
@@ -659,8 +655,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2">
-                                        &nbsp;</td>
+                                    <td colspan="2">&nbsp;</td>
                                 </tr>
                             </table>
                         </ContentTemplate>
@@ -668,5 +663,6 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                 </ajaxToolkit:TabContainer>
             </ContentTemplate>
         </ajaxToolkit:TabPanel>
+
     </ajaxToolkit:TabContainer>
 </asp:Content>

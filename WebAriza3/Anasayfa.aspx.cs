@@ -18,7 +18,7 @@ namespace WebAriza3
             {
                 if (Session["k_sicil"] != null)
                 {
-                     
+
                 }
                 else
                 {
@@ -31,17 +31,17 @@ namespace WebAriza3
         {
             int secili = GridView1.SelectedIndex;
             GridViewRow row = GridView1.Rows[secili];
-                      
+
             string id4 = row.Cells[4].Text;
-            
+
             string id8 = row.Cells[8].Text;
             DataTable dt = new DataTable();
-            if (id8.ToString()== "İşlem Tamamlandı.")
+            if (id8.ToString() == "İşlem Tamamlandı.")
             {
-                dt = dataClass.get_tbl("SELECT TOP 1 tbl_nevi.osifre FROM (tbl_ariza INNER JOIN tbl_nevi ON tbl_ariza.nevi = tbl_nevi.nevi) WHERE (tbl_ariza.durumu = 'İşlem Tamamlandı.') AND (tbl_ariza.nevi = '"+id4.ToString()+"')");
-                if (dt.Rows.Count>0)
+                dt = dataClass.get_tbl("SELECT TOP 1 tbl_nevi.osifre FROM (tbl_ariza INNER JOIN tbl_nevi ON tbl_ariza.nevi = tbl_nevi.nevi) WHERE (tbl_ariza.durumu = 'İşlem Tamamlandı.') AND (tbl_ariza.nevi = '" + id4.ToString() + "')");
+                if (dt.Rows.Count > 0)
                 {
-  MessageBox.Show(dt.Rows[0][0].ToString());
+                    MessageBox.Show(dt.Rows[0][0].ToString());
                 }
 
             }
