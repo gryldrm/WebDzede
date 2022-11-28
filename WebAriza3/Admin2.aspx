@@ -10,7 +10,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
 
-    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" Width="100%">
+    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" Width="100%">
 
         <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1">
             <HeaderTemplate>
@@ -273,12 +273,13 @@
                                     </td>
                                     <td style="vertical-align: top">&nbsp;</td>
                                     <td style="vertical-align: top">&nbsp;</td>
-                                    <td class="auto-style1" style="vertical-align: top">Geldiği Yer:<asp:DropDownList ID="dd_cgyer" runat="server" class="form-control" placeholder="">
+                                    <td class="auto-style1" style="vertical-align: top">Geldiği Yer:<asp:DropDownList ID="dd_cgyer" runat="server" class="form-control" placeholder="" DataSourceID="SqlDataSource9" DataTextField="birim" DataValueField="birim">
                                         <asp:ListItem>Seçiniz</asp:ListItem>
                                         <asp:ListItem>Diğer</asp:ListItem>
                                         <asp:ListItem>Efeler İlçe Emniyet</asp:ListItem>
                                         <asp:ListItem>Asayiş Şube Müdürlüğü</asp:ListItem>
                                         </asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource9" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_birim]"></asp:SqlDataSource>
                                     </td>
                                 </tr>
                                 <tr>
@@ -429,17 +430,17 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                             <table>
                                                 <tr>
                                                     <td>Cihaz Seri No<br />
-                                                        <asp:TextBox ID="txt_caseri" runat="server"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" placeholder="" ID="txt_caseri" runat="server"></asp:TextBox>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Cihaz Adı<br />
-                                                        <asp:TextBox ID="txt_caad" runat="server"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" placeholder=""  ID="txt_caad" runat="server"></asp:TextBox>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Birim<br />
-                                                        <asp:DropDownList ID="dd_cagyer" runat="server">
+                                                        <asp:DropDownList class="form-control" placeholder="" ID="dd_cagyer" runat="server">
                                                             <asp:ListItem>Seçiniz</asp:ListItem>
                                                             <asp:ListItem>Diğer</asp:ListItem>
                                                             <asp:ListItem>Efeler İlçe Emniyet</asp:ListItem>
@@ -450,7 +451,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                                 </tr>
                                                 <tr>
                                                     <td>Durumu<br />
-                                                        <asp:DropDownList ID="dd_cidrm0" runat="server">
+                                                        <asp:DropDownList class="form-control" placeholder="" ID="dd_cidrm0" runat="server">
                                                             <asp:ListItem>Seçiniz</asp:ListItem>
                                                             <asp:ListItem>Tamamlandı</asp:ListItem>
                                                             <asp:ListItem>Hek</asp:ListItem>
@@ -461,34 +462,22 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                                 </tr>
                                                 <tr>
                                                     <td>Geldiği Tarih<br />
-                                                        <asp:TextBox ID="dt_cagt1" runat="server" TextMode="Date"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" placeholder="" ID="dt_cagt1" runat="server" TextMode="Date"></asp:TextBox>
                                                         <br />
-                                                        <asp:TextBox ID="dt_cagt2" runat="server" TextMode="Date"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" placeholder="" ID="dt_cagt2" runat="server" TextMode="Date"></asp:TextBox>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>İşlem Tarih<br />
-                                                        <asp:TextBox ID="dt_cait1" runat="server" TextMode="Date"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" placeholder="" ID="dt_cait1" runat="server" TextMode="Date"></asp:TextBox>
                                                         <br />
-                                                        <asp:TextBox ID="dt_cait2" runat="server" TextMode="Date"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" placeholder="" ID="dt_cait2" runat="server" TextMode="Date"></asp:TextBox>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: right">
-                                                        <asp:Button ID="Button6" runat="server" OnClick="Button6_Click" Text="Ara" />
+                                                    <td style="text-align: center">
+                                                        <asp:Button class="form-control" placeholder="" ID="Button6" runat="server" OnClick="Button6_Click" Text="Ara" />
                                                     </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>&nbsp;</td>
                                                 </tr>
                                                 <tr>
                                                     <td>&nbsp;</td>
@@ -506,12 +495,12 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                                     </td>
                                                     <td class="auto-style22" style="vertical-align: top">Cihaz Adı:</td>
                                                     <td class="auto-style12" style="vertical-align: top">
-                                                        <asp:TextBox ID="txt_ciad" runat="server"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" placeholder="" ID="txt_ciad" runat="server"></asp:TextBox>
                                                         <br />
                                                     </td>
                                                     <td class="auto-style5" style="vertical-align: top">İp No:</td>
                                                     <td class="auto-style5" style="vertical-align: top">
-                                                        <asp:TextBox ID="txt_ciipno" runat="server"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" placeholder="" ID="txt_ciipno" runat="server"></asp:TextBox>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -523,7 +512,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                                     </td>
                                                     <td class="auto-style31" colspan="3" style="vertical-align: top">
                                                         <asp:Panel ID="Panel2" runat="server">
-                                                            HDD:<asp:DropDownList ID="dd_cihdd" runat="server">
+                                                            HDD:<asp:DropDownList class="form-control" placeholder="" ID="dd_cihdd" runat="server">
                                                                 <asp:ListItem>Seçiniz</asp:ListItem>
                                                                 <asp:ListItem>200 GB</asp:ListItem>
                                                                 <asp:ListItem>300 GB</asp:ListItem>
@@ -531,20 +520,20 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                                                 <asp:ListItem>1 TB</asp:ListItem>
                                                                 <asp:ListItem>2 TB</asp:ListItem>
                                                             </asp:DropDownList>
-                                                            &nbsp;-SSD:<asp:DropDownList ID="dd_cissd" runat="server">
+                                                            &nbsp;-SSD:<asp:DropDownList class="form-control" placeholder="" ID="dd_cissd" runat="server">
                                                                 <asp:ListItem>Seçiniz</asp:ListItem>
                                                                 <asp:ListItem>240 GB</asp:ListItem>
                                                                 <asp:ListItem>480 GB</asp:ListItem>
                                                                 <asp:ListItem>500 GB</asp:ListItem>
                                                                 <asp:ListItem>1 TB</asp:ListItem>
                                                             </asp:DropDownList>
-                                                            &nbsp;RAM:<asp:DropDownList ID="dd_ciram" runat="server">
+                                                            &nbsp;RAM:<asp:DropDownList class="form-control" placeholder="" ID="dd_ciram" runat="server">
                                                                 <asp:ListItem>Seçiniz</asp:ListItem>
                                                                 <asp:ListItem>4 GB</asp:ListItem>
                                                                 <asp:ListItem>8 GB</asp:ListItem>
                                                                 <asp:ListItem>16 GB</asp:ListItem>
                                                             </asp:DropDownList>
-                                                            -Ekran Kartı:<asp:DropDownList ID="dd_ciekart" runat="server">
+                                                            -Ekran Kartı:<asp:DropDownList class="form-control" placeholder="" ID="dd_ciekart" runat="server">
                                                                 <asp:ListItem>Seçiniz</asp:ListItem>
                                                                 <asp:ListItem>Onboard</asp:ListItem>
                                                                 <asp:ListItem>256 GB</asp:ListItem>
@@ -567,13 +556,13 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                                     </td>
                                                     <td class="auto-style4" style="vertical-align: top">Arıza Açıklama:</td>
                                                     <td class="auto-style4" style="vertical-align: top">
-                                                        <asp:TextBox ID="txt_ciack" runat="server" Enabled="False" TextMode="MultiLine" Width="100%"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" placeholder="" ID="txt_ciack" runat="server" Enabled="False" TextMode="MultiLine" Width="100%"></asp:TextBox>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="auto-style19" style="vertical-align: top">&nbsp; EBYS</td>
                                                     <td class="auto-style9" colspan="3" style="vertical-align: top">
-                                                        <asp:TextBox ID="txt_ciebys0" runat="server" Enabled="False" Width="288px"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" placeholder="" ID="txt_ciebys0" runat="server" Enabled="False" Width="288px"></asp:TextBox>
                                                     </td>
                                                     <td class="auto-style4" style="vertical-align: top">&nbsp;</td>
                                                     <td class="auto-style4" style="vertical-align: top">&nbsp;</td>
@@ -586,16 +575,16 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                                 <tr>
                                                     <td class="auto-style20" style="vertical-align: top">&nbsp; Yapılan İşlem</td>
                                                     <td class="auto-style21" style="vertical-align: top">
-                                                        <asp:TextBox ID="txt_ciyis" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" placeholder="" ID="txt_ciyis" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox>
                                                     </td>
                                                     <td class="auto-style25" style="vertical-align: top">İşlem Tarihi:</td>
                                                     <td class="auto-style26" style="vertical-align: top">
-                                                        <asp:TextBox ID="txt_ciyistar" runat="server" TextMode="Date"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" placeholder="" ID="txt_ciyistar" runat="server" TextMode="Date"></asp:TextBox>
                                                         <br />
                                                     </td>
                                                     <td class="auto-style6" style="vertical-align: top">Durumu:</td>
                                                     <td class="auto-style6" style="vertical-align: top">
-                                                        <asp:DropDownList ID="dd_cidrm" runat="server">
+                                                        <asp:DropDownList class="form-control" placeholder="" ID="dd_cidrm" runat="server">
                                                             <asp:ListItem>Seçiniz</asp:ListItem>
                                                             <asp:ListItem>Tamamlandı</asp:ListItem>
                                                             <asp:ListItem>Hek</asp:ListItem>
