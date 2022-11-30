@@ -136,6 +136,9 @@
 
 
         <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="style/jquery-3.2.1.min.js"></script>
+        <script src="style/moment.js"></script>
+        <script src="style/toastr.min.js"></script>
     </form>
 
 </body>

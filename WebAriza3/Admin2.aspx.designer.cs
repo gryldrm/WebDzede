@@ -627,6 +627,15 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.Button btn_ckayit;
 
         /// <summary>
+        /// lbl_ckmsj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ckmsj;
+
+        /// <summary>
         /// TabPanel4 control.
         /// </summary>
         /// <remarks>

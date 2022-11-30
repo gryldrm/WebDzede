@@ -8,8 +8,6 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <br />
-
     <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" Width="100%">
 
         <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1">
@@ -278,7 +276,7 @@
                                         <asp:ListItem>Diğer</asp:ListItem>
                                         <asp:ListItem>Efeler İlçe Emniyet</asp:ListItem>
                                         <asp:ListItem>Asayiş Şube Müdürlüğü</asp:ListItem>
-                                        </asp:DropDownList>
+                                    </asp:DropDownList>
                                         <asp:SqlDataSource ID="SqlDataSource9" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_birim]"></asp:SqlDataSource>
                                     </td>
                                 </tr>
@@ -361,7 +359,8 @@
                                     <td style="vertical-align: top">
                                         <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_chz] WHERE [id] = ?" InsertCommand="INSERT INTO tbl_chz
                          (chz_sn, chz_ad, chz_ip, chz_ozl,chz_mrk, chz_hdd, chz_ssd, chz_ram, chz_ek, chz_gy, chz_gtar, chz_ack,chz_iper,chz_ebys)
-VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?">
+VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+                                            ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?">
                                             <DeleteParameters>
                                                 <asp:Parameter Name="id" Type="Int32" />
                                             </DeleteParameters>
@@ -405,12 +404,13 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                             </UpdateParameters>
                                         </asp:SqlDataSource>
                                     </td>
-                                    <td style="vertical-align: top">&nbsp;</td>
+                                    <td style="vertical-align: top"> </td>
                                     <td class="auto-style1" style="vertical-align: top">
-                                        <asp:Button ID="btn_ckayit" runat="server" class="form-control" OnClick="btn_ckayit_Click" placeholder="" Text="Kaydet" />
+                                        <asp:Button ID="btn_ckayit" runat="server"  OnClick="btn_ckayit_Click"  Text="Kaydet" />
                                     </td>
                                 </tr>
                             </table>
+                            <asp:Label ID="lbl_ckmsj" runat="server"></asp:Label>
                             <br />
                         </ContentTemplate>
                     </ajaxToolkit:TabPanel>
@@ -435,7 +435,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                                 </tr>
                                                 <tr>
                                                     <td>Cihaz Adı<br />
-                                                        <asp:TextBox class="form-control" placeholder=""  ID="txt_caad" runat="server"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" placeholder="" ID="txt_caad" runat="server"></asp:TextBox>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -651,4 +651,6 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
         </ajaxToolkit:TabPanel>
 
     </ajaxToolkit:TabContainer>
+
+
 </asp:Content>

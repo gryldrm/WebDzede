@@ -329,20 +329,23 @@ namespace WebAriza3
 
         protected void btn_ckayit_Click(object sender, EventArgs e)
         {
+
+
+
             try
             {
                 SqlDataSource6.Insert();
-                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                    "toastr.success('Kayıt Başarılı...', ' ')", true);
+                lbl_ckmsj.Text = "Kayıt Başarılı...";
+
+                 
             }
             catch (Exception)
             {
 
-                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                   "toastr.error('Aynı sicile ait kullanıcı bulunmakta...', ' ')", true);
+                lbl_ckmsj.Text = "Kayıt sırasında hata oluştu...";
             }
 
-            GridView5.DataBind();
+      
         }
 
         protected void GridView5_SelectedIndexChanged(object sender, EventArgs e)

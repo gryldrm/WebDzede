@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <br />
+     
     <div class="container-md">
         <table style="text-align: left; table-layout: auto;">
             <tr>
@@ -85,7 +85,5 @@
             </tr>
         </table>
     </div>
-    <script src="style/jquery-3.2.1.min.js"></script>
-    <script src="style/moment.js"></script>
-    <script src="style/toastr.min.js"></script>
+  
 </asp:Content>
