@@ -1,11 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="Admin2.aspx.cs" Inherits="WebAriza3.Admin2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            width: 278px;
-        }
-    </style>
+     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" Width="100%">
@@ -59,7 +55,7 @@
                                 </table>
                             </asp:Panel>
                             <asp:Panel ID="pnl_kullanici" runat="server" Visible="False">
-                                <table style="width: 100%">
+                                <table >
                                     <tr>
                                         <td colspan="2">
                                             <h3>KULLANICI İŞLEMLERİ </h3>
@@ -110,7 +106,8 @@
                                     <tr>
                                         <td>Kullanıcı Birim</td>
                                         <td>
-                                            <asp:TextBox Class="form-control" placeholder="birim" ID="txt_birim" runat="server" Width="319px"></asp:TextBox>
+                                            <asp:DropDownList ID="dd_drm2" runat="server" AppendDataBoundItems="True" class="form-select" DataSourceID="SqlDataSource2" DataTextField="k_birim" DataValueField="k_birim">
+                                            </asp:DropDownList>
                                         </td>
                                     </tr>
                                     <tr>
@@ -126,7 +123,7 @@
                                                     <asp:ControlParameter ControlID="txt_adsad" Name="k_adsad" PropertyName="Text" Type="String" />
                                                     <asp:ControlParameter ControlID="txt_sfr" Name="k_sifre" PropertyName="Text" Type="String" />
                                                     <asp:ControlParameter ControlID="dd_Rol" Name="k_rol" PropertyName="SelectedValue" Type="Int32" />
-                                                    <asp:ControlParameter ControlID="txt_birim" Name="k_birim" PropertyName="Text" Type="String" />
+                                                    <asp:ControlParameter ControlID="dd_drm2" Name="k_birim" PropertyName="SelectedValue" Type="String" />
                                                 </InsertParameters>
                                                 <UpdateParameters>
                                                     <asp:Parameter Name="k_scl" Type="Int32" />
@@ -143,7 +140,7 @@
                             </asp:Panel>
                             <asp:Panel ID="pnl_nevi" runat="server" Visible="False">
                                 <h3>NEVİ İŞLEMLERİ </h3>
-                                <table style="width: 100%">
+                                <table >
                                     <tr>
                                         <td style="vertical-align: top">Nevi:<asp:TextBox class="form-control" ID="txt_nevi" runat="server"></asp:TextBox>
                                             &nbsp;Açıklama:<asp:TextBox class="form-control" ID="txt_sifre" runat="server"></asp:TextBox>
@@ -179,9 +176,9 @@
                             <asp:Panel ID="pnl_drm" runat="server" Visible="False" Width="100%">
                                 <h3>İŞLEM TANIMLAMA </h3>
                                 <br />
-                                <table style="width: 100%">
+                                <table >
                                     <tr>
-                                        <td style="vertical-align: top">İşlem<asp:TextBox class="form-control" ID="txt_islem" runat="server"></asp:TextBox>
+                                        <td style="vertical-align: top">İşlem;<asp:TextBox class="form-control" ID="txt_islem" runat="server"></asp:TextBox>
                                             <asp:Button CssClass="btn btn-primary btn-smy" ID="Button5" runat="server" OnClick="Button5_Click" Text="Kaydet" />
                                             <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_drm] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_drm] ( [islem]) VALUES ( ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_drm]" UpdateCommand="UPDATE [tbl_drm] SET [islem] = ? WHERE [id] = ?">
                                                 <DeleteParameters>
@@ -210,9 +207,9 @@
                                 <br />
                             </asp:Panel>
                             <asp:Panel ID="pnlupdate" runat="server" Visible="False">
-                                <table style="width: 100%">
+                                <table >
                                     <tr>
-                                        <td colspan="7" style="vertical-align: top">
+                                        <td colspan="6" style="vertical-align: top">
                                             <h3>GÜNCELLEME İŞLEMLERİ </h3>
                                         </td>
                                     </tr>
@@ -224,11 +221,10 @@
                                         <td style="vertical-align: top">Durumu<asp:DropDownList class="form-select" ID="dd_drm" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource1" DataTextField="islem" DataValueField="islem">
                                         </asp:DropDownList>
                                         </td>
-                                        <td style="vertical-align: top">Yapılan İşlem</td>
-                                        <td style="vertical-align: top">
-                                            <asp:TextBox class="form-control" ID="txt_ack" runat="server" Height="75px" TextMode="MultiLine" Width="214px"></asp:TextBox>
+                                        <td style="vertical-align: top">Yapılan İşlem:<asp:TextBox ID="txt_ack" runat="server" class="form-control" Height="75px" TextMode="MultiLine" Width="214px"></asp:TextBox>
                                         </td>
-                                        <td style="vertical-align: top">İşlem Tarihi:<asp:TextBox class="form-control" ID="dt_it" runat="server" TextMode="Date"></asp:TextBox>
+                                        <td style="vertical-align: top">
+                                            İşlem Tarihi:<asp:TextBox ID="dt_it" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                                             <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" BehaviorID="_content_CalendarExtender1" Format="dd/MM/yyyy" PopupButtonID="imgPopup" TargetControlID="dt_it" />
                                         </td>
                                         <td style="vertical-align: top">
@@ -238,7 +234,7 @@
                                 </table>
                             </asp:Panel>
 
-                            <asp:GridView ID="GridView1" runat="server" class="table table-striped" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="100%">
+                            <asp:GridView ID="GridView1" runat="server" class="table table-striped" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" >
                                 <Columns>
                                     <asp:CommandField SelectText="İşleme Al" ShowSelectButton="True" />
                                 </Columns>
@@ -419,7 +415,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                             Sorgulama İşlemleri
                         </HeaderTemplate>
                         <ContentTemplate>
-                            <table style="width: 100%">
+                            <table  >
                                 <tr>
                                     <td style="vertical-align: top" class="auto-style2">
                                         <asp:LinkButton ID="LinkButton7" runat="server" CssClass="btn btn-primary btn-smy" Width="150px" OnClick="LinkButton7_Click">İşlem Bekleyenler</asp:LinkButton>
@@ -487,7 +483,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                                     </td>
                                     <td style="vertical-align: top">
                                         <asp:Panel ID="pnl_ciislem" runat="server" Visible="False">
-                                            <table style="width: 100%">
+                                            <table  >
                                                 <tr>
                                                     <td class="auto-style17" style="vertical-align: top">&nbsp; Cihaz Seri No:</td>
                                                     <td class="auto-style7" style="vertical-align: top">

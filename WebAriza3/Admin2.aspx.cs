@@ -89,15 +89,14 @@ namespace WebAriza3
                 try
                 {
                     cmd.ExecuteNonQuery();
-                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                                 "toastr.success('Kayıt başarılı...', ' ')", true);
+                    MessageBox.Show("Kayıt başarılı..");
+                     
 
                     datayukle();
                 }
                 catch (OleDbException ex)
                 {
-                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                     "toastr.error('Kayıt edilirken hata oluştu...', ' ')", true);
+                    MessageBox.Show("Kayıt edilirken hata oluştu..");
 
                 }
             }
