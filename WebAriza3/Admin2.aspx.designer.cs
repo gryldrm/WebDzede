@@ -222,13 +222,13 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.DropDownList dd_Rol;
 
         /// <summary>
-        /// txt_birim control.
+        /// DropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_birim;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
         /// btn_kk control.
@@ -564,22 +564,22 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.DropDownList dd_ekart;
 
         /// <summary>
-        /// txt_cip0 control.
+        /// txt_chdds control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cip0;
+        protected global::System.Web.UI.WebControls.TextBox txt_chdds;
 
         /// <summary>
-        /// txt_cip1 control.
+        /// txt_ssds control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cip1;
+        protected global::System.Web.UI.WebControls.TextBox txt_ssds;
 
         /// <summary>
         /// dt_cgtar control.

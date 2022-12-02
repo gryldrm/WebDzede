@@ -7,9 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows;
-
-
-
+using System.Runtime.CompilerServices;
 
 namespace WebAriza3
 {
@@ -571,6 +569,33 @@ namespace WebAriza3
             DataTable dt = dataClass.get_tbl("  SELECT id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_ssd AS SSD, chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu  FROM tbl_chz  WHERE (chz_drm = 'İşlem Bekliyor') OR (chz_drm IS NULL) ");
             GridView5.DataSource = dt;
             GridView5.DataBind();
+        }
+
+        protected void dd_cozllk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dd_cozllk.SelectedItem.ToString() =="Yazıcı")
+            {
+                dd_chdd.Enabled = false;
+                txt_chdds.Enabled = false;
+                dd_cssd.Enabled = false;
+                txt_ssds.Enabled = false;
+
+                dd_ram.Enabled = false;
+                dd_ekart.Enabled = false;
+            }
+            else
+            {
+                dd_chdd.Enabled = true;
+                txt_chdds.Enabled = true;
+                dd_cssd.Enabled = true;
+                txt_ssds.Enabled = true;
+
+                dd_ram.Enabled = true;
+                dd_ekart.Enabled = true;
+            } 
+          
+          
+
         }
     }
 }
