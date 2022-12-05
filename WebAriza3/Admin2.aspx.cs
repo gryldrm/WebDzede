@@ -355,7 +355,7 @@ namespace WebAriza3
 
             GridViewRow row = GridView5.Rows[secili];
             lbl_cidd.Text = row.Cells[1].Text;
-            DataTable dt = dataClass.get_tbl(" SELECT id, chz_sn, chz_ad, chz_ip, chz_ozl, chz_mrk, chz_hdd, chz_ssd, chz_ram, chz_ek, chz_gy, chz_gtar, chz_ack, chz_yi, chz_itar, chz_drm, chz_cbrm, chz_ctar, chz_iper, chz_ibtar, chz_ebys FROM tbl_chz WHERE (id = " + row.Cells[1].Text.ToString() + ") ORDER BY id DESC ");
+            DataTable dt = dataClass.get_tbl(" SELECT id, chz_sn, chz_ad, chz_ip, chz_ozl, chz_mrk, chz_hdd, chz_shdd,  chz_ssd,chz_sssd, chz_ram, chz_ek, chz_gy, chz_gtar, chz_ack, chz_yi, chz_itar, chz_drm, chz_cbrm, chz_ctar, chz_iper, chz_ibtar, chz_ebys FROM tbl_chz WHERE (id = " + row.Cells[1].Text.ToString() + ") ORDER BY id DESC ");
 
             lbl_ciserin.Text = row.Cells[2].Text;
             txt_ciad.Text = row.Cells[3].Text;
@@ -456,7 +456,7 @@ namespace WebAriza3
         protected void Button6_Click(object sender, EventArgs e)
         {
             string sorgu = "";
-            string srg_select = "SELECT   id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_ssd AS SSD, chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu FROM tbl_chz  ";
+            string srg_select = "SELECT   id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_shdd AS [Hdd Seri], chz_ssd AS SSD, chz_sssd AS [Ssd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu FROM tbl_chz  ";
 
             if (txt_caseri.Text != "")
             {
@@ -565,7 +565,7 @@ namespace WebAriza3
         protected void LinkButton7_Click(object sender, EventArgs e)
         {
             //
-            DataTable dt = dataClass.get_tbl("  SELECT id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_ssd AS SSD, chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu  FROM tbl_chz  WHERE (chz_drm = 'İşlem Bekliyor') OR (chz_drm IS NULL) ");
+            DataTable dt = dataClass.get_tbl("  SELECT id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_shdd [Hdd Seri], chz_ssd AS SSD, chz_sssd [Sdd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu  FROM tbl_chz  WHERE (chz_drm = 'İşlem Bekliyor') OR (chz_drm IS NULL) ");
             GridView5.DataSource = dt;
             GridView5.DataBind();
         }

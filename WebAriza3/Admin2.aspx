@@ -4,7 +4,7 @@
      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" Width="100%">
+    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" Width="100%">
 
         <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1">
             <HeaderTemplate>
@@ -353,10 +353,12 @@
                                     </td>
                                     <td style="vertical-align: top">&nbsp;</td>
                                     <td style="vertical-align: top">
+                                        &nbsp;</td>
+                                    <td style="vertical-align: top"> </td>
+                                    <td class="auto-style1" style="vertical-align: top; text-align: center;">
                                         <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_chz] WHERE [id] = ?" InsertCommand="INSERT INTO tbl_chz
-                         (chz_sn, chz_ad, chz_ip, chz_ozl,chz_mrk, chz_hdd, chz_ssd, chz_ram, chz_ek, chz_gy, chz_gtar, chz_ack,chz_iper,chz_ebys)
-VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
-                                            ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?">
+                         (chz_sn, chz_ad, chz_ip, chz_ozl,chz_mrk, chz_hdd, chz_ssd, chz_ram, chz_ek, chz_gy, chz_gtar, chz_ack,chz_iper,chz_ebys,chz_shdd,chz_sssd)
+VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?">
                                             <DeleteParameters>
                                                 <asp:Parameter Name="id" Type="Int32" />
                                             </DeleteParameters>
@@ -375,6 +377,8 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                                                 <asp:ControlParameter ControlID="txt_cariza" Name="chz_ack" PropertyName="Text" />
                                                 <asp:SessionParameter Name="chz_iper" SessionField="k_sicil" />
                                                 <asp:ControlParameter ControlID="txt_ciebys" Name="chz_ebys" PropertyName="Text" />
+                                                <asp:ControlParameter ControlID="txt_chdds" Name="chz_shdd" PropertyName="Text" />
+                                                <asp:ControlParameter ControlID="txt_ssds" Name="chz_sssd" PropertyName="Text" />
                                             </InsertParameters>
                                             <UpdateParameters>
                                                 <asp:Parameter Name="chz_sn" Type="String" />
@@ -399,9 +403,6 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                                                 <asp:Parameter Name="id" Type="Int32" />
                                             </UpdateParameters>
                                         </asp:SqlDataSource>
-                                    </td>
-                                    <td style="vertical-align: top"> </td>
-                                    <td class="auto-style1" style="vertical-align: top; text-align: center;">
                                         <asp:Button ID="btn_ckayit" runat="server"  OnClick="btn_ckayit_Click"  Text="Kaydet" class="btn btn-lg btn-primary" />
                                     </td>
                                 </tr>
@@ -622,7 +623,9 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                                                 <asp:BoundField DataField="Tip" HeaderText="Tip" SortExpression="Tip" />
                                                 <asp:BoundField DataField="Marka" HeaderText="Marka" SortExpression="Marka" />
                                                 <asp:BoundField DataField="HDD" HeaderText="HDD" SortExpression="HDD" />
+                                                <asp:BoundField DataField="Hdd Seri" HeaderText="Hdd Seri" SortExpression="Hdd Seri" />
                                                 <asp:BoundField DataField="SSD" HeaderText="SSD" SortExpression="SSD" />
+                                                <asp:BoundField DataField="Ssd Seri" HeaderText="Ssd Seri" SortExpression="Ssd Seri" />
                                                 <asp:BoundField DataField="RAM" HeaderText="RAM" SortExpression="RAM" />
                                                 <asp:BoundField DataField="Ekran Kartı" HeaderText="Ekran Kartı" SortExpression="Ekran Kartı" />
                                                 <asp:BoundField DataField="Birim" HeaderText="Birim" SortExpression="Birim" />
