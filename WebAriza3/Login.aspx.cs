@@ -28,7 +28,7 @@ namespace WebAriza3
 
             baglanti = db_baglanti();
             OleDbCommand komut = new OleDbCommand();
-            string sorgu = "SELECT        k_scl, k_adsad, k_sifre, k_rol, k_birim FROM            tbl_per WHERE        (k_scl = " + kscl.ToString() + ") AND (k_sifre = '" + kscl.ToString() + "')";
+            string sorgu = "SELECT        k_scl, k_adsad, k_sifre, k_rol, k_birim FROM            tbl_per WHERE        (k_scl = " + kscl.ToString() + ") AND (k_sifre = '" + ksifre.ToString() + "')";
             komut = new OleDbCommand(sorgu, baglanti);
 
             baglanti.Open();
