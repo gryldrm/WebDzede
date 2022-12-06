@@ -372,16 +372,16 @@ namespace WebAriza3
             lbl_cigtar.Text = row.Cells[14].Text;
             txt_ciack.Text = row.Cells[15].Text;
 
-            txt_ciyis.Text = dt.Rows[0][13].ToString();
+            txt_ciyis.Text = dt.Rows[0][16].ToString();
 
-            txt_ciyistar.Text = row.Cells[14].Text;
+            txt_ciyistar.Text = row.Cells[16].Text;
 
-            if (dt.Rows[0][15].ToString() != "")
+            if (dt.Rows[0][17].ToString() != "")
             {
-                dd_cidrm.Text = dt.Rows[0][15].ToString();
+                dd_cidrm.Text = dt.Rows[0][17].ToString();
             }
 
-            txt_ciebys0.Text = dt.Rows[0][20].ToString();
+            txt_ciebys0.Text = dt.Rows[0][22].ToString();
 
         }
 
@@ -397,7 +397,9 @@ namespace WebAriza3
                         string sorgu = " UPDATE tbl_chz SET chz_ad = '" + txt_ciad.Text
                                        + "', chz_ip = '" + txt_ciipno.Text
                                        + "', chz_hdd = '" + dd_cihdd.SelectedItem.Text
+                                        + "', chz_shdd = '" + txthdds.Text
                                        + "', chz_ssd = '" + dd_cissd.SelectedItem.Text
+                                        + "', chz_sssd = '" + txtssds.Text
                                        + "', chz_ram = '" + dd_ciram.SelectedItem.Text
                                        + "', chz_ek = '" + dd_ciekart.SelectedItem.Text
                                        + "', chz_yi = '" + txt_ciyis.Text
@@ -567,7 +569,7 @@ namespace WebAriza3
         protected void LinkButton7_Click(object sender, EventArgs e)
         {
             //
-            DataTable dt = dataClass.get_tbl(" SELECT id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_shdd AS [Hdd Seri], chz_ssd AS SSD, chz_sssd AS [Ssd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu  FROM tbl_chz WHERE (chz_drm = 'İşlem Bekliyor') OR (chz_drm IS NULL)");
+            DataTable dt = dataClass.get_tbl(" SELECT id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_shdd AS [Hdd Seri], chz_ssd AS SSD, chz_sssd AS [Ssd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu  FROM tbl_chz WHERE (chz_drm = 'İşlem Bekliyor') OR (chz_drm IS NULL) order by id desc");
             GridView5.DataSource = dt;
             GridView5.DataBind();
         }

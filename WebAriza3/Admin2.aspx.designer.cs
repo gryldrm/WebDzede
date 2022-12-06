@@ -762,6 +762,24 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.Panel pnl_ciislem;
 
         /// <summary>
+        /// lbl_cigyer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_cigyer;
+
+        /// <summary>
+        /// lbl_cigtar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_cigtar;
+
+        /// <summary>
         /// lbl_ciserin control.
         /// </summary>
         /// <remarks>
@@ -868,24 +886,6 @@ namespace WebAriza3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dd_ciekart;
-
-        /// <summary>
-        /// lbl_cigyer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_cigyer;
-
-        /// <summary>
-        /// lbl_cigtar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_cigtar;
 
         /// <summary>
         /// txt_ciack control.
