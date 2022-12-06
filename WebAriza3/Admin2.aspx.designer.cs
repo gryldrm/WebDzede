@@ -825,6 +825,15 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.DropDownList dd_cihdd;
 
         /// <summary>
+        /// txthdds control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txthdds;
+
+        /// <summary>
         /// dd_cissd control.
         /// </summary>
         /// <remarks>
@@ -832,6 +841,15 @@ namespace WebAriza3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dd_cissd;
+
+        /// <summary>
+        /// txtssds control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtssds;
 
         /// <summary>
         /// dd_ciram control.

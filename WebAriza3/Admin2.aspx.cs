@@ -363,12 +363,14 @@ namespace WebAriza3
             lbl_ciozllk.Text = row.Cells[5].Text;
             lbl_cimrk.Text = dt.Rows[0][5].ToString();
             dd_cihdd.Text = dt.Rows[0][6].ToString();
-            dd_cissd.Text = dt.Rows[0][7].ToString();
-            dd_ciram.Text = dt.Rows[0][8].ToString();
-            dd_ciekart.Text = dt.Rows[0][9].ToString();
-            lbl_cigyer.Text = dt.Rows[0][10].ToString();
-            lbl_cigtar.Text = row.Cells[12].Text;
-            txt_ciack.Text = row.Cells[13].Text;
+            txthdds.Text= dt.Rows[0][7].ToString(); 
+            dd_cissd.Text = dt.Rows[0][8].ToString();
+            txtssds.Text = dt.Rows[0][9].ToString();    
+            dd_ciram.Text = dt.Rows[0][10].ToString();
+            dd_ciekart.Text = dt.Rows[0][11].ToString();
+            lbl_cigyer.Text = dt.Rows[0][12].ToString();
+            lbl_cigtar.Text = row.Cells[14].Text;
+            txt_ciack.Text = row.Cells[15].Text;
 
             txt_ciyis.Text = dt.Rows[0][13].ToString();
 
@@ -565,7 +567,7 @@ namespace WebAriza3
         protected void LinkButton7_Click(object sender, EventArgs e)
         {
             //
-            DataTable dt = dataClass.get_tbl("  SELECT id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_shdd [Hdd Seri], chz_ssd AS SSD, chz_sssd [Sdd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu  FROM tbl_chz  WHERE (chz_drm = 'İşlem Bekliyor') OR (chz_drm IS NULL) ");
+            DataTable dt = dataClass.get_tbl(" SELECT id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_shdd AS [Hdd Seri], chz_ssd AS SSD, chz_sssd AS [Ssd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu  FROM tbl_chz WHERE (chz_drm = 'İşlem Bekliyor') OR (chz_drm IS NULL)");
             GridView5.DataSource = dt;
             GridView5.DataBind();
         }

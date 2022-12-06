@@ -253,7 +253,7 @@
                 Cihaz İşlemleri
             </HeaderTemplate>
             <ContentTemplate>
-                <ajaxToolkit:TabContainer ID="TabContainer2" runat="server" ActiveTabIndex="0" Width="100%">
+                <ajaxToolkit:TabContainer ID="TabContainer2" runat="server" ActiveTabIndex="1" Width="100%">
                     <ajaxToolkit:TabPanel ID="TabPanel3" runat="server" HeaderText="TabPanel1">
                         <HeaderTemplate>
                             Cihaz Kayıt
@@ -358,7 +358,7 @@
                                     <td class="auto-style1" style="vertical-align: top; text-align: center;">
                                         <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_chz] WHERE [id] = ?" InsertCommand="INSERT INTO tbl_chz
                          (chz_sn, chz_ad, chz_ip, chz_ozl,chz_mrk, chz_hdd, chz_ssd, chz_ram, chz_ek, chz_gy, chz_gtar, chz_ack,chz_iper,chz_ebys,chz_shdd,chz_sssd)
-VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?">
+VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?">
                                             <DeleteParameters>
                                                 <asp:Parameter Name="id" Type="Int32" />
                                             </DeleteParameters>
@@ -517,19 +517,22 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStrings
                                                                 <asp:ListItem>1 TB</asp:ListItem>
                                                                 <asp:ListItem>2 TB</asp:ListItem>
                                                             </asp:DropDownList>
-                                                            &nbsp;-SSD:<asp:DropDownList class="form-control" placeholder="" ID="dd_cissd" runat="server">
+                                                            <asp:TextBox ID="txthdds" runat="server"></asp:TextBox>
+                                                            &nbsp;<br /> -SSD:<asp:DropDownList class="form-control" placeholder="" ID="dd_cissd" runat="server">
                                                                 <asp:ListItem>Seçiniz</asp:ListItem>
                                                                 <asp:ListItem>240 GB</asp:ListItem>
                                                                 <asp:ListItem>480 GB</asp:ListItem>
                                                                 <asp:ListItem>500 GB</asp:ListItem>
                                                                 <asp:ListItem>1 TB</asp:ListItem>
                                                             </asp:DropDownList>
-                                                            &nbsp;RAM:<asp:DropDownList class="form-control" placeholder="" ID="dd_ciram" runat="server">
+                                                            <asp:TextBox ID="txtssds" runat="server"></asp:TextBox>
+                                                            &nbsp;<br /> RAM:<asp:DropDownList class="form-control" placeholder="" ID="dd_ciram" runat="server">
                                                                 <asp:ListItem>Seçiniz</asp:ListItem>
                                                                 <asp:ListItem>4 GB</asp:ListItem>
                                                                 <asp:ListItem>8 GB</asp:ListItem>
                                                                 <asp:ListItem>16 GB</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <br />
                                                             -Ekran Kartı:<asp:DropDownList class="form-control" placeholder="" ID="dd_ciekart" runat="server">
                                                                 <asp:ListItem>Seçiniz</asp:ListItem>
                                                                 <asp:ListItem>Onboard</asp:ListItem>
