@@ -91,7 +91,7 @@ namespace WebAriza3
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Kayıt başarılı..");
                      
-
+                   // GridView1.DataBind();   
                     datayukle();
                 }
                 catch (OleDbException ex)

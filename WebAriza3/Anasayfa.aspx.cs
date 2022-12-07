@@ -16,14 +16,11 @@ namespace WebAriza3
         {
             if (!Page.IsPostBack)
             {
-                if (Session["k_sicil"] != null)
-                {
-
-                }
-                else
+                if (Session["k_sicil"] == null)
                 {
                     Response.Redirect("login.aspx");
                 }
+
             }
         }
 
@@ -41,7 +38,9 @@ namespace WebAriza3
                 dt = dataClass.get_tbl("SELECT TOP 1 tbl_nevi.osifre FROM (tbl_ariza INNER JOIN tbl_nevi ON tbl_ariza.nevi = tbl_nevi.nevi) WHERE (tbl_ariza.durumu = 'İşlem Tamamlandı.') AND (tbl_ariza.nevi = '" + id4.ToString() + "')");
                 if (dt.Rows.Count > 0)
                 {
-                    MessageBox.Show(dt.Rows[0][0].ToString());
+                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                                               "toastr.success('" + dt.Rows[0][0].ToString() + "', ' ')", true);
+
                 }
 
             }

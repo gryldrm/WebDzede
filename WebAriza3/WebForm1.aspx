@@ -18,6 +18,12 @@
     <script src="style/moment.js"></script>
     <script src="style/toastr.min.js"></script>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+    
+    <fieldset>
+  <legend>Personalia:</legend>
+  <label for="fname">First name:</label>
+ guray yıldırım
+ </fieldset>
     </form>
 
     </body>
