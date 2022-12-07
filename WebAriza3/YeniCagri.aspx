@@ -16,12 +16,7 @@
         <div class="col align-self-center">
             <fieldset class="border p-2">
                 <legend class="float-none w-auto p-2">Yeni Çağrı</legend>
-               gr<table align="center" class="auto-style1">
-                    <tr>
-                        <td>sdf</td>
-                    </tr>
-                </table>
-                ry
+            
                 <br />
                 <table style="text-align: left; table-layout: auto;">
                     <tr>
