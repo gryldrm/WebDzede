@@ -789,6 +789,15 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.Label lbl_ciserin;
 
         /// <summary>
+        /// lbl_ciozllk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ciozllk;
+
+        /// <summary>
         /// txt_ciad control.
         /// </summary>
         /// <remarks>
@@ -796,6 +805,15 @@ namespace WebAriza3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_ciad;
+
+        /// <summary>
+        /// lbl_cimrk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_cimrk;
 
         /// <summary>
         /// txt_ciipno control.
@@ -807,22 +825,31 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.TextBox txt_ciipno;
 
         /// <summary>
-        /// lbl_ciozllk control.
+        /// txt_ciebys0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_ciozllk;
+        protected global::System.Web.UI.WebControls.TextBox txt_ciebys0;
 
         /// <summary>
-        /// lbl_cimrk control.
+        /// txt_ciack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_cimrk;
+        protected global::System.Web.UI.WebControls.TextBox txt_ciack;
+
+        /// <summary>
+        /// Panel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel2;
 
         /// <summary>
         /// dd_cihdd control.
@@ -879,33 +906,6 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.DropDownList dd_ciekart;
 
         /// <summary>
-        /// Panel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel2;
-
-        /// <summary>
-        /// txt_ciack control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_ciack;
-
-        /// <summary>
-        /// txt_ciebys0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_ciebys0;
-
-        /// <summary>
         /// txt_ciyis control.
         /// </summary>
         /// <remarks>
@@ -913,6 +913,15 @@ namespace WebAriza3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_ciyis;
+
+        /// <summary>
+        /// dd_cidrm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dd_cidrm;
 
         /// <summary>
         /// txt_ciyistar control.
@@ -924,13 +933,13 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.TextBox txt_ciyistar;
 
         /// <summary>
-        /// dd_cidrm control.
+        /// btn_cikyt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dd_cidrm;
+        protected global::System.Web.UI.WebControls.Button btn_cikyt;
 
         /// <summary>
         /// lbl_cidd control.
@@ -949,15 +958,6 @@ namespace WebAriza3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_imsj0;
-
-        /// <summary>
-        /// btn_cikyt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cikyt;
 
         /// <summary>
         /// GridView5 control.

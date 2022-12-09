@@ -1,12 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="Admin2.aspx.cs" Inherits="WebAriza3.Admin2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+ 
+     
+    <style type="text/css">
+        .auto-style1 {
+            width: 298px;
+        }
+        .auto-style2 {
+            width: 299px;
+        }
+        .auto-style3 {
+            width: 300px;
+        }
+        .auto-style4 {
+            width: 349px;
+        }
+    </style>
+ 
      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" Width="100%">
+    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" Width="100%">
 
         <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1">
             <HeaderTemplate>
@@ -255,7 +272,7 @@
                 Cihaz İşlemleri
             </HeaderTemplate>
             <ContentTemplate>
-                <ajaxToolkit:TabContainer ID="TabContainer2" runat="server" ActiveTabIndex="0" Width="100%">
+                <ajaxToolkit:TabContainer ID="TabContainer2" runat="server" ActiveTabIndex="1" Width="100%">
                     <ajaxToolkit:TabPanel ID="TabPanel3" runat="server" HeaderText="TabPanel1">
                         <HeaderTemplate>
                             Cihaz Kayıt
@@ -420,7 +437,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                         <ContentTemplate>
                             <table  >
                                 <tr>
-                                    <td style="vertical-align: top" class="auto-style2">
+                                    <td style="vertical-align: top" >
                                         <asp:LinkButton ID="LinkButton7" runat="server" CssClass="btn btn-primary btn-smy" Width="150px" OnClick="LinkButton7_Click">İşlem Bekleyenler</asp:LinkButton>
                                         <br />
                                         <asp:LinkButton ID="LinkButton8" runat="server" CssClass="btn btn-secondary btn-smy" OnClick="LinkButton8_Click" Width="150px">Arama</asp:LinkButton>
@@ -485,42 +502,48 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                         </asp:Panel>
                                     </td>
                                     <td style="vertical-align: top">
+                                        <br />
                                         <asp:Panel ID="pnl_ciislem" runat="server" Visible="False">
                                             <table  >
                                                 <tr>
-                                                    <td class="auto-style17" style="vertical-align: top">Geldiği Yer:</td>
-                                                    <td class="auto-style7" style="vertical-align: top" colspan="4">
-                                                        <h2> <asp:Label ID="lbl_cigyer" runat="server"></asp:Label></h2>
-                                                    </td>
-                                                    <td class="auto-style5" style="vertical-align: top">
-                                                        Geldiği Tarih:<asp:Label ID="lbl_cigtar" runat="server"></asp:Label>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="auto-style17" style="vertical-align: top">&nbsp; Cihaz Seri No:</td>
-                                                    <td class="auto-style7" style="vertical-align: top">
-                                                        <asp:Label ID="lbl_ciserin" runat="server"></asp:Label>
-                                                    </td>
-                                                    <td class="auto-style22" style="vertical-align: top">Cihaz Adı:</td>
-                                                    <td class="auto-style12" style="vertical-align: top">
-                                                        <asp:TextBox ID="txt_ciad" runat="server" class="form-control" placeholder=""></asp:TextBox>
+                                                    <td class="auto-style4" style="vertical-align: top">Geldiği Yer:<h2><asp:Label ID="lbl_cigyer" runat="server"></asp:Label></h2>
+                                                        <br />
+                                                        <br />
+                                                        Geldiği Tarih:<h2><asp:Label ID="lbl_cigtar" runat="server"></asp:Label></h2>
+                                                        <br />
+                                                        <br />
+                                                        Cihaz Seri No:<h2><asp:Label ID="lbl_ciserin" runat="server"></asp:Label></h2>
+                                                        <br />
+                                                        <br />
+                                                        Özellikleri:<h2><asp:Label ID="lbl_ciozllk" runat="server"></asp:Label></h2>
+                                                        <br />
+                                                        <br />
+                                                        <br />
+                                                        <br />
+                                                        <br />
+                                                        <br />
+                                                        <br />
                                                         <br />
                                                     </td>
-                                                    <td class="auto-style5" style="vertical-align: top">İp No:</td>
-                                                    <td class="auto-style5" style="vertical-align: top">
+                                                    <td class="auto-style3" style="vertical-align: top">
+                                                        Cihaz Adı:<asp:TextBox ID="txt_ciad" runat="server" class="form-control" placeholder=""></asp:TextBox>
+                                                        <br />
+                                                        Marka:<asp:Label ID="lbl_cimrk" runat="server"></asp:Label>
+                                                        <br />
+                                                        <br />
+                                                        İp No:<br />
                                                         <asp:TextBox ID="txt_ciipno" runat="server" class="form-control" placeholder=""></asp:TextBox>
+                                                        <br />
+                                                        EBYS:<br />
+                                                        <asp:TextBox ID="txt_ciebys0" runat="server" class="form-control" Enabled="False" placeholder="" Width="288px"></asp:TextBox>
+                                                        <br />
+                                                        Arıza Açıklama:<br />
+                                                        <asp:TextBox ID="txt_ciack" runat="server" class="form-control" Enabled="False" placeholder="" TextMode="MultiLine" Width="100%"></asp:TextBox>
+                                                        <br />
                                                     </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="auto-style28" style="vertical-align: top">&nbsp; Özellikleri:</td>
-                                                    <td class="auto-style29" style="vertical-align: top">
-                                                        <asp:Label ID="lbl_ciozllk" runat="server"></asp:Label>
-                                                    </td>
-                                                    <td class="auto-style30" style="vertical-align: top">Marka:<asp:Label ID="lbl_cimrk" runat="server"></asp:Label>
-                                                    </td>
-                                                    <td class="auto-style31" colspan="3" style="vertical-align: top">
+                                                    <td class="auto-style3" style="vertical-align: top">
                                                         <asp:Panel ID="Panel2" runat="server">
-                                                            HDD:<asp:DropDownList class="form-control" placeholder="" ID="dd_cihdd" runat="server">
+                                                            HDD:<asp:DropDownList ID="dd_cihdd" runat="server" class="form-control" placeholder="">
                                                                 <asp:ListItem>Seçiniz</asp:ListItem>
                                                                 <asp:ListItem>200 GB</asp:ListItem>
                                                                 <asp:ListItem>300 GB</asp:ListItem>
@@ -529,9 +552,9 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                                 <asp:ListItem>2 TB</asp:ListItem>
                                                             </asp:DropDownList>
                                                             <asp:TextBox ID="txthdds" runat="server"></asp:TextBox>
-                                                            &nbsp;<br /> 
+                                                            &nbsp;<br />
                                                             <br />
-                                                            SSD:<asp:DropDownList class="form-control" placeholder="" ID="dd_cissd" runat="server">
+                                                            SSD:<asp:DropDownList ID="dd_cissd" runat="server" class="form-control" placeholder="">
                                                                 <asp:ListItem>Seçiniz</asp:ListItem>
                                                                 <asp:ListItem>240 GB</asp:ListItem>
                                                                 <asp:ListItem>480 GB</asp:ListItem>
@@ -539,16 +562,16 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                                 <asp:ListItem>1 TB</asp:ListItem>
                                                             </asp:DropDownList>
                                                             <asp:TextBox ID="txtssds" runat="server"></asp:TextBox>
-                                                            &nbsp;<br /> 
+                                                            &nbsp;<br />
                                                             <br />
-                                                            RAM:<asp:DropDownList class="form-control" placeholder="" ID="dd_ciram" runat="server">
+                                                            RAM:<asp:DropDownList ID="dd_ciram" runat="server" class="form-control" placeholder="">
                                                                 <asp:ListItem>Seçiniz</asp:ListItem>
                                                                 <asp:ListItem>4 GB</asp:ListItem>
                                                                 <asp:ListItem>8 GB</asp:ListItem>
                                                                 <asp:ListItem>16 GB</asp:ListItem>
                                                             </asp:DropDownList>
                                                             <br />
-                                                            -Ekran Kartı:<asp:DropDownList class="form-control" placeholder="" ID="dd_ciekart" runat="server">
+                                                            -Ekran Kartı:<asp:DropDownList ID="dd_ciekart" runat="server" class="form-control" placeholder="">
                                                                 <asp:ListItem>Seçiniz</asp:ListItem>
                                                                 <asp:ListItem>Onboard</asp:ListItem>
                                                                 <asp:ListItem>256 GB</asp:ListItem>
@@ -559,72 +582,32 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                             <br />
                                                         </asp:Panel>
                                                     </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="auto-style19" style="vertical-align: top">&nbsp; </td>
-                                                    <td class="auto-style9" style="vertical-align: top">
-                                                        &nbsp;</td>
-                                                    <td class="auto-style24" style="vertical-align: top">&nbsp;</td>
-                                                    <td class="auto-style14" style="vertical-align: top" colspan="3">
-                                                        Arıza Açıklama:<asp:TextBox ID="txt_ciack" runat="server" class="form-control" Enabled="False" placeholder="" TextMode="MultiLine" Width="100%"></asp:TextBox>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="auto-style19" style="vertical-align: top">&nbsp; EBYS</td>
-                                                    <td class="auto-style9" colspan="5" style="vertical-align: top">
-                                                        <asp:TextBox class="form-control" placeholder="" ID="txt_ciebys0" runat="server" Enabled="False" Width="288px"></asp:TextBox>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="6" style="vertical-align: top">
-                                                        <hr />
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="auto-style20" style="vertical-align: top">&nbsp; Yapılan İşlem</td>
-                                                    <td class="auto-style21" style="vertical-align: top">
-                                                        <asp:TextBox class="form-control" placeholder="" ID="txt_ciyis" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox>
-                                                    </td>
-                                                    <td class="auto-style25" style="vertical-align: top">İşlem Tarihi:</td>
-                                                    <td class="auto-style26" style="vertical-align: top">
-                                                        <asp:TextBox class="form-control" placeholder="" ID="txt_ciyistar" runat="server" TextMode="Date"></asp:TextBox>
+                                                    <td class="auto-style3" style="vertical-align: top; background-color: #CCCCCC;">Yapılan İşlem<asp:TextBox ID="txt_ciyis" runat="server" class="form-control" placeholder="" TextMode="MultiLine" Width="100%"></asp:TextBox>
                                                         <br />
-                                                    </td>
-                                                    <td class="auto-style6" style="vertical-align: top">Durumu:</td>
-                                                    <td class="auto-style6" style="vertical-align: top">
-                                                        <asp:DropDownList class="form-control" placeholder="" ID="dd_cidrm" runat="server">
+                                                        Durumu:<asp:DropDownList ID="dd_cidrm" runat="server" class="form-control" placeholder="">
                                                             <asp:ListItem>Seçiniz</asp:ListItem>
                                                             <asp:ListItem>Tamamlandı</asp:ListItem>
                                                             <asp:ListItem>Hek</asp:ListItem>
                                                             <asp:ListItem>İşlem Bekliyor</asp:ListItem>
                                                         </asp:DropDownList>
+                                                        <br />
+                                                        İşlem Tarihi:<asp:TextBox ID="txt_ciyistar" runat="server" class="form-control" placeholder="" TextMode="Date"></asp:TextBox>
+                                                        <br />
+                                                        <asp:Button ID="btn_cikyt" runat="server" OnClick="btn_cikyt_Click" Text="Kaydet" class="form-control" />
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="auto-style20" style="vertical-align: top">&nbsp;</td>
-                                                    <td class="auto-style21" style="vertical-align: top">&nbsp;</td>
-                                                    <td class="auto-style25" style="vertical-align: top">&nbsp;</td>
-                                                    <td class="auto-style26" style="vertical-align: top">&nbsp;</td>
-                                                    <td class="auto-style6" style="vertical-align: top">&nbsp;</td>
-                                                    <td class="auto-style6" style="vertical-align: top">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="3" style="vertical-align: top">&nbsp;
+                                                    <td colspan="4" style="vertical-align: top">
                                                         <asp:Label ID="lbl_cidd" runat="server"></asp:Label>
                                                         <asp:Label ID="lbl_imsj0" runat="server" ForeColor="Red"></asp:Label>
                                                     </td>
-                                                    <td class="auto-style27" style="vertical-align: top">&nbsp;</td>
-                                                    <td style="vertical-align: top">&nbsp;</td>
-                                                    <td style="vertical-align: top; text-align: right;">
-                                                        <asp:Button ID="btn_cikyt" runat="server" OnClick="btn_cikyt_Click" Text="Kaydet" />
-                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="6" style="vertical-align: top">&nbsp;</td>
+                                                    <td colspan="4" style="vertical-align: top">&nbsp;</td>
                                                 </tr>
                                             </table>
                                         </asp:Panel>
-                                        <asp:GridView ID="GridView5" runat="server" AutoGenerateColumns="False" DataKeyNames="TakipNo" class="table table-striped" OnSelectedIndexChanged="GridView5_SelectedIndexChanged" Width="100%">
+                                        <asp:GridView ID="GridView5" runat="server" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="TakipNo" OnSelectedIndexChanged="GridView5_SelectedIndexChanged" Width="100%">
                                             <Columns>
                                                 <asp:CommandField ShowSelectButton="True" />
                                                 <asp:BoundField DataField="TakipNo" HeaderText="TakipNo" InsertVisible="False" ReadOnly="True" SortExpression="TakipNo" />
@@ -640,14 +623,15 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                 <asp:BoundField DataField="RAM" HeaderText="RAM" SortExpression="RAM" />
                                                 <asp:BoundField DataField="Ekran Kartı" HeaderText="Ekran Kartı" SortExpression="Ekran Kartı" />
                                                 <asp:BoundField DataField="Birim" HeaderText="Birim" SortExpression="Birim" />
-                                                <asp:BoundField DataField="Geldiği Tarih" HeaderText="Geldiği Tarih" SortExpression="Geldiği Tarih" ReadOnly="True" />
+                                                <asp:BoundField DataField="Geldiği Tarih" HeaderText="Geldiği Tarih" ReadOnly="True" SortExpression="Geldiği Tarih" />
                                                 <asp:BoundField DataField="Açıklama" HeaderText="Açıklama" SortExpression="Açıklama" />
-                                                <asp:BoundField DataField="İşlem Tarihi" HeaderText="İşlem Tarihi" SortExpression="İşlem Tarihi" ReadOnly="True" />
+                                                <asp:BoundField DataField="İşlem Tarihi" HeaderText="İşlem Tarihi" ReadOnly="True" SortExpression="İşlem Tarihi" />
                                                 <asp:BoundField DataField="Yapılan İşlem" HeaderText="Yapılan İşlem" SortExpression="Yapılan İşlem" />
                                                 <asp:BoundField DataField="Personel" HeaderText="Personel" SortExpression="Personel" />
                                                 <asp:BoundField DataField="Durumu" HeaderText="Durumu" SortExpression="Durumu" />
                                             </Columns>
                                         </asp:GridView>
+                                        <br />
                                     </td>
                                 </tr>
                                 <tr>
@@ -656,36 +640,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                             </table>
 
 
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
-      </div>
-    </div>
-  </div>
-</div>
+                         
 
                         </ContentTemplate>
                     </ajaxToolkit:TabPanel>
