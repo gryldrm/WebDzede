@@ -46,5 +46,26 @@ namespace WebAriza3
             }
 
         }
+
+        
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+int secili = GridView2.SelectedIndex;
+            GridViewRow row = GridView2.Rows[secili];
+
+            string id4 = row.Cells[0].Text;
+
+
+            Session.Add("yzdr", "29");
+
+            Response.Redirect("Yazdir.aspx");
+            //yzdr
+        }
     }
 }

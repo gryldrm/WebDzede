@@ -200,6 +200,7 @@
     <Content Include="toastr\toastr.min.css" />
     <Content Include="toastr\toastr.min.js" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="Yazdir.aspx" />
     <Content Include="YeniCagri.aspx" />
     <None Include="packages.config" />
     <Content Include="toastr\toastr.js.map" />
@@ -267,6 +268,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yazdir.aspx.cs">
+      <DependentUpon>Yazdir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yazdir.aspx.designer.cs">
+      <DependentUpon>Yazdir.aspx</DependentUpon>
     </Compile>
     <Compile Include="YeniCagri.aspx.cs">
       <DependentUpon>YeniCagri.aspx</DependentUpon>

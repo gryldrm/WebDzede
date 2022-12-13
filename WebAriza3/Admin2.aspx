@@ -3,21 +3,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  
      
+     
     <style type="text/css">
         .auto-style1 {
-            width: 298px;
+            width: 250px;
         }
         .auto-style2 {
-            width: 299px;
-        }
-        .auto-style3 {
-            width: 300px;
-        }
-        .auto-style4 {
-            width: 349px;
+            width: 250px;
         }
     </style>
  
+     
      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -504,9 +500,9 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                     <td style="vertical-align: top">
                                         <br />
                                         <asp:Panel ID="pnl_ciislem" runat="server" Visible="False">
-                                            <table  >
+                                            <table  style="width:100%">
                                                 <tr>
-                                                    <td class="auto-style4" style="vertical-align: top">Geldiği Yer:<h2><asp:Label ID="lbl_cigyer" runat="server"></asp:Label></h2>
+                                                    <td class="auto-style1" style="vertical-align: top">Geldiği Yer:<h2><asp:Label ID="lbl_cigyer" runat="server"></asp:Label></h2>
                                                         <br />
                                                         <br />
                                                         Geldiği Tarih:<h2><asp:Label ID="lbl_cigtar" runat="server"></asp:Label></h2>
@@ -582,7 +578,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                             <br />
                                                         </asp:Panel>
                                                     </td>
-                                                    <td class="auto-style3" style="vertical-align: top; background-color: #CCCCCC;">Yapılan İşlem<asp:TextBox ID="txt_ciyis" runat="server" class="form-control" placeholder="" TextMode="MultiLine" Width="100%"></asp:TextBox>
+                                                    <td class="auto-style2" style="vertical-align: top; background-color: #CCCCCC;">Yapılan İşlem<asp:TextBox ID="txt_ciyis" runat="server" class="form-control" placeholder="" TextMode="MultiLine" Width="100%"></asp:TextBox>
                                                         <br />
                                                         Durumu:<asp:DropDownList ID="dd_cidrm" runat="server" class="form-control" placeholder="">
                                                             <asp:ListItem>Seçiniz</asp:ListItem>
@@ -617,9 +613,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                 <asp:BoundField DataField="Tip" HeaderText="Tip" SortExpression="Tip" />
                                                 <asp:BoundField DataField="Marka" HeaderText="Marka" SortExpression="Marka" />
                                                 <asp:BoundField DataField="HDD" HeaderText="HDD" SortExpression="HDD" />
-                                                <asp:BoundField DataField="Hdd Seri" HeaderText="Hdd Seri" SortExpression="Hdd Seri" />
                                                 <asp:BoundField DataField="SSD" HeaderText="SSD" SortExpression="SSD" />
-                                                <asp:BoundField DataField="Ssd Seri" HeaderText="Ssd Seri" SortExpression="Ssd Seri" />
                                                 <asp:BoundField DataField="RAM" HeaderText="RAM" SortExpression="RAM" />
                                                 <asp:BoundField DataField="Ekran Kartı" HeaderText="Ekran Kartı" SortExpression="Ekran Kartı" />
                                                 <asp:BoundField DataField="Birim" HeaderText="Birim" SortExpression="Birim" />
