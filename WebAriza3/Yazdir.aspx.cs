@@ -14,7 +14,8 @@ using System.Web.UI.WebControls;
 using System.Xml;
 using iTextSharp.text.xml;
 using iTextSharp.text.html;
-
+using System.Data;
+using System.Windows.Controls;
 
 namespace WebAriza3
 {
@@ -30,51 +31,27 @@ namespace WebAriza3
             return value.Replace(absoluteUrl + "/", absoluteUrl);
         }
 
+        [Obsolete]
         protected void Page_Load(object sender, EventArgs e)
         {
-            //IEnumerable<int> data = Enumerable.Range(1, 4);
-            //gv.DataSource = data;
-            //gv.DataBind();
-            //lbl.Text = DateTime.Now.ToString();
-
-            Page p = new Page();
-            HtmlForm f = new HtmlForm();
-            f.Controls.Add(form1);
-            p.Controls.Add(f);
-
-            StringWriter sw = new StringWriter();
-            HtmlTextWriter htw = new HtmlTextWriter(sw);
-            f.Controls[0].RenderControl(htw);
-            string content = sw.ToString();
-
-            Document doc = new Document(iTextSharp.text.PageSize.A4);
-            MemoryStream output = new MemoryStream();
-            PdfWriter.GetInstance(doc, output);
-            doc.Open();
-
-            //XmlTextReader xr = new XmlTextReader(new StringReader(content));
-            //HtmlParser.Parse(doc, xr);
-            content = RelativeToAbsoluteURLS(content);
-
-            List<IElement> dizi = HTMLWorker.ParseToList(new StringReader(content), null);
-
-            foreach (var item in dizi)
-                doc.Add(item);
-
-
-            Phrase phrase = new Phrase(Environment.NewLine);
-            doc.Add(phrase);
-            //doc.Add(phrase);
-            //doc.Add(phrase);
-
-
-            doc.Close();
-
+            DataList1.DataSource = dataClass.get_tbl("SELECT * FROM [tbl_chz] WHERE ([id] = "+ Session["yzdr"].ToString() + ")");
+            DataList1.DataBind();
             Response.Clear();
-            Response.AddHeader("content-disposition", "inline;");
-            Response.ContentType = "application/pdf";
-            Response.BinaryWrite(output.ToArray());
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", "attachment;filename=TakipNo"+ Session["yzdr"].ToString() + ".doc");
+            Response.Charset = "";
+            Response.ContentType = "application/vnd.ms-word ";
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter hw = new HtmlTextWriter(sw);
+            // Gridviewdakı bütün verileri aktarabilmek için sayfalama özelleğini iptal edip , Gridview’mızdaki değişikliklerin geçerli olabilmesi için tekrar dolduruyoruz
+            //DataList1.AllowPaging = false;
+            DataList1.DataBind();
+            // Gridview’daki değerlerimizi html formatına renderlıyoruz
+            DataList1.RenderControl(hw);
+            Response.Output.Write(sw.ToString());
+            Response.Flush();
             Response.End();
+
 
         }
     }

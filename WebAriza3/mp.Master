@@ -70,7 +70,7 @@
 
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" class="row g-3 needs-validation was-validated" novalidate="">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
          
         <main>
@@ -111,7 +111,7 @@
                     <div class="col-sm-16 mx-auto">
                         
 
-                            <h1>ARIZA / TALEP BİLDİRİM İŞLEMLERİ </h1>
+                            <h1 class="text-center">ARIZA / TALEP BİLDİRİM İŞLEMLERİ </h1>
                     
 
                         <br />

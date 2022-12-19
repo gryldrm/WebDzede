@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace WebAriza3
 {
@@ -62,7 +63,7 @@ int secili = GridView2.SelectedIndex;
             string id4 = row.Cells[0].Text;
 
 
-            Session.Add("yzdr", "29");
+            Session.Add("yzdr", id4);
 
             Response.Redirect("Yazdir.aspx");
             //yzdr

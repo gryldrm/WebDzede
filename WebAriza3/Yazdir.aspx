@@ -1,125 +1,118 @@
-ï»¿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Yazdir.aspx.cs" Inherits="WebAriza3.Yazdir" %>
+<%@ Page Language="C#"  AutoEventWireup="true" CodeBehind="Yazdir.aspx.cs" Inherits="WebAriza3.Yazdir" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    
+  
+    
     <style type="text/css">
         .auto-style1 {
-            width: 977px;
+            font-size: x-large;
         }
         .auto-style2 {
-            text-align: center;
             font-size: xx-large;
         }
     </style>
+    
+  
+    
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
         </div>
-        <asp:DataList ID="DataList1" runat="server" DataKeyField="id" DataSourceID="SqlDataSource1">
+        <asp:DataList ID="DataList1" runat="server" DataKeyField="id" CellPadding="4" Width="100%" >
+         
             <ItemTemplate>
-                &nbsp;<table class="auto-style1">
+               <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; width:100%" >
                     <tr>
-                        <td class="auto-style2" colspan="3">ARÄ°ZA / TALEP BÄ°LDÄ°RÄ°M FORMU</td>
+                        <td  colspan="3" style="text-align: center; " class="auto-style2"><strong style="border-color: #000000; border-collapse: collapse">ARİZA / TALEP BİLDİRİM FORMU</strong></td>
                     </tr>
                     <tr>
-                        <td>ArÄ±za Takip No</td>
-                        <td>:<asp:Label ID="idLabel" runat="server" Text='<%# Eval("id") %>' />
+                        <td style="border-color: #000000; border-collapse: collapse">Arıza Takip No</td>
+                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">:<asp:Label ID="idLabel" runat="server" Text='<%# Eval("id") %>' />
                         </td>
-                        <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>Talep Eden Birim AdÄ±</td>
-                        <td>:<asp:Label ID="chz_gyLabel" runat="server" Text='<%# Eval("chz_gy") %>' />
+                        <td style="border-color: #000000; border-collapse: collapse">Talep Eden Birim Adı</td>
+                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">:<asp:Label ID="chz_gyLabel" runat="server" Text='<%# Eval("chz_gy") %>' />
                         </td>
-                        <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>KullanÄ±cÄ±nÄ±n AdÄ± SoyadÄ±</td>
-                        <td>:<asp:Label ID="lbladsoyad" runat="server"></asp:Label>
+                        <td style="border-color: #000000; border-collapse: collapse">Kullanıcının Adı Soyadı</td>
+                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">:<asp:Label ID="lbladsoyad" runat="server"></asp:Label>
                         </td>
-                        <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>KullanÄ±cÄ±nÄ±n RÃ¼tbesi</td>
-                        <td>:</td>
-                        <td>&nbsp;</td>
+                        <td style="border-color: #000000; border-collapse: collapse">Kullanıcının Rütbesi</td>
+                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">:</td>
                     </tr>
                     <tr>
-                        <td>KullanÄ±cÄ±nÄ±n Sicili</td>
-                        <td>:<asp:Label ID="lblsicil" runat="server"></asp:Label>
+                        <td style="border-color: #000000; border-collapse: collapse">Kullanıcının Sicili</td>
+                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">:<asp:Label ID="lblsicil" runat="server"></asp:Label>
                         </td>
-                        <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>KullanÄ±cÄ±nÄ±n Cep Telefonu / Dahili No</td>
-                        <td>:</td>
-                        <td>&nbsp;</td>
+                        <td style="border-color: #000000; border-collapse: collapse">Kullanıcının Cep Telefonu / Dahili No</td>
+                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">:</td>
                     </tr>
                     <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td style="border-color: #000000; border-collapse: collapse">&nbsp;</td>
+                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>ArÄ±za Talep Nevi</td>
-                        <td>:<strong><asp:Label ID="chz_ozlLabel" runat="server" Text='<%# Eval("chz_ozl") %>' />
+                        <td style="border-color: #000000; border-collapse: collapse">Arıza Talep Nevi</td>
+                        <td style="border-color: #000000; border-collapse: collapse">:<strong><asp:Label ID="chz_ozlLabel" runat="server" Text='<%# Eval("chz_ozl") %>' />
                             </strong></td>
-                        <td><strong>
+                        <td style="border-color: #000000; border-collapse: collapse"><strong>
                             <asp:Label ID="chz_mrkLabel" runat="server" Text='<%# Eval("chz_mrk") %>' />
                             </strong></td>
                     </tr>
                     <tr>
-                        <td>ArÄ±zalÄ± CihazÄ±n</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td colspan="3" class="auto-style1" style="border-color: #000000; border-collapse: collapse"><strong>Arızalı Cihazın</strong></td>
                     </tr>
                     <tr>
-                        <td>Seri Nosu:<strong><asp:Label ID="chz_snLabel" runat="server" Text='<%# Eval("chz_sn") %>' />
+                        <td style="border-color: #000000; border-collapse: collapse">Seri Nosu:<strong><asp:Label ID="chz_snLabel" runat="server" Text='<%# Eval("chz_sn") %>' />
                             </strong></td>
-                        <td>PC AdÄ±:<strong><asp:Label ID="chz_adLabel" runat="server" Text='<%# Eval("chz_ad") %>' />
+                        <td style="border-color: #000000; border-collapse: collapse">PC Adı:<strong><asp:Label ID="chz_adLabel" runat="server" Text='<%# Eval("chz_ad") %>' />
                             </strong></td>
-                        <td>IP No:<strong><asp:Label ID="chz_ipLabel" runat="server" Text='<%# Eval("chz_ip") %>' />
+                        <td style="border-color: #000000; border-collapse: collapse">IP No:<strong><asp:Label ID="chz_ipLabel" runat="server" Text='<%# Eval("chz_ip") %>' />
                             </strong></td>
                     </tr>
                     <tr>
-                        <td>ArÄ±za / Talep Ä°le Ä°lgili KullanÄ±cÄ± Åikayeti:</td>
-                        <td>
+                        <td style="border-color: #000000; border-collapse: collapse">Arıza / Talep İle İlgili Kullanıcı Şikayeti:</td>
+                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">
                             <asp:Label ID="chz_ackLabel" runat="server" Text='<%# Eval("chz_ack") %>' />
                         </td>
-                        <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>Talep Tarihi:</td>
-                        <td>
+                        <td style="border-color: #000000; border-collapse: collapse">Talep Tarihi:</td>
+                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">
                             <asp:Label ID="chz_gtarLabel" runat="server" Text='<%# Eval("chz_gtar") %>' />
                         </td>
-                        <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>EBYS No:</td>
-                        <td>
+                        <td style="border-color: #000000; border-collapse: collapse">EBYS No:</td>
+                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">
                             <asp:Label ID="chz_ebysLabel" runat="server" Text='<%# Eval("chz_ebys") %>' />
                         </td>
-                        <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td colspan="3" style="border-color: #000000; border-collapse: collapse">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td colspan="3">Bilgi Teknolojileri ve HaberleÅŸme Åube MÃ¼dÃ¼rlÃ¼ÄŸÃ¼nce YapÄ±lan Ä°ÅŸlem</td>
+                        <td colspan="3" style="border-color: #000000; border-collapse: collapse">Bilgi Teknolojileri ve Haberleşme Şube Müdürlüğünce Yapılan İşlem</td>
                     </tr>
                     <tr>
-                        <td>YapÄ±lan Ä°ÅŸlem:<strong><asp:Label ID="chz_yiLabel" runat="server" Text='<%# Eval("chz_yi") %>' />
+                        <td style="border-color: #000000; border-collapse: collapse">Yapılan İşlem:<strong><asp:Label ID="chz_yiLabel" runat="server" Text='<%# Eval("chz_yi") %>' />
                             </strong></td>
-                        <td>Ä°ÅŸlem Tarihi:<strong><asp:Label ID="chz_itarLabel" runat="server" Text='<%# Eval("chz_itar") %>' />
+                        <td style="border-color: #000000; border-collapse: collapse">İşlem Tarihi:<strong><asp:Label ID="chz_itarLabel" runat="server" Text='<%# Eval("chz_itar") %>' />
                             </strong></td>
-                        <td>Durumu:<strong><asp:Label ID="chz_drmLabel" runat="server" Text='<%# Eval("chz_drm") %>' />
+                        <td style="border-color: #000000; border-collapse: collapse">Durumu:<strong><asp:Label ID="chz_drmLabel" runat="server" Text='<%# Eval("chz_drm") %>' />
                             </strong></td>
                     </tr>
                     <tr>
@@ -128,16 +121,9 @@
                         <td>&nbsp;</td>
                     </tr>
                 </table>
-                <br />
-&nbsp;<br />
-<br />
             </ItemTemplate>
+            <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
         </asp:DataList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz] WHERE ([id] = ?)">
-            <SelectParameters>
-                <asp:SessionParameter Name="id" SessionField="yzdr" Type="Int32" />
-            </SelectParameters>
-        </asp:SqlDataSource>
     </form>
 </body>
 </html>
