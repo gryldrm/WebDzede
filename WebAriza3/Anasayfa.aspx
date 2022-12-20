@@ -7,7 +7,7 @@
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
              
-            <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" Width="100%">
+            <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" Width="100%">
                 <ajaxToolkit:TabPanel ID="TabPanel1" runat="server" HeaderText="TabPanel1">
                     <HeaderTemplate>
                         Şifre Talepleri
@@ -47,7 +47,11 @@
                         Cihaz Arıza Talepleri
                     </HeaderTemplate>
                     <ContentTemplate>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT id, chz_sn AS [Seri No], chz_ad AS [Cihazın Adı], chz_ip AS [İp No], chz_ozl AS Özellik, chz_mrk AS Marka, chz_gtar AS [Geldiği Tarih], chz_ack AS Açıklama, chz_yi AS [Yapılan İşlem], chz_itar AS [İşlem Tarihi], chz_drm AS Durumu, chz_ebys AS EBYS FROM tbl_chz ORDER BY id DESC"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT id, chz_sn AS [Seri No], chz_ad AS [Cihazın Adı], chz_ip AS [İp No], chz_ozl AS Özellik, chz_mrk AS Marka, chz_gtar AS [Geldiği Tarih], chz_ack AS Açıklama, chz_yi AS [Yapılan İşlem], chz_itar AS [İşlem Tarihi], chz_drm AS Durumu, chz_ebys AS EBYS FROM tbl_chz WHERE (chz_tscl = ?) ORDER BY id DESC">
+                            <SelectParameters>
+                                <asp:SessionParameter Name="?" SessionField="k_sicil" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
                         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="id" DataSourceID="SqlDataSource2" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" Width="100%" AllowPaging="True" AllowSorting="True">
                             <Columns>
                                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />

@@ -5,10 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+   
     <title>Sign In | AdminKit Demo</title>
-    <link href="css/app.css" rel="stylesheet">
+    <link href="../css/app.css" rel="stylesheet"/>
    
 </head>
 <body>
@@ -67,7 +68,7 @@
             </div>
         </main>
 
-        <script src="js/app.js"></script>
+        <script src="../js/app.js"></script>
 
     </form>
 </body>

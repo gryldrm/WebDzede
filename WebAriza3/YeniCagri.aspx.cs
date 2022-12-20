@@ -23,6 +23,12 @@ namespace WebAriza3
                     dd_nevi.Items.Insert(0, new ListItem("Seçin", String.Empty));
                     dd_nevi.SelectedIndex = 0;
 
+                    dd_cozllk.Items.Insert(0, new ListItem("Seçin", String.Empty));
+                    dd_cozllk.SelectedIndex = 0;
+
+                    dd_marka.Items.Insert(0, new ListItem("Seçin", String.Empty));
+                    dd_marka.SelectedIndex = 0;
+
                     txt_scl.Text = Session["k_sicil"].ToString();
                     txt_adsad.Text = Session["k_adsoyad"].ToString();
                     lblbirim.Text = Session["k_birim"].ToString();
@@ -51,17 +57,13 @@ namespace WebAriza3
             {
                 if (txt_ariza.Text == "" && txt_ebys.Text == "")
                 {
-                    
 
                     ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
                                 "toastr.warning('Arıza açıklama veya ebys numarası girmelisiniz... ', 'Uyarı')", true);
-                    
-                    
+
                 }
                 else
                 {
-
-
 
                     OleDbConnection con = db_baglanti();
                     OleDbCommand cmd;
@@ -83,13 +85,9 @@ namespace WebAriza3
                         try
                         {
                             cmd.ExecuteNonQuery();
-                            
 
                             ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                                "<div class="+"alert alert-warning"+" role="+"alert"+">  Give it a click if you like.</div>", true);
-
-                            ///////////        
-                            //////////
+                                                "toastr.success('Kayıt başarılı...', ' ')", true);
 
                         }
                         catch (OleDbException ex)

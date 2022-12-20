@@ -19,7 +19,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" Width="100%">
+    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" Width="100%">
 
         <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1">
             <HeaderTemplate>
@@ -268,7 +268,7 @@
                 Cihaz İşlemleri
             </HeaderTemplate>
             <ContentTemplate>
-                <ajaxToolkit:TabContainer ID="TabContainer2" runat="server" ActiveTabIndex="0" Width="100%">
+                <ajaxToolkit:TabContainer ID="TabContainer2" runat="server" ActiveTabIndex="1" Width="100%">
                     <ajaxToolkit:TabPanel ID="TabPanel3" runat="server" HeaderText="TabPanel1">
                         <HeaderTemplate>
                             Cihaz Kayıt
@@ -500,7 +500,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                     <td style="vertical-align: top">
                                         <br />
                                         <asp:Panel ID="pnl_ciislem" runat="server" Visible="False">
-                                            <table  style="width:100%">
+                                            <table  >
                                                 <tr>
                                                     <td class="auto-style1" style="vertical-align: top">Geldiği Yer:<h2><asp:Label ID="lbl_cigyer" runat="server"></asp:Label></h2>
                                                         <br />
@@ -513,15 +513,9 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                         <br />
                                                         Özellikleri:<h2><asp:Label ID="lbl_ciozllk" runat="server"></asp:Label></h2>
                                                         <br />
-                                                        <br />
-                                                        <br />
-                                                        <br />
-                                                        <br />
-                                                        <br />
-                                                        <br />
-                                                        <br />
+                                                      
                                                     </td>
-                                                    <td class="auto-style3" style="vertical-align: top">
+                                                    <td  style="vertical-align: top">
                                                         Cihaz Adı:<asp:TextBox ID="txt_ciad" runat="server" class="form-control" placeholder=""></asp:TextBox>
                                                         <br />
                                                         Marka:<asp:Label ID="lbl_cimrk" runat="server"></asp:Label>
@@ -531,54 +525,50 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                         <asp:TextBox ID="txt_ciipno" runat="server" class="form-control" placeholder=""></asp:TextBox>
                                                         <br />
                                                         EBYS:<br />
-                                                        <asp:TextBox ID="txt_ciebys0" runat="server" class="form-control" Enabled="False" placeholder="" Width="288px"></asp:TextBox>
+                                                        <asp:TextBox ID="txt_ciebys0" runat="server" class="form-control" Enabled="False" placeholder="" ></asp:TextBox>
                                                         <br />
                                                         Arıza Açıklama:<br />
-                                                        <asp:TextBox ID="txt_ciack" runat="server" class="form-control" Enabled="False" placeholder="" TextMode="MultiLine" Width="100%"></asp:TextBox>
+                                                        <asp:TextBox ID="txt_ciack" runat="server" class="form-control" Enabled="False" placeholder="" TextMode="MultiLine" ></asp:TextBox>
                                                         <br />
                                                     </td>
-                                                    <td class="auto-style3" style="vertical-align: top">
-                                                        <asp:Panel ID="Panel2" runat="server">
-                                                            HDD:<asp:DropDownList ID="dd_cihdd" runat="server" class="form-control" placeholder="">
-                                                                <asp:ListItem>Seçiniz</asp:ListItem>
-                                                                <asp:ListItem>200 GB</asp:ListItem>
-                                                                <asp:ListItem>300 GB</asp:ListItem>
-                                                                <asp:ListItem>500 GB</asp:ListItem>
-                                                                <asp:ListItem>1 TB</asp:ListItem>
-                                                                <asp:ListItem>2 TB</asp:ListItem>
-                                                            </asp:DropDownList>
-                                                            <asp:TextBox ID="txthdds" runat="server"></asp:TextBox>
-                                                            &nbsp;<br />
-                                                            <br />
-                                                            SSD:<asp:DropDownList ID="dd_cissd" runat="server" class="form-control" placeholder="">
-                                                                <asp:ListItem>Seçiniz</asp:ListItem>
-                                                                <asp:ListItem>240 GB</asp:ListItem>
-                                                                <asp:ListItem>480 GB</asp:ListItem>
-                                                                <asp:ListItem>500 GB</asp:ListItem>
-                                                                <asp:ListItem>1 TB</asp:ListItem>
-                                                            </asp:DropDownList>
-                                                            <asp:TextBox ID="txtssds" runat="server"></asp:TextBox>
-                                                            &nbsp;<br />
-                                                            <br />
-                                                            RAM:<asp:DropDownList ID="dd_ciram" runat="server" class="form-control" placeholder="">
-                                                                <asp:ListItem>Seçiniz</asp:ListItem>
-                                                                <asp:ListItem>4 GB</asp:ListItem>
-                                                                <asp:ListItem>8 GB</asp:ListItem>
-                                                                <asp:ListItem>16 GB</asp:ListItem>
-                                                            </asp:DropDownList>
-                                                            <br />
-                                                            -Ekran Kartı:<asp:DropDownList ID="dd_ciekart" runat="server" class="form-control" placeholder="">
-                                                                <asp:ListItem>Seçiniz</asp:ListItem>
-                                                                <asp:ListItem>Onboard</asp:ListItem>
-                                                                <asp:ListItem>256 GB</asp:ListItem>
-                                                                <asp:ListItem>512 GB</asp:ListItem>
-                                                                <asp:ListItem>1024 GB</asp:ListItem>
-                                                                <asp:ListItem>2048 GB</asp:ListItem>
-                                                            </asp:DropDownList>
-                                                            <br />
-                                                        </asp:Panel>
+                                                    <td  style="vertical-align: top">
+                                                        HDD:<asp:DropDownList ID="dd_cihdd" runat="server" class="form-control" placeholder="">
+                                                            <asp:ListItem>Seçiniz</asp:ListItem>
+                                                            <asp:ListItem>200 GB</asp:ListItem>
+                                                            <asp:ListItem>300 GB</asp:ListItem>
+                                                            <asp:ListItem>500 GB</asp:ListItem>
+                                                            <asp:ListItem>1 TB</asp:ListItem>
+                                                            <asp:ListItem>2 TB</asp:ListItem>
+                                                        </asp:DropDownList>
+                                                        <asp:TextBox ID="txthdds" runat="server"></asp:TextBox>
+                                                        <br />
+                                                        SSD:<asp:DropDownList ID="dd_cissd" runat="server" class="form-control" placeholder="">
+                                                            <asp:ListItem>Seçiniz</asp:ListItem>
+                                                            <asp:ListItem>240 GB</asp:ListItem>
+                                                            <asp:ListItem>256 GB</asp:ListItem>
+                                                            <asp:ListItem>480 GB</asp:ListItem>
+                                                            <asp:ListItem>500 GB</asp:ListItem>
+                                                            <asp:ListItem>512 GB</asp:ListItem>
+                                                            <asp:ListItem>1 TB</asp:ListItem>
+                                                        </asp:DropDownList>
+                                                        <asp:TextBox ID="txtssds" runat="server"></asp:TextBox>
+                                                        <br />
+                                                        RAM:<asp:DropDownList ID="dd_ciram" runat="server" class="form-control" placeholder="">
+                                                            <asp:ListItem>Seçiniz</asp:ListItem>
+                                                            <asp:ListItem>4 GB</asp:ListItem>
+                                                            <asp:ListItem>8 GB</asp:ListItem>
+                                                            <asp:ListItem>16 GB</asp:ListItem>
+                                                        </asp:DropDownList>
+                                                        Ekran Kartı:<asp:DropDownList ID="dd_ciekart" runat="server" class="form-control" placeholder="">
+                                                            <asp:ListItem>Seçiniz</asp:ListItem>
+                                                            <asp:ListItem>Onboard</asp:ListItem>
+                                                            <asp:ListItem>256 GB</asp:ListItem>
+                                                            <asp:ListItem>512 GB</asp:ListItem>
+                                                            <asp:ListItem>1024 GB</asp:ListItem>
+                                                            <asp:ListItem>2048 GB</asp:ListItem>
+                                                        </asp:DropDownList>
                                                     </td>
-                                                    <td class="auto-style2" style="vertical-align: top; background-color: #CCCCCC;">Yapılan İşlem<asp:TextBox ID="txt_ciyis" runat="server" class="form-control" placeholder="" TextMode="MultiLine" Width="100%"></asp:TextBox>
+                                                    <td style="vertical-align: top; background-color: #CCCCCC;">Yapılan İşlem<asp:TextBox ID="txt_ciyis" runat="server" class="form-control" placeholder="" TextMode="MultiLine" ></asp:TextBox>
                                                         <br />
                                                         Durumu:<asp:DropDownList ID="dd_cidrm" runat="server" class="form-control" placeholder="">
                                                             <asp:ListItem>Seçiniz</asp:ListItem>
