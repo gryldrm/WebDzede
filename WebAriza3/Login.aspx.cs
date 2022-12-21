@@ -22,6 +22,10 @@ namespace WebAriza3
         }
         protected void btnGiris_Click(object sender, EventArgs e)
         {
+            if (txtAd.Text !="" && txtSifre.Text!="" )
+            {
+
+          
             string kscl, ksifre;
             kscl = txtAd.Text;
             ksifre = txtSifre.Text;
@@ -47,6 +51,6 @@ namespace WebAriza3
                 lblDurum.Text = "Giriş Başarısız";
             }
             baglanti.Close();
-        }
+        }  }
     }
 }

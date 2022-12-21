@@ -66,7 +66,7 @@ namespace WebAriza3
         {
             pnlupdate.Visible = true;
             pnlarama.Visible = false;
-            pnl_kullanici.Visible = false;
+           // pnl_kullanici.Visible = false;
 
             int secili;
             secili = GridView1.SelectedIndex;
@@ -111,9 +111,9 @@ namespace WebAriza3
         {
             pnlupdate.Visible = false;
             pnlarama.Visible = true;
-            pnl_kullanici.Visible = false;
-            pnl_nevi.Visible = false;
-            pnl_drm.Visible = false;
+            //pnl_kullanici.Visible = false;
+            //pnl_nevi.Visible = false;
+            //pnl_drm.Visible = false;
         }
 
         protected void Button3_Click(object sender, EventArgs e)
@@ -218,15 +218,15 @@ namespace WebAriza3
 
 
             pnlarama.Visible = false;
-            pnl_kullanici.Visible = false;
+            //pnl_kullanici.Visible = false;
             pnlupdate.Visible = false;
-            pnl_nevi.Visible = false;
-            pnl_drm.Visible = false;
+            //pnl_nevi.Visible = false;
+            //pnl_drm.Visible = false;
         }
 
         protected void LinkButton3_Click(object sender, EventArgs e)
         {
-            pnl_kullanici.Visible = true;
+            //pnl_kullanici.Visible = true;
             pnlupdate.Visible = false;
             pnlarama.Visible = false;
         }
@@ -253,11 +253,11 @@ namespace WebAriza3
 
         protected void LinkButton3_Click1(object sender, EventArgs e)
         {
-            pnl_kullanici.Visible = true;
+            //pnl_kullanici.Visible = true;
             pnlupdate.Visible = false;
             pnlarama.Visible = false;
-            pnl_nevi.Visible = false;
-            pnl_drm.Visible = false;
+            //pnl_nevi.Visible = false;
+            //pnl_drm.Visible = false;
         }
 
         protected void txt_scl_TextChanged(object sender, EventArgs e)
@@ -292,20 +292,20 @@ namespace WebAriza3
 
         protected void LinkButton5_Click(object sender, EventArgs e)
         {
-            pnl_kullanici.Visible = false;
+            //pnl_kullanici.Visible = false;
             pnlupdate.Visible = false;
             pnlarama.Visible = false;
-            pnl_nevi.Visible = false;
-            pnl_drm.Visible = true;
+            //pnl_nevi.Visible = false;
+            //pnl_drm.Visible = true;
         }
 
         protected void LinkButton4_Click(object sender, EventArgs e)
         {
-            pnl_kullanici.Visible = false;
+            //pnl_kullanici.Visible = false;
             pnlupdate.Visible = false;
             pnlarama.Visible = false;
-            pnl_nevi.Visible = true;
-            pnl_drm.Visible = false;
+            //pnl_nevi.Visible = true;
+            //pnl_drm.Visible = false;
         }
 
         protected void Button5_Click(object sender, EventArgs e)

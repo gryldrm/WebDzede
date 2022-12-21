@@ -141,7 +141,7 @@
                                     <tr>
                                         <td style="vertical-align: top">
                                             <br />
-                                            Özellikleri:<asp:DropDownList required="Seçiniz" runat="server" AppendDataBoundItems="true" DataTextField="tbl_ozl" DataValueField="tbl_ozl" DataSourceID="SqlDataSource7" ID="dd_cozllk" class="form-control" OnSelectedIndexChanged="dd_cozllk_SelectedIndexChanged">
+                                            Özellikleri:<asp:DropDownList required="Seçiniz" runat="server" AppendDataBoundItems="true" DataTextField="tbl_ozl" DataValueField="tbl_ozl" DataSourceID="SqlDataSource7" ID="dd_cozllk" class="form-control" >
                                               
                                             </asp:DropDownList>
 
@@ -163,7 +163,7 @@
                                             <br />
                                         </td>
                                         <td style="vertical-align: top">
-                                            <br />
+                                           <%-- <br />
                                             HDD:<asp:DropDownList required="Seçiniz" runat="server" ID="dd_chdd" class="form-control" placeholder="">
                                                 <asp:ListItem>Seçiniz</asp:ListItem>
                                                 <asp:ListItem>200 GB</asp:ListItem>
@@ -198,15 +198,15 @@
                                                 <asp:ListItem>512 GB</asp:ListItem>
                                                 <asp:ListItem>1024 GB</asp:ListItem>
                                                 <asp:ListItem>2048 GB</asp:ListItem>
-                                            </asp:DropDownList>
+                                            </asp:DropDownList>--%>
 
                                         </td>
                                         <td style="vertical-align: top">
-                                            <br />
+                                           <%-- <br />
                                             -HDD-Seri No:<asp:TextBox required="" runat="server" ID="txt_chdds" class="form-control" placeholder=""></asp:TextBox>
 
                                             <br />
-                                            -SSD-Seri No:<asp:TextBox required="" runat="server" ID="txt_ssds" class="form-control" placeholder=""></asp:TextBox>
+                                            -SSD-Seri No:<asp:TextBox required="" runat="server" ID="txt_ssds" class="form-control" placeholder=""></asp:TextBox>--%>
 
                                         </td>
                                         <td  style="vertical-align: top" >Geldiği Tarih:<asp:TextBox required="" runat="server" TextMode="Date" ID="dt_cgtar" class="form-control" placeholder=""></asp:TextBox>
@@ -225,8 +225,8 @@
                                         <td style="vertical-align: top"></td>
                                         <td class="auto-style1" style="vertical-align: top; text-align: center;">
                                             <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_chz] WHERE [id] = ?" InsertCommand="INSERT INTO tbl_chz
-                         (chz_sn, chz_ad, chz_ip, chz_ozl,chz_mrk, chz_hdd, chz_ssd, chz_ram, chz_ek, chz_gy, chz_gtar, chz_ack,chz_ebys,chz_shdd,chz_sssd,chz_tscl,chz_tadsoyad)
-VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+                         (chz_sn, chz_ad, chz_ip, chz_ozl,chz_mrk,  chz_gy, chz_gtar, chz_ack,chz_ebys,chz_tscl,chz_tadsoyad)
+VALUES        (?,?,?,?,?,?,?,?,?,?,?)"
                                                 ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?" ID="SqlDataSource6">
                                                 <DeleteParameters>
                                                     <asp:Parameter Name="id" Type="Int32"></asp:Parameter>
@@ -237,16 +237,10 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                                                     <asp:ControlParameter ControlID="txt_cip" PropertyName="Text" Name="chz_ip" Type="String"></asp:ControlParameter>
                                                     <asp:ControlParameter ControlID="dd_cozllk" PropertyName="SelectedValue" Name="chz_ozl" Type="String"></asp:ControlParameter>
                                                     <asp:ControlParameter ControlID="dd_marka" PropertyName="SelectedValue" Name="chz_mrk" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_chdd" PropertyName="SelectedValue" DefaultValue="-" Name="chz_hdd" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_cssd" PropertyName="SelectedValue" DefaultValue="" Name="chz_ssd" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_ram" PropertyName="SelectedValue" Name="chz_ram" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_ekart" PropertyName="SelectedValue" Name="chz_ek" Type="String"></asp:ControlParameter>
                                                     <asp:ControlParameter ControlID="dd_cgyer" PropertyName="SelectedValue" Name="chz_gy" Type="String"></asp:ControlParameter>
                                                     <asp:ControlParameter ControlID="dt_cgtar" PropertyName="Text" Name="chz_gtar" Type="DateTime"></asp:ControlParameter>
                                                     <asp:ControlParameter ControlID="txt_cariza" PropertyName="Text" Name="chz_ack"></asp:ControlParameter>
                                                     <asp:ControlParameter ControlID="txt_ciebys" PropertyName="Text" Name="chz_ebys"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_chdds" PropertyName="Text" Name="chz_shdd"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_ssds" PropertyName="Text" Name="chz_sssd"></asp:ControlParameter>
                                                     <asp:SessionParameter SessionField="k_sicil" Name="chz_tscl"></asp:SessionParameter>
                                                     <asp:SessionParameter Name="chz_tadsoyad" SessionField="k_adsoyad" />
                                                 </InsertParameters>

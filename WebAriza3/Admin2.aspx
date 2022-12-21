@@ -2,24 +2,14 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  
-     
-     
-    <style type="text/css">
-        .auto-style1 {
-            width: 250px;
-        }
-        .auto-style2 {
-            width: 250px;
-        }
-    </style>
  
-     
-     
+ 
+      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" Width="100%">
+    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" Width="100%">
 
         <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1">
             <HeaderTemplate>
@@ -29,211 +19,52 @@
                 <table>
                     <tr>
                         <td align="top" rowspan="2" style="vertical-align: top">
-                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-primary btn-smy" OnClick="LinkButton1_Click" PostBackUrl="~/Admin2.aspx" Width="150px">İşlem Bekleyenler</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-primary btn-smy" OnClick="LinkButton1_Click" PostBackUrl="~/Admin2.aspx" Width="100%">İşlem Bekleyenler</asp:LinkButton>
                             <br />
-                            <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-secondary btn-smy" OnClick="LinkButton2_Click" Width="150px">Arama</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-secondary btn-smy" OnClick="LinkButton2_Click" Width="100%">Arama</asp:LinkButton>
                             <br />
-                            <asp:LinkButton ID="LinkButton3" runat="server" CssClass="btn btn-secondary btn-smy" OnClick="LinkButton3_Click1" Width="150px">Kullanıcı Ekle</asp:LinkButton>
                             <br />
-                            <asp:LinkButton ID="LinkButton4" runat="server" CssClass="btn btn-secondary btn-smy" OnClick="LinkButton4_Click" Width="150px">Nevi Tanımla</asp:LinkButton>
                             <br />
-                            <asp:LinkButton ID="LinkButton5" runat="server" CssClass="btn btn-secondary btn-smy" OnClick="LinkButton5_Click" Width="150px">Durum Tanımla</asp:LinkButton>
-                            <br />
-                        </td>
-                        <td>
                             <asp:Panel ID="pnlarama" runat="server" Visible="False">
-                                <table >
+                                <table>
                                     <tr>
-                                        <td colspan="5">
+                                        <td>
                                             <h3>ARAMA İŞLEMLERİ </h3>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="vertical-align: top">Birim:<asp:DropDownList class="form-select"  ID="dd_drm0" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource2" DataTextField="k_birim" DataValueField="k_birim">
-                                        </asp:DropDownList>
+                                        <td style="vertical-align: top">Birim:<asp:DropDownList ID="dd_drm0" runat="server" AppendDataBoundItems="True" class="form-select" DataSourceID="SqlDataSource2" DataTextField="k_birim" DataValueField="k_birim">
+                                            </asp:DropDownList>
                                             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT k_birim FROM tbl_per GROUP BY k_birim"></asp:SqlDataSource>
-                                        </td>
-                                        <td style="vertical-align: top">Durum:<asp:DropDownList class="form-select"   ID="dd_drm1" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource1" DataTextField="islem" DataValueField="islem">
-                                        </asp:DropDownList>
+                                            <br />
+                                            Durum:<asp:DropDownList ID="dd_drm1" runat="server" AppendDataBoundItems="True" class="form-select" DataSourceID="SqlDataSource1" DataTextField="islem" DataValueField="islem">
+                                            </asp:DropDownList>
                                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_drm]"></asp:SqlDataSource>
-                                        </td>
-                                        <td style="vertical-align: top">Talep Tarih<asp:TextBox class="form-control" placeholder="" ID="dt_1" runat="server" TextMode="Date"></asp:TextBox>
-                                            -<asp:TextBox class="form-control" placeholder="" ID="dt_2" runat="server" TextMode="Date"></asp:TextBox>
-                                        </td>
-                                        <td style="vertical-align: top">Bitiş Tarihi<asp:TextBox class="form-control"   ID="dt_3" runat="server" TextMode="Date"></asp:TextBox>
-                                            -<asp:TextBox class="form-control" ID="dt_4" runat="server" TextMode="Date"></asp:TextBox>
-                                        </td>
-                                        <td  >
-                                            <asp:Button CssClass="btn btn-primary btn-smy" ID="Button3" runat="server" OnClick="Button3_Click" Text="Listele" />
+                                            Talep Tarih<asp:TextBox ID="dt_1" runat="server" class="form-control" placeholder="" TextMode="Date"></asp:TextBox>
+                                            -<asp:TextBox ID="dt_2" runat="server" class="form-control" placeholder="" TextMode="Date"></asp:TextBox>
+                                            <br />
+                                            Bitiş Tarihi<asp:TextBox ID="dt_3" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
+                                            -<asp:TextBox ID="dt_4" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
+                                            <br />
+                                            <asp:Button ID="Button3" runat="server" CssClass="btn btn-primary btn-smy" OnClick="Button3_Click" Text="Listele" />
                                         </td>
                                     </tr>
                                 </table>
                             </asp:Panel>
-                            <asp:Panel ID="pnl_kullanici" runat="server" Visible="False">
-                                <table >
-                                    <tr>
-                                        <td colspan="2">
-                                            <h3>KULLANICI İŞLEMLERİ </h3>
-                                        </td>
-                                        <td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kullnıcı Sicil</td>
-                                        <td>
-                                            <asp:TextBox ID="txt_scl" class="form-control" placeholder="sicil" runat="server" AutoPostBack="True" OnTextChanged="txt_scl_TextChanged"></asp:TextBox>
-                                        </td>
-                                        <td rowspan="6" style="vertical-align: top">
-                                            <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="id" DataSourceID="SqlDataSource3">
-                                                <Columns>
-                                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                                                    <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-                                                    <asp:BoundField DataField="k_scl" HeaderText="k_scl" SortExpression="k_scl" />
-                                                    <asp:BoundField DataField="k_adsad" HeaderText="k_adsad" SortExpression="k_adsad" />
-                                                    <asp:BoundField DataField="k_sifre" HeaderText="k_sifre" SortExpression="k_sifre" />
-                                                    <asp:BoundField DataField="k_rol" HeaderText="k_rol" SortExpression="k_rol" />
-                                                    <asp:BoundField DataField="k_birim" HeaderText="k_birim" SortExpression="k_birim" />
-                                                </Columns>
-                                            </asp:GridView>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kullanıcı Ad Soyad</td>
-                                        <td>
-                                            <asp:TextBox class="form-control" placeholder="kullanıcı adı" ID="txt_adsad" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kullanıcı Şifre</td>
-                                        <td>
-                                            <asp:TextBox class="form-control" placeholder="kullanıcı şifre" ID="txt_sfr" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kullanıcı Rol</td>
-                                        <td>
-                                            <asp:DropDownList class="form-select" ID="dd_Rol" runat="server">
-                                                <asp:ListItem>Seçin</asp:ListItem>
-                                                <asp:ListItem Value="1">Admin</asp:ListItem>
-                                                <asp:ListItem Value="2">Kullanıcı</asp:ListItem>
-                                            </asp:DropDownList>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kullanıcı Birim</td>
-                                        <td>
-                                            <asp:DropDownList ID="dd_drm2" runat="server" AppendDataBoundItems="True" class="form-select" DataSourceID="SqlDataSource2" DataTextField="k_birim" DataValueField="k_birim">
-                                            </asp:DropDownList>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp;</td>
-                                        <td>
-                                            <asp:Button  CssClass="btn btn-primary btn-smy" ID="btn_kk" runat="server" OnClick="btn_kk_Click1" Text="Kaydet" />
-                                            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_per] WHERE [id] = ?" InsertCommand="INSERT INTO tbl_per( k_scl, k_adsad, k_sifre, k_rol, k_birim) VALUES (?, ?, ?, ?, ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_per]" UpdateCommand="UPDATE [tbl_per] SET [k_scl] = ?, [k_adsad] = ?, [k_sifre] = ?, [k_rol] = ?, [k_birim] = ? WHERE [id] = ?">
-                                                <DeleteParameters>
-                                                    <asp:Parameter Name="id" Type="Int32" />
-                                                </DeleteParameters>
-                                                <InsertParameters>
-                                                    <asp:ControlParameter ControlID="txt_scl" Name="k_scl" PropertyName="Text" Type="Int32" />
-                                                    <asp:ControlParameter ControlID="txt_adsad" Name="k_adsad" PropertyName="Text" Type="String" />
-                                                    <asp:ControlParameter ControlID="txt_sfr" Name="k_sifre" PropertyName="Text" Type="String" />
-                                                    <asp:ControlParameter ControlID="dd_Rol" Name="k_rol" PropertyName="SelectedValue" Type="Int32" />
-                                                    <asp:ControlParameter ControlID="dd_drm2" Name="k_birim" PropertyName="SelectedValue" Type="String" />
-                                                </InsertParameters>
-                                                <UpdateParameters>
-                                                    <asp:Parameter Name="k_scl" Type="Int32" />
-                                                    <asp:Parameter Name="k_adsad" Type="String" />
-                                                    <asp:Parameter Name="k_sifre" Type="String" />
-                                                    <asp:Parameter Name="k_rol" Type="Int32" />
-                                                    <asp:Parameter Name="k_birim" Type="String" />
-                                                    <asp:Parameter Name="id" Type="Int32" />
-                                                </UpdateParameters>
-                                            </asp:SqlDataSource>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </asp:Panel>
-                            <asp:Panel ID="pnl_nevi" runat="server" Visible="False">
-                                <h3>NEVİ İŞLEMLERİ </h3>
-                                <table >
-                                    <tr>
-                                        <td style="vertical-align: top">Nevi:<asp:TextBox class="form-control" ID="txt_nevi" runat="server"></asp:TextBox>
-                                            &nbsp;Açıklama:<asp:TextBox class="form-control" ID="txt_sifre" runat="server"></asp:TextBox>
-                                            <asp:Button CssClass="btn btn-primary btn-smy" ID="Button4" runat="server" OnClick="Button4_Click" Text="Kaydet" />
-                                            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_nevi] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_nevi] ( [nevi], [osifre]) VALUES ( ?, ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_nevi]" UpdateCommand="UPDATE [tbl_nevi] SET [nevi] = ?, [osifre] = ? WHERE [id] = ?">
-                                                <DeleteParameters>
-                                                    <asp:Parameter Name="id" Type="Int32" />
-                                                </DeleteParameters>
-                                                <InsertParameters>
-                                                    <asp:ControlParameter ControlID="txt_nevi" Name="nevi" PropertyName="Text" Type="String" />
-                                                    <asp:ControlParameter ControlID="txt_sifre" Name="osifre" PropertyName="Text" Type="String" />
-                                                </InsertParameters>
-                                                <UpdateParameters>
-                                                    <asp:Parameter Name="nevi" Type="String" />
-                                                    <asp:Parameter Name="osifre" Type="String" />
-                                                    <asp:Parameter Name="id" Type="Int32" />
-                                                </UpdateParameters>
-                                            </asp:SqlDataSource>
-                                        </td>
-                                        <td>
-                                            <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="id" DataSourceID="SqlDataSource4" Width="100%">
-                                                <Columns>
-                                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                                                    <asp:BoundField DataField="id" HeaderText="id" ReadOnly="True" SortExpression="id" />
-                                                    <asp:BoundField DataField="nevi" HeaderText="nevi" SortExpression="nevi" />
-                                                    <asp:BoundField DataField="osifre" HeaderText="osifre" SortExpression="osifre" />
-                                                </Columns>
-                                            </asp:GridView>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </asp:Panel>
-                            <asp:Panel ID="pnl_drm" runat="server" Visible="False" Width="100%">
-                                <h3>İŞLEM TANIMLAMA </h3>
-                                <br />
-                                <table >
-                                    <tr>
-                                        <td style="vertical-align: top">İşlem;<asp:TextBox class="form-control" ID="txt_islem" runat="server"></asp:TextBox>
-                                            <asp:Button CssClass="btn btn-primary btn-smy" ID="Button5" runat="server" OnClick="Button5_Click" Text="Kaydet" />
-                                            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_drm] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_drm] ( [islem]) VALUES ( ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_drm]" UpdateCommand="UPDATE [tbl_drm] SET [islem] = ? WHERE [id] = ?">
-                                                <DeleteParameters>
-                                                    <asp:Parameter Name="id" Type="Int32" />
-                                                </DeleteParameters>
-                                                <InsertParameters>
-                                                    <asp:ControlParameter ControlID="txt_islem" Name="islem" PropertyName="Text" Type="String" />
-                                                </InsertParameters>
-                                                <UpdateParameters>
-                                                    <asp:Parameter Name="islem" Type="String" />
-                                                    <asp:Parameter Name="id" Type="Int32" />
-                                                </UpdateParameters>
-                                            </asp:SqlDataSource>
-                                        </td>
-                                        <td>
-                                            <asp:GridView ID="GridView4" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="id" DataSourceID="SqlDataSource5">
-                                                <Columns>
-                                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                                                    <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-                                                    <asp:BoundField DataField="islem" HeaderText="islem" SortExpression="islem" />
-                                                </Columns>
-                                            </asp:GridView>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <br />
-                            </asp:Panel>
+                            <br />
+                        </td>
+                        <td style="vertical-align: top">
                             <asp:Panel ID="pnlupdate" runat="server" Visible="False">
-                                <table >
+                                <table class="auto-style1" >
                                     <tr>
-                                        <td colspan="6" style="vertical-align: top">
-                                            <h3>GÜNCELLEME İŞLEMLERİ </h3>
+                                        <td colspan="5" style="vertical-align: top">
+                                            <h3 style="vertical-align: top">GÜNCELLEME İŞLEMLERİ </h3>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="vertical-align: top">İd</td>
-                                        <td style="vertical-align: top">
-                                            <asp:Label ID="lbl_id" runat="server" ForeColor="Red"></asp:Label>
+                                        <td style="vertical-align: top">İd:<asp:Label ID="lbl_id" runat="server" ForeColor="Red"></asp:Label>
                                         </td>
-                                        <td style="vertical-align: top">Durumu<asp:DropDownList class="form-select" ID="dd_drm" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource1" DataTextField="islem" DataValueField="islem">
+                                        <td style="vertical-align: top">Durumu<asp:DropDownList class="form-select" ID="dd_drm" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource2" DataTextField="islem" DataValueField="islem">
                                         </asp:DropDownList>
                                         </td>
                                         <td style="vertical-align: top">Yapılan İşlem:<asp:TextBox ID="txt_ack" runat="server" class="form-control" Height="75px" TextMode="MultiLine" Width="214px"></asp:TextBox>
@@ -243,6 +74,7 @@
                                             <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" BehaviorID="_content_CalendarExtender1" Format="dd/MM/yyyy" PopupButtonID="imgPopup" TargetControlID="dt_it" />
                                         </td>
                                         <td style="vertical-align: top">
+                                            <br />
                                             <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary btn-smy" OnClick="Button1_Click" Text="Güncelle" />
                                         </td>
                                     </tr>
@@ -498,7 +330,6 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                         </asp:Panel>
                                     </td>
                                     <td style="vertical-align: top">
-                                        <br />
                                         <asp:Panel ID="pnl_ciislem" runat="server" Visible="False">
                                             <table  >
                                                 <tr>
@@ -630,6 +461,192 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                     </ajaxToolkit:TabPanel>
                 </ajaxToolkit:TabContainer>
             </ContentTemplate>
+        </ajaxToolkit:TabPanel>
+
+        <ajaxToolkit:TabPanel ID="TabPanel33" runat="server" HeaderText="TabPanel3">
+            <HeaderTemplate>
+                Birim Tanımlama
+            </HeaderTemplate>
+        </ajaxToolkit:TabPanel>
+        <ajaxToolkit:TabPanel ID="TabPanel43" runat="server" HeaderText="TabPanel4">
+            <HeaderTemplate>
+                Kullanıcı Ekle
+            </HeaderTemplate>
+            <ContentTemplate>
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <h3>KULLANICI İŞLEMLERİ </h3>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Kullnıcı Sicil</td>
+                        <td>
+                            <asp:TextBox ID="txt_scl" runat="server" AutoPostBack="True" class="form-control" OnTextChanged="txt_scl_TextChanged" placeholder="sicil"></asp:TextBox>
+                        </td>
+                        <td rowspan="6" style="vertical-align: top">
+                            <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="id" DataSourceID="SqlDataSource3">
+                                <Columns>
+                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                    <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                                    <asp:BoundField DataField="k_scl" HeaderText="k_scl" SortExpression="k_scl" />
+                                    <asp:BoundField DataField="k_adsad" HeaderText="k_adsad" SortExpression="k_adsad" />
+                                    <asp:BoundField DataField="k_sifre" HeaderText="k_sifre" SortExpression="k_sifre" />
+                                    <asp:BoundField DataField="k_rol" HeaderText="k_rol" SortExpression="k_rol" />
+                                    <asp:BoundField DataField="k_birim" HeaderText="k_birim" SortExpression="k_birim" />
+                                </Columns>
+                            </asp:GridView>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kullanıcı Ad Soyad</td>
+                        <td>
+                            <asp:TextBox ID="txt_adsad" runat="server" class="form-control" placeholder="kullanıcı adı"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kullanıcı Şifre</td>
+                        <td>
+                            <asp:TextBox ID="txt_sfr" runat="server" class="form-control" placeholder="kullanıcı şifre"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kullanıcı Rol</td>
+                        <td>
+                            <asp:DropDownList ID="dd_Rol" runat="server" class="form-select">
+                                <asp:ListItem>Seçin</asp:ListItem>
+                                <asp:ListItem Value="1">Admin</asp:ListItem>
+                                <asp:ListItem Value="2">Kullanıcı</asp:ListItem>
+                            </asp:DropDownList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kullanıcı Birim</td>
+                        <td>
+                            <asp:DropDownList ID="dd_drm2" runat="server" AppendDataBoundItems="True" class="form-select" DataSourceID="SqlDataSource3" DataTextField="k_birim" DataValueField="k_birim">
+                            </asp:DropDownList>
+                            <asp:SqlDataSource ID="SqlDataSource10" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT k_birim FROM tbl_per GROUP BY k_birim"></asp:SqlDataSource>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <asp:Button ID="btn_kk" runat="server" CssClass="btn btn-primary btn-smy" OnClick="btn_kk_Click1" Text="Kaydet" />
+                            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_per] WHERE [id] = ?" InsertCommand="INSERT INTO tbl_per( k_scl, k_adsad, k_sifre, k_rol, k_birim) VALUES (?, ?, ?, ?, ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_per]" UpdateCommand="UPDATE [tbl_per] SET [k_scl] = ?, [k_adsad] = ?, [k_sifre] = ?, [k_rol] = ?, [k_birim] = ? WHERE [id] = ?">
+                                <DeleteParameters>
+                                    <asp:Parameter Name="id" Type="Int32" />
+                                </DeleteParameters>
+                                <InsertParameters>
+                                    <asp:ControlParameter ControlID="txt_scl" Name="k_scl" PropertyName="Text" Type="Int32" />
+                                    <asp:ControlParameter ControlID="txt_adsad" Name="k_adsad" PropertyName="Text" Type="String" />
+                                    <asp:ControlParameter ControlID="txt_sfr" Name="k_sifre" PropertyName="Text" Type="String" />
+                                    <asp:ControlParameter ControlID="dd_Rol" Name="k_rol" PropertyName="SelectedValue" Type="Int32" />
+                                    <asp:ControlParameter ControlID="dd_drm2" Name="k_birim" PropertyName="SelectedValue" Type="String" />
+                                </InsertParameters>
+                                <UpdateParameters>
+                                    <asp:Parameter Name="k_scl" Type="Int32" />
+                                    <asp:Parameter Name="k_adsad" Type="String" />
+                                    <asp:Parameter Name="k_sifre" Type="String" />
+                                    <asp:Parameter Name="k_rol" Type="Int32" />
+                                    <asp:Parameter Name="k_birim" Type="String" />
+                                    <asp:Parameter Name="id" Type="Int32" />
+                                </UpdateParameters>
+                            </asp:SqlDataSource>
+                        </td>
+                    </tr>
+                </table>
+            </ContentTemplate>
+        </ajaxToolkit:TabPanel>
+        <ajaxToolkit:TabPanel ID="TabPanel5" runat="server" HeaderText="TabPanel5">
+            <HeaderTemplate>
+                Arıza Nevi Ekle
+            </HeaderTemplate>
+            <ContentTemplate>
+                NEVİ İŞLEMLERİ
+                <br />
+                <table>
+                    <tr>
+                        <td style="vertical-align: top">Nevi:<asp:TextBox ID="txt_nevi" runat="server" class="form-control"></asp:TextBox>
+                            &nbsp;Açıklama:<asp:TextBox ID="txt_sifre" runat="server" class="form-control"></asp:TextBox>
+                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-primary btn-smy" OnClick="Button4_Click" Text="Kaydet" />
+                            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_nevi] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_nevi] ( [nevi], [osifre]) VALUES ( ?, ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_nevi]" UpdateCommand="UPDATE [tbl_nevi] SET [nevi] = ?, [osifre] = ? WHERE [id] = ?">
+                                <DeleteParameters>
+                                    <asp:Parameter Name="id" Type="Int32" />
+                                </DeleteParameters>
+                                <InsertParameters>
+                                    <asp:ControlParameter ControlID="txt_nevi" Name="nevi" PropertyName="Text" Type="String" />
+                                    <asp:ControlParameter ControlID="txt_sifre" Name="osifre" PropertyName="Text" Type="String" />
+                                </InsertParameters>
+                                <UpdateParameters>
+                                    <asp:Parameter Name="nevi" Type="String" />
+                                    <asp:Parameter Name="osifre" Type="String" />
+                                    <asp:Parameter Name="id" Type="Int32" />
+                                </UpdateParameters>
+                            </asp:SqlDataSource>
+                        </td>
+                        <td>
+                            <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="id" DataSourceID="SqlDataSource4" Width="100%">
+                                <Columns>
+                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                    <asp:BoundField DataField="id" HeaderText="id" ReadOnly="True" SortExpression="id" />
+                                    <asp:BoundField DataField="nevi" HeaderText="nevi" SortExpression="nevi" />
+                                    <asp:BoundField DataField="osifre" HeaderText="osifre" SortExpression="osifre" />
+                                </Columns>
+                            </asp:GridView>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+            </ContentTemplate>
+        </ajaxToolkit:TabPanel>
+        <ajaxToolkit:TabPanel ID="TabPanel6" runat="server" HeaderText="TabPanel6">
+            <HeaderTemplate>
+                İşlem Durum Ekle
+            </HeaderTemplate>
+            <ContentTemplate>
+                İŞLEM TANIMLAMA
+                <br />
+                <table>
+                    <tr>
+                        <td style="vertical-align: top">İşlem:<asp:TextBox ID="txt_islem" runat="server" class="form-control"></asp:TextBox>
+                            <asp:Button ID="Button5" runat="server" CssClass="btn btn-primary btn-smy" OnClick="Button5_Click" Text="Kaydet" />
+                            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_drm] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_drm] ( [islem]) VALUES ( ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_drm]" UpdateCommand="UPDATE [tbl_drm] SET [islem] = ? WHERE [id] = ?">
+                                <DeleteParameters>
+                                    <asp:Parameter Name="id" Type="Int32" />
+                                </DeleteParameters>
+                                <InsertParameters>
+                                    <asp:ControlParameter ControlID="txt_islem" Name="islem" PropertyName="Text" Type="String" />
+                                </InsertParameters>
+                                <UpdateParameters>
+                                    <asp:Parameter Name="islem" Type="String" />
+                                    <asp:Parameter Name="id" Type="Int32" />
+                                </UpdateParameters>
+                            </asp:SqlDataSource>
+                        </td>
+                        <td>
+                            <asp:GridView ID="GridView4" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="id" DataSourceID="SqlDataSource5">
+                                <Columns>
+                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                    <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                                    <asp:BoundField DataField="islem" HeaderText="islem" SortExpression="islem" />
+                                </Columns>
+                            </asp:GridView>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+            </ContentTemplate>
+        </ajaxToolkit:TabPanel>
+        <ajaxToolkit:TabPanel ID="TabPanel7" runat="server" HeaderText="TabPanel7">
+            <HeaderTemplate>
+                Cihaz Ekleme
+            </HeaderTemplate>
+        </ajaxToolkit:TabPanel>
+        <ajaxToolkit:TabPanel ID="TabPanel8" runat="server" HeaderText="TabPanel8">
+            <HeaderTemplate>
+                Cihaz Marka Ekle
+            </HeaderTemplate>
         </ajaxToolkit:TabPanel>
 
     </ajaxToolkit:TabContainer>

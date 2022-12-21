@@ -143,32 +143,32 @@ namespace WebAriza3
             }
 
         }
-        protected void dd_cozllk_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (dd_cozllk.SelectedItem.ToString() == "Yazıcı")
-            {
-                dd_chdd.Enabled = false;
-                txt_chdds.Enabled = false;
-                dd_cssd.Enabled = false;
-                txt_ssds.Enabled = false;
+        //protected void dd_cozllk_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (dd_cozllk.SelectedItem.ToString() == "Yazıcı")
+        //    {
+        //        dd_chdd.Enabled = false;
+        //        txt_chdds.Enabled = false;
+        //        dd_cssd.Enabled = false;
+        //        txt_ssds.Enabled = false;
 
-                dd_ram.Enabled = false;
-                dd_ekart.Enabled = false;
-            }
-            else
-            {
-                dd_chdd.Enabled = true;
-                txt_chdds.Enabled = true;
-                dd_cssd.Enabled = true;
-                txt_ssds.Enabled = true;
+        //        dd_ram.Enabled = false;
+        //        dd_ekart.Enabled = false;
+        //    }
+        //    else
+        //    {
+        //        dd_chdd.Enabled = true;
+        //        txt_chdds.Enabled = true;
+        //        dd_cssd.Enabled = true;
+        //        txt_ssds.Enabled = true;
 
-                dd_ram.Enabled = true;
-                dd_ekart.Enabled = true;
-            }
+        //        dd_ram.Enabled = true;
+        //        dd_ekart.Enabled = true;
+        //    }
 
 
 
-        }
+        //}
 
       
     }
