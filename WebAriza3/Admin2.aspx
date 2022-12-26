@@ -2,6 +2,18 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  
+    <style type="text/css">
+        .auto-style1 {
+            width: 798px;
+        }
+        .auto-style2 {
+            width: 217px;
+        }
+        .auto-style3 {
+            width: 134px;
+        }
+    </style>
+ 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -13,9 +25,9 @@
                 Şifre / Yetki İşlemleri
             </HeaderTemplate>
             <ContentTemplate>
-                <table>
+                <table style="width:100%">
                     <tr>
-                        <td align="top" rowspan="2" style="vertical-align: top">
+                        <td align="top" rowspan="2" style="vertical-align: top" class="auto-style2">
                             <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-primary btn-smy" OnClick="LinkButton1_Click" PostBackUrl="~/Admin2.aspx" Width="100%">İşlem Bekleyenler</asp:LinkButton>
                             <br />
                             <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-secondary btn-smy" OnClick="LinkButton2_Click" Width="100%">Arama</asp:LinkButton>
@@ -51,7 +63,7 @@
                         </td>
                         <td style="vertical-align: top">
                             <asp:Panel ID="pnlupdate" runat="server" Visible="False">
-                                <table class="auto-style1" >
+                                <table style="width:%" >
                                     <tr>
                                         <td colspan="5" style="vertical-align: top">
                                             <h3 style="vertical-align: top">GÜNCELLEME İŞLEMLERİ </h3>
@@ -60,7 +72,7 @@
                                     <tr>
                                         <td style="vertical-align: top">İd:<asp:Label ID="lbl_id" runat="server" ForeColor="Red"></asp:Label>
                                         </td>
-                                        <td style="vertical-align: top">Durumu<asp:DropDownList class="form-select" ID="dd_drm" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource2" DataTextField="islem" DataValueField="islem">
+                                        <td style="vertical-align: top" class="auto-style3">Durumu<asp:DropDownList class="form-select" ID="dd_drm" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource1" DataTextField="islem" DataValueField="islem">
                                         </asp:DropDownList>
                                         </td>
                                         <td style="vertical-align: top">Yapılan İşlem:<asp:TextBox ID="txt_ack" runat="server" class="form-control" Height="75px" TextMode="MultiLine" Width="214px"></asp:TextBox>

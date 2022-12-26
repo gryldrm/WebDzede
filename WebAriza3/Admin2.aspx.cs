@@ -19,23 +19,25 @@ namespace WebAriza3
             {
                 if (Session["k_sicil"] != null)
                 {
-                    dd_drm0.Items.Insert(0, new ListItem("Seçin", String.Empty));
+                    dd_drm0.Items.Insert(0, new ListItem("Seçiniz", String.Empty));
                     dd_drm0.SelectedIndex = 0;
 
-                    dd_drm.Items.Insert(0, new ListItem("Seçin", String.Empty));
+                    dd_drm.Items.Insert(0, new ListItem("Seçiniz", String.Empty));
                     dd_drm.SelectedIndex = 0;
 
-                    dd_drm1.Items.Insert(0, new ListItem("Seçin", String.Empty));
+                    dd_drm1.Items.Insert(0, new ListItem("Seçiniz", String.Empty));
                     dd_drm1.SelectedIndex = 0;
 
                     //
                     //
 
-                    dd_cidrm.Items.Insert(0, new ListItem("Seçin", String.Empty));
+                    dd_cidrm.Items.Insert(0, new ListItem("Seçiniz", String.Empty));
                     dd_cidrm.SelectedIndex = 0;
 
                     dd_cidrm0.Items.Insert(0, new ListItem("Seçiniz", String.Empty));
                     dd_cidrm0.SelectedIndex = 0;
+
+                    
 
                     datayukle();
                 }
@@ -130,13 +132,13 @@ namespace WebAriza3
             string sorgu = "";
             string srg_select = "SELECT id AS ID, birim AS Birim, adisoyadi AS [Adı Soyadı], sicil AS Sicil, nevi AS Nevi, ariza AS Açıklama, ebys AS [EBYS No], tlptar AS [Talep Tarihi], durumu AS Durumu, isl_alanper AS [İşlem Yapan], isl_aciklama AS [Yapılan İşlem], isl_bitis AS [İşlem Bitiş] FROM tbl_ariza  ";
 
-            if (dd_drm0.SelectedItem.ToString() != "Seçin")
+            if (dd_drm0.SelectedItem.ToString() != "Seçiniz")
             {
                 sorgu += " WHERE (birim = '" + dd_drm0.SelectedItem.Text.ToString() + "')";
 
             }
 
-            if (dd_drm1.SelectedItem.ToString() != "Seçin")
+            if (dd_drm1.SelectedItem.ToString() != "Seçiniz")
             {
                 if (sorgu.ToString() == "")
                 {
@@ -243,7 +245,7 @@ namespace WebAriza3
         {
             if (txt_scl.Text != "")
             {
-                if (dd_Rol.SelectedItem.Text != "Seçin")
+                if (dd_Rol.SelectedItem.Text != "Seçiniz")
                 {
                     SqlDataSource3.Insert();
                     txt_scl.Text = "";
@@ -383,9 +385,10 @@ namespace WebAriza3
             lbl_cigtar.Text = dt.Rows[0][13].ToString();
             txt_ciack.Text = dt.Rows[0][14].ToString();
 
-            txt_ciyis.Text = dt.Rows[0][16].ToString();
 
-            txt_ciyistar.Text = dt.Rows[0][15].ToString();
+            txt_ciyis.Text = dt.Rows[0][15].ToString();
+
+
 
             if (dt.Rows[0][17].ToString() != "")
             {
@@ -401,6 +404,7 @@ namespace WebAriza3
 
             }
 
+            txt_ciyistar.Text =dt.Rows[0][16].ToString();
             txt_ciebys0.Text = dt.Rows[0][22].ToString();
 
         }
