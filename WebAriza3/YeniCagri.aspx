@@ -14,7 +14,7 @@
 
                 <!-- Button trigger modal -->
                 <button type="button" ID="btn_kaydet2"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    Ariza Nevi Talep
+                    Şifre Talep Çağrı
                 </button>
               
                 <!-- Modal -->
@@ -108,7 +108,7 @@
 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
-                    Cihaz Arıza Talep
+                    Cihaz Arıza Çağrı
                 </button>
 
                 <!-- Modal -->

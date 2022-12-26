@@ -34,7 +34,7 @@ namespace WebAriza3
                     dd_cidrm.Items.Insert(0, new ListItem("Seçin", String.Empty));
                     dd_cidrm.SelectedIndex = 0;
 
-                    dd_cidrm0.Items.Insert(0, new ListItem("Seçin", String.Empty));
+                    dd_cidrm0.Items.Insert(0, new ListItem("Seçiniz", String.Empty));
                     dd_cidrm0.SelectedIndex = 0;
 
                     datayukle();
@@ -251,7 +251,7 @@ namespace WebAriza3
                 }
                 else
                 {
-                     
+
 
                 }
             }
@@ -283,9 +283,9 @@ namespace WebAriza3
         protected void Button4_Click(object sender, EventArgs e)
         {
 
-           
-                SqlDataSource4.Insert();
-              
+
+            SqlDataSource4.Insert();
+
         }
 
         protected void LinkButton5_Click(object sender, EventArgs e)
@@ -308,9 +308,9 @@ namespace WebAriza3
 
         protected void Button5_Click(object sender, EventArgs e)
         {
-            
-                SqlDataSource5.Insert();
-               
+
+            SqlDataSource5.Insert();
+
         }
 
         protected void btn_ckayit_Click(object sender, EventArgs e)
@@ -389,7 +389,16 @@ namespace WebAriza3
 
             if (dt.Rows[0][17].ToString() != "")
             {
-                dd_cidrm.Text = dt.Rows[0][17].ToString();
+                try
+                {
+                    dd_cidrm.Text = dt.Rows[0][17].ToString();
+                }
+                catch (Exception)
+                {
+
+
+                }
+
             }
 
             txt_ciebys0.Text = dt.Rows[0][22].ToString();
@@ -405,41 +414,41 @@ namespace WebAriza3
                 {
                     if (dd_cidrm.SelectedItem.Text != "Seçiniz")
                     {
-                        string sb = "UPDATE tbl_chz SET chz_ad = '" + txt_ciad.Text+"'";
+                        string sb = "UPDATE tbl_chz SET chz_ad = '" + txt_ciad.Text + "'";
 
-                        if (txt_ciipno.Text !="")
+                        if (txt_ciipno.Text != "")
                         {
-                            sb += ", chz_ip = '" + txt_ciipno.Text+"'";
+                            sb += ", chz_ip = '" + txt_ciipno.Text + "'";
                         }
 
-                        if (dd_cihdd.SelectedItem.Text !="Seçiniz")
+                        if (dd_cihdd.SelectedItem.Text != "Seçiniz")
                         {
-                            sb += ", chz_hdd = '" + dd_cihdd.SelectedItem.Text+"', chz_shdd = '" + txthdds.Text+"'";
+                            sb += ", chz_hdd = '" + dd_cihdd.SelectedItem.Text + "', chz_shdd = '" + txthdds.Text + "'";
 
                         }
 
                         if (dd_cissd.SelectedItem.Text != "Seçiniz")
                         {
-                            sb += ", chz_ssd = '" + dd_cissd.SelectedItem.Text+"', chz_sssd = '" + txtssds.Text+"'";
+                            sb += ", chz_ssd = '" + dd_cissd.SelectedItem.Text + "', chz_sssd = '" + txtssds.Text + "'";
                         }
 
                         if (dd_ciram.SelectedItem.Text != "Seçiniz")
                         {
-                            sb += ", chz_ram = '" + dd_ciram.SelectedItem.Text+"'";
+                            sb += ", chz_ram = '" + dd_ciram.SelectedItem.Text + "'";
                         }
 
-                        if (dd_ciekart.SelectedItem.Text !="Seçiniz")
+                        if (dd_ciekart.SelectedItem.Text != "Seçiniz")
                         {
-                            sb += ", chz_ek = '" + dd_ciekart.SelectedItem.Text+"'";
+                            sb += ", chz_ek = '" + dd_ciekart.SelectedItem.Text + "'";
                         }
-                        
 
 
-                         sb += ", chz_yi = '" + txt_ciyis.Text 
-                                       + "', chz_itar = #" + txt_ciyistar.Text
-                                       + "#, chz_drm = '" + dd_cidrm.Text
-                                       + "', chz_iper = '" + Session["k_sicil"].ToString()
-                                       + "' WHERE (tbl_chz.id = " + lbl_cidd.Text + ") ";
+
+                        sb += ", chz_yi = '" + txt_ciyis.Text
+                                      + "', chz_itar = #" + txt_ciyistar.Text
+                                      + "#, chz_drm = '" + dd_cidrm.Text
+                                      + "', chz_iper = '" + Session["k_sicil"].ToString()
+                                      + "' WHERE (tbl_chz.id = " + lbl_cidd.Text + ") ";
 
                         //string sorgu = " UPDATE tbl_chz SET chz_ad = '" + txt_ciad.Text
 

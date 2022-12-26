@@ -262,9 +262,9 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                             <table  >
                                 <tr>
                                     <td style="vertical-align: top" >
-                                        <asp:LinkButton ID="LinkButton7" runat="server" CssClass="btn btn-primary btn-smy" Width="150px" OnClick="LinkButton7_Click">İşlem Bekleyenler</asp:LinkButton>
+                                        <asp:LinkButton ID="LinkButton7" runat="server" CssClass="btn btn-primary btn-smy" Width="100%" OnClick="LinkButton7_Click">İşlem Bekleyenler</asp:LinkButton>
                                         <br />
-                                        <asp:LinkButton ID="LinkButton8" runat="server" CssClass="btn btn-secondary btn-smy" OnClick="LinkButton8_Click" Width="150px">Arama</asp:LinkButton>
+                                        <asp:LinkButton ID="LinkButton8" runat="server" CssClass="btn btn-secondary btn-smy" OnClick="LinkButton8_Click" Width="100%">Arama</asp:LinkButton>
                                         <br />
                                         <asp:Panel ID="pnl_ciara" runat="server" Visible="False">
                                             <table style="width:100%">
@@ -444,12 +444,9 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2">&nbsp;</td>
+                                    <td colspan="2"></td>
                                 </tr>
                             </table>
-
-
-                         
 
                         </ContentTemplate>
                     </ajaxToolkit:TabPanel>
