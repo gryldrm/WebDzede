@@ -2,14 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  
- 
- 
-      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0" Width="100%">
+    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="1" Width="100%">
 
         <ajaxToolkit:TabPanel runat="server" HeaderText="TabPanel1" ID="TabPanel1">
             <HeaderTemplate>
@@ -23,8 +20,7 @@
                             <br />
                             <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-secondary btn-smy" OnClick="LinkButton2_Click" Width="100%">Arama</asp:LinkButton>
                             <br />
-                            <br />
-                            <br />
+                        
                             <asp:Panel ID="pnlarama" runat="server" Visible="False">
                                 <table>
                                     <tr>
@@ -271,10 +267,15 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                         <asp:LinkButton ID="LinkButton8" runat="server" CssClass="btn btn-secondary btn-smy" OnClick="LinkButton8_Click" Width="150px">Arama</asp:LinkButton>
                                         <br />
                                         <asp:Panel ID="pnl_ciara" runat="server" Visible="False">
-                                            <table>
+                                            <table style="width:100%">
+                                                <tr>
+                                                    <td>Takip No:<br />
+                                                        <asp:TextBox ID="txtctkpno" runat="server" class="form-control" placeholder="Takip No"></asp:TextBox>
+                                                    </td>
+                                                </tr>
                                                 <tr>
                                                     <td>Cihaz Seri No<br />
-                                                        <asp:TextBox class="form-control" placeholder="" ID="txt_caseri" runat="server"></asp:TextBox>
+                                                        <asp:TextBox ID="txt_caseri" runat="server" class="form-control" placeholder=""></asp:TextBox>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -295,11 +296,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                 </tr>
                                                 <tr>
                                                     <td>Durumu<br />
-                                                        <asp:DropDownList class="form-control" placeholder="" ID="dd_cidrm0" runat="server">
-                                                            <asp:ListItem>Seçiniz</asp:ListItem>
-                                                            <asp:ListItem>Tamamlandı</asp:ListItem>
-                                                            <asp:ListItem>Hek</asp:ListItem>
-                                                            <asp:ListItem>İşlem Bekliyor</asp:ListItem>
+                                                        <asp:DropDownList class="form-control" placeholder="" ID="dd_cidrm0" runat="server" AppendDataBoundItems="True" DataSourceID="SqlDataSource14" DataTextField="islem" DataValueField="islem">
                                                         </asp:DropDownList>
                                                         <br />
                                                     </td>
@@ -331,7 +328,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                     </td>
                                     <td style="vertical-align: top">
                                         <asp:Panel ID="pnl_ciislem" runat="server" Visible="False">
-                                            <table  >
+                                            <table style="width:100%" >
                                                 <tr>
                                                     <td class="auto-style1" style="vertical-align: top">Geldiği Yer:<h2><asp:Label ID="lbl_cigyer" runat="server"></asp:Label></h2>
                                                         <br />
@@ -401,12 +398,9 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                     </td>
                                                     <td style="vertical-align: top; background-color: #CCCCCC;">Yapılan İşlem<asp:TextBox ID="txt_ciyis" runat="server" class="form-control" placeholder="" TextMode="MultiLine" ></asp:TextBox>
                                                         <br />
-                                                        Durumu:<asp:DropDownList ID="dd_cidrm" runat="server" class="form-control" placeholder="">
-                                                            <asp:ListItem>Seçiniz</asp:ListItem>
-                                                            <asp:ListItem>Tamamlandı</asp:ListItem>
-                                                            <asp:ListItem>Hek</asp:ListItem>
-                                                            <asp:ListItem>İşlem Bekliyor</asp:ListItem>
+                                                        Durumu:<asp:DropDownList ID="dd_cidrm" runat="server" class="form-control" placeholder="" AppendDataBoundItems="True" DataSourceID="SqlDataSource14" DataTextField="islem" DataValueField="islem">
                                                         </asp:DropDownList>
+                                                        <asp:SqlDataSource ID="SqlDataSource14" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_drm]"></asp:SqlDataSource>
                                                         <br />
                                                         İşlem Tarihi:<asp:TextBox ID="txt_ciyistar" runat="server" class="form-control" placeholder="" TextMode="Date"></asp:TextBox>
                                                         <br />
@@ -415,7 +409,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                 </tr>
                                                 <tr>
                                                     <td colspan="4" style="vertical-align: top">
-                                                        <asp:Label ID="lbl_cidd" runat="server"></asp:Label>
+                                                        Takip No:<asp:Label ID="lbl_cidd" runat="server"></asp:Label>
                                                         <asp:Label ID="lbl_imsj0" runat="server" ForeColor="Red"></asp:Label>
                                                     </td>
                                                 </tr>
@@ -467,13 +461,48 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
             <HeaderTemplate>
                 Birim Tanımlama
             </HeaderTemplate>
+            <ContentTemplate>
+                <table class="w-100">
+                    <tr>
+                        <td>Birim Adı:<asp:TextBox ID="TextBox1" runat="server" Width="530px"></asp:TextBox>
+                            <asp:Button ID="Button9" runat="server" OnClick="Button9_Click" Text="Kaydet" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:GridView ID="GridView7" class="table table-striped"  runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource12">
+                                <Columns>
+                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                                    <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                                    <asp:BoundField DataField="pid" HeaderText="pid" SortExpression="pid" />
+                                    <asp:BoundField DataField="birim" HeaderText="birim" SortExpression="birim" />
+                                </Columns>
+                            </asp:GridView>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <asp:SqlDataSource ID="SqlDataSource12" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_birim] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_birim] ( [birim]) VALUES ( ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_birim]" UpdateCommand="UPDATE [tbl_birim] SET [pid] = ?, [birim] = ? WHERE [id] = ?">
+                    <DeleteParameters>
+                        <asp:Parameter Name="id" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:ControlParameter ControlID="TextBox1" Name="birim" PropertyName="Text" Type="String" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="pid" Type="Int32" />
+                        <asp:Parameter Name="birim" Type="String" />
+                        <asp:Parameter Name="id" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+            </ContentTemplate>
         </ajaxToolkit:TabPanel>
         <ajaxToolkit:TabPanel ID="TabPanel43" runat="server" HeaderText="TabPanel4">
             <HeaderTemplate>
                 Kullanıcı Ekle
             </HeaderTemplate>
             <ContentTemplate>
-                <table>
+                <table style="width:100%">
                     <tr>
                         <td colspan="2">
                             <h3>KULLANICI İŞLEMLERİ </h3>
@@ -565,7 +594,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
             <ContentTemplate>
                 NEVİ İŞLEMLERİ
                 <br />
-                <table>
+                <table style="width:100%">
                     <tr>
                         <td style="vertical-align: top">Nevi:<asp:TextBox ID="txt_nevi" runat="server" class="form-control"></asp:TextBox>
                             &nbsp;Açıklama:<asp:TextBox ID="txt_sifre" runat="server" class="form-control"></asp:TextBox>
@@ -607,7 +636,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
             <ContentTemplate>
                 İŞLEM TANIMLAMA
                 <br />
-                <table>
+                <table style="width:100%">
                     <tr>
                         <td style="vertical-align: top">İşlem:<asp:TextBox ID="txt_islem" runat="server" class="form-control"></asp:TextBox>
                             <asp:Button ID="Button5" runat="server" CssClass="btn btn-primary btn-smy" OnClick="Button5_Click" Text="Kaydet" />
@@ -642,11 +671,67 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
             <HeaderTemplate>
                 Cihaz Ekleme
             </HeaderTemplate>
+            <ContentTemplate>
+                <table class="w-100">
+                    <tr>
+                        <td>Özellik:<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                            <asp:Button ID="Button7" runat="server" Text="Kaydet" OnClick="Button7_Click" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:GridView ID="GridView6" class="table table-striped" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource11">
+                                <Columns>
+                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                                    <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                                    <asp:BoundField DataField="tbl_ozl" HeaderText="tbl_ozl" SortExpression="tbl_ozl" />
+                                </Columns>
+                            </asp:GridView>
+                        </td>
+                    </tr>
+                </table>
+                <asp:SqlDataSource ID="SqlDataSource11" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_cozl] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_cozl] ([tbl_ozl]) VALUES ( ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_cozl]" UpdateCommand="UPDATE [tbl_cozl] SET [tbl_ozl] = ? WHERE [id] = ?">
+                    <DeleteParameters>
+                        <asp:Parameter Name="id" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:ControlParameter ControlID="TextBox2" Name="tbl_ozl" PropertyName="Text" Type="String" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="tbl_ozl" Type="String" />
+                        <asp:Parameter Name="id" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+            </ContentTemplate>
         </ajaxToolkit:TabPanel>
         <ajaxToolkit:TabPanel ID="TabPanel8" runat="server" HeaderText="TabPanel8">
             <HeaderTemplate>
                 Cihaz Marka Ekle
             </HeaderTemplate>
+            <ContentTemplate>
+                Marka:<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                <asp:Button ID="Button8" runat="server" Text="Kaydet" OnClick="Button8_Click" />
+                <br />
+                <asp:GridView ID="GridView8" class="table table-striped" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource13">
+                    <Columns>
+                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                        <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                        <asp:BoundField DataField="tbl_cmrk" HeaderText="tbl_cmrk" SortExpression="tbl_cmrk" />
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource13" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_mrk] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_mrk] ( [tbl_cmrk]) VALUES ( ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_mrk]" UpdateCommand="UPDATE [tbl_mrk] SET [tbl_cmrk] = ? WHERE [id] = ?">
+                    <DeleteParameters>
+                        <asp:Parameter Name="id" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:ControlParameter ControlID="TextBox3" Name="tbl_cmrk" PropertyName="Text" Type="String" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="tbl_cmrk" Type="String" />
+                        <asp:Parameter Name="id" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+            </ContentTemplate>
         </ajaxToolkit:TabPanel>
 
     </ajaxToolkit:TabContainer>

@@ -11,10 +11,14 @@
     
     <style type="text/css">
         .auto-style1 {
-            font-size: x-large;
+            height: 24px;
         }
         .auto-style2 {
-            font-size: xx-large;
+            height: 78px;
+        }
+        .auto-style3 {
+            height: 49px;
+            text-align: center;
         }
     </style>
     
@@ -23,14 +27,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
-        <asp:DataList ID="DataList1" runat="server" DataKeyField="id" CellPadding="4" Width="100%" >
+        <asp:DataList ID="DataList1" runat="server" DataKeyField="id" CellPadding="4"  >
          
             <ItemTemplate>
-               <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; width:100%" >
+               <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; " >
                     <tr>
-                        <td  colspan="3" style="text-align: center; " class="auto-style2"><strong style="border-color: #000000; border-collapse: collapse">ARÝZA / TALEP BÝLDÝRÝM FORMU</strong></td>
+                        <td  colspan="3" style="text-align: center; " class="auto-style2"><strong style="border-color: #000000; border-collapse: collapse">ARÝZA / TALEP BÝLDÝRÝM FORMU<br />
+                            <br />
+                            </strong></td>
                     </tr>
                     <tr>
                         <td style="border-color: #000000; border-collapse: collapse">Arýza Takip No</td>
@@ -44,7 +48,7 @@
                     </tr>
                     <tr>
                         <td style="border-color: #000000; border-collapse: collapse">Kullanýcýnýn Adý Soyadý</td>
-                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">:<asp:Label ID="lbladsoyad" runat="server"></asp:Label>
+                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">:<asp:Label ID="lbladsoyad" runat="server" Text='<%# Eval("chz_tadsoyad") %>'></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -53,7 +57,7 @@
                     </tr>
                     <tr>
                         <td style="border-color: #000000; border-collapse: collapse">Kullanýcýnýn Sicili</td>
-                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">:<asp:Label ID="lblsicil" runat="server"></asp:Label>
+                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">:<asp:Label ID="lblsicil" runat="server" Text='<%# Eval("chz_tscl") %>'></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -65,10 +69,10 @@
                         <td colspan="2" style="border-color: #000000; border-collapse: collapse">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td style="border-color: #000000; border-collapse: collapse">Arýza Talep Nevi</td>
-                        <td style="border-color: #000000; border-collapse: collapse">:<strong><asp:Label ID="chz_ozlLabel" runat="server" Text='<%# Eval("chz_ozl") %>' />
+                        <td style="border-color: #000000; border-collapse: collapse; vertical-align: top;" class="auto-style5">Arýza Talep Nevi</td>
+                        <td style="border-color: #000000; border-collapse: collapse" class="auto-style5">:<strong style="vertical-align: top"><asp:Label ID="chz_ozlLabel" runat="server" Text='<%# Eval("chz_ozl") %>' />
                             </strong></td>
-                        <td style="border-color: #000000; border-collapse: collapse"><strong>
+                        <td style="border-color: #000000; border-collapse: collapse" class="auto-style5"><strong style="vertical-align: text-top">
                             <asp:Label ID="chz_mrkLabel" runat="server" Text='<%# Eval("chz_mrk") %>' />
                             </strong></td>
                     </tr>
@@ -84,8 +88,8 @@
                             </strong></td>
                     </tr>
                     <tr>
-                        <td style="border-color: #000000; border-collapse: collapse">Arýza / Talep Ýle Ýlgili Kullanýcý Þikayeti:</td>
-                        <td colspan="2" style="border-color: #000000; border-collapse: collapse">
+                        <td style="border-color: #000000; border-collapse: collapse; vertical-align: top;" class="auto-style4">Arýza / Talep Ýle Ýlgili Kullanýcý Þikayeti:</td>
+                        <td colspan="2" style="border-color: #000000; border-collapse: collapse; vertical-align: top;" class="auto-style4">
                             <asp:Label ID="chz_ackLabel" runat="server" Text='<%# Eval("chz_ack") %>' />
                         </td>
                     </tr>
@@ -102,10 +106,20 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="3" style="border-color: #000000; border-collapse: collapse">&nbsp;</td>
+                         
+
+                        <td style="border-color: #FFFFFF; border-collapse: collapse">&nbsp;</td>
+                        <td style="border-color: #FFFFFF; border-collapse: collapse">&nbsp;</td>
+                        <td style="border-color: #FFFFFF; text-align: center;"text-align: center; " border-collapse: collapse">
+                            <br />
+                            <br />
+                            <asp:Panel ID="Panel2" runat="server" CssClass="auto-style13" Font-Size="X-Small" ForeColor="Silver">
+                                Ýmza<br /> BirimAmiriAdSoyad<br /> Ünvaný<br /> Rütbesi
+                            </asp:Panel>
+                        </td>
                     </tr>
                     <tr>
-                        <td colspan="3" style="border-color: #000000; border-collapse: collapse">Bilgi Teknolojileri ve Haberleþme Þube Müdürlüðünce Yapýlan Ýþlem</td>
+                        <td colspan="3" style="border-color: #000000; border-collapse: collapse" class="auto-style3"><strong>Bilgi Teknolojileri ve Haberleþme Þube Müdürlüðünce Yapýlan Ýþlem</strong></td>
                     </tr>
                     <tr>
                         <td style="border-color: #000000; border-collapse: collapse">Yapýlan Ýþlem:<strong><asp:Label ID="chz_yiLabel" runat="server" Text='<%# Eval("chz_yi") %>' />
@@ -116,9 +130,29 @@
                             </strong></td>
                     </tr>
                     <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td class="auto-style12"></td>
+                        <td class="auto-style12"></td>
+                        <td class="auto-style12">
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <asp:Panel ID="Panel1" runat="server" Font-Size="XX-Small">
+                                UYARILAR:
+                                <br />
+                                *Arýza/Talep formsuz hiçbir cihaza bakým yapýlmayacaktýr. Bu form sistem üzerinden boþ olarak çýkartýlýp eksiksiz doldurulacaktýr.
+                                <br />
+                                *Bakým ve onarým için gelen cihazlarda gerekli bilgi ve belge yedeklerini þubeler kendi bünyesinde almalýdýr. Aksi takdirde meydana gelebilecek bilgi ve belge kayýplarýndan þubemiz sorumlu deðildir. *Herhangi bir sorunda Pol-Net sistemi yüklü bilgisayarlara hiçbir þekilde kullanýcý tarafýndan müdahale edilmeyecektir.
+                                <br />
+                                *Pol-Net sistemi yüklü bilgisayarlarda harici FLASH BELLEK VS. kullanýlmasý yasaktýr.
+                                <br />
+                                *Pol-Net sitemi yüklü bilgisayarlara ASLA ÝNTERNET KABLOSU TAKILMAYACAKTIR.
+                                <br />
+                                *Virüs bulaþmasý ihtimali veya internet kablosu, flash bellek vs. takýlmasý sonucu Pol-Net sistemine virüs bulaþmasý halinde derhal Pol-Net kablosu çekilerek Bilgi Ýþlem Þube Müdürlüðü ile irtibata geçilmelidir.
+                            </asp:Panel>
+                                              
+                        </td>
                     </tr>
                 </table>
             </ItemTemplate>

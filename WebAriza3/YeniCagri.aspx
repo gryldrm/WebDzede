@@ -209,7 +209,7 @@
                                             -SSD-Seri No:<asp:TextBox required="" runat="server" ID="txt_ssds" class="form-control" placeholder=""></asp:TextBox>--%>
 
                                         </td>
-                                        <td  style="vertical-align: top" >Geldiği Tarih:<asp:TextBox required="" runat="server" TextMode="Date" ID="dt_cgtar" class="form-control" placeholder=""></asp:TextBox>
+                                        <td  style="vertical-align: top" >Tarih:<asp:TextBox required="" runat="server" TextMode="Date" ID="dt_cgtar" class="form-control" placeholder=""></asp:TextBox>
 
                                             <br />
                                             Arıza Açıklama:<asp:TextBox required="" runat="server" TextMode="MultiLine" Height="84px" ID="txt_cariza" class="form-control" placeholder=""></asp:TextBox>

@@ -28,6 +28,14 @@ namespace WebAriza3
                     dd_drm1.Items.Insert(0, new ListItem("Seçin", String.Empty));
                     dd_drm1.SelectedIndex = 0;
 
+                    //
+                    //
+
+                    dd_cidrm.Items.Insert(0, new ListItem("Seçin", String.Empty));
+                    dd_cidrm.SelectedIndex = 0;
+
+                    dd_cidrm0.Items.Insert(0, new ListItem("Seçin", String.Empty));
+                    dd_cidrm0.SelectedIndex = 0;
 
                     datayukle();
                 }
@@ -66,7 +74,7 @@ namespace WebAriza3
         {
             pnlupdate.Visible = true;
             pnlarama.Visible = false;
-           // pnl_kullanici.Visible = false;
+            // pnl_kullanici.Visible = false;
 
             int secili;
             secili = GridView1.SelectedIndex;
@@ -90,8 +98,8 @@ namespace WebAriza3
                 {
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Kayıt başarılı..");
-                     
-                   // GridView1.DataBind();   
+
+                    // GridView1.DataBind();   
                     datayukle();
                 }
                 catch (OleDbException ex)
@@ -239,13 +247,12 @@ namespace WebAriza3
                 {
                     SqlDataSource3.Insert();
                     txt_scl.Text = "";
-                     
+
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                               "toastr.error('Kullanıcı rol seçmelisiniz.', ' ')", true);
-                    
+                     
+
                 }
             }
 
@@ -268,7 +275,7 @@ namespace WebAriza3
             {
                 ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
                                     "toastr.error('Aynı sicile ait kullanıcı bulunmakta...', ' ')", true);
-                
+
                 txt_scl.Text = "";
             }
         }
@@ -276,18 +283,9 @@ namespace WebAriza3
         protected void Button4_Click(object sender, EventArgs e)
         {
 
-            try
-            {
+           
                 SqlDataSource4.Insert();
-                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                    "toastr.success('Kayıt Başarılı...', ' ')", true);
-            }
-            catch (Exception)
-            {
-
-                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                   "toastr.error('Aynı sicile ait kullanıcı bulunmakta...', ' ')", true);
-            }
+              
         }
 
         protected void LinkButton5_Click(object sender, EventArgs e)
@@ -310,18 +308,9 @@ namespace WebAriza3
 
         protected void Button5_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 SqlDataSource5.Insert();
-                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                    "toastr.success('Kayıt Başarılı...', ' ')", true);
-            }
-            catch (Exception)
-            {
-
-                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                   "toastr.error('Aynı sicile ait kullanıcı bulunmakta...', ' ')", true);
-            }
+               
         }
 
         protected void btn_ckayit_Click(object sender, EventArgs e)
@@ -334,7 +323,7 @@ namespace WebAriza3
                 SqlDataSource6.Insert();
                 lbl_ckmsj.Text = "Kayıt Başarılı...";
 
-                 
+
             }
             catch (Exception)
             {
@@ -342,12 +331,12 @@ namespace WebAriza3
                 lbl_ckmsj.Text = "Kayıt sırasında hata oluştu...";
             }
 
-      
+
         }
 
         protected void GridView5_SelectedIndexChanged(object sender, EventArgs e)
         {
-             
+
             pnl_ciislem.Visible = true;
             pnl_ciara.Visible = false;
             int secili;
@@ -357,24 +346,46 @@ namespace WebAriza3
             lbl_cidd.Text = row.Cells[1].Text;
             DataTable dt = dataClass.get_tbl(" SELECT id, chz_sn, chz_ad, chz_ip, chz_ozl, chz_mrk, chz_hdd, chz_shdd,  chz_ssd,chz_sssd, chz_ram, chz_ek, chz_gy, chz_gtar, chz_ack, chz_yi, chz_itar, chz_drm, chz_cbrm, chz_ctar, chz_iper, chz_ibtar, chz_ebys FROM tbl_chz WHERE (id = " + row.Cells[1].Text.ToString() + ") ORDER BY id DESC ");
 
-            lbl_ciserin.Text = row.Cells[2].Text;
-            txt_ciad.Text = row.Cells[3].Text;
-            txt_ciipno.Text = row.Cells[4].Text;
-            lbl_ciozllk.Text = row.Cells[5].Text;
+            lbl_ciserin.Text = dt.Rows[0][1].ToString();
+            txt_ciad.Text = dt.Rows[0][2].ToString();
+
+            txt_ciipno.Text = dt.Rows[0][3].ToString();
+
+            lbl_ciozllk.Text = dt.Rows[0][4].ToString();
             lbl_cimrk.Text = dt.Rows[0][5].ToString();
-            dd_cihdd.Text = dt.Rows[0][6].ToString();
-            txthdds.Text= dt.Rows[0][7].ToString(); 
-            dd_cissd.Text = dt.Rows[0][8].ToString();
-            txtssds.Text = dt.Rows[0][9].ToString();    
-            dd_ciram.Text = dt.Rows[0][10].ToString();
-            dd_ciekart.Text = dt.Rows[0][11].ToString();
+
+            if (dt.Rows[0][6].ToString() != "")
+            {
+                dd_cihdd.Text = dt.Rows[0][6].ToString();
+            }
+
+            txthdds.Text = dt.Rows[0][7].ToString();
+            if (dt.Rows[0][8].ToString() != "")
+            {
+                dd_cissd.Text = dt.Rows[0][8].ToString();
+            }
+            txtssds.Text = dt.Rows[0][9].ToString();
+
+            if (dt.Rows[0][10].ToString() != "")
+            {
+                dd_ciram.Text = dt.Rows[0][10].ToString();
+            }
+
+
+            if (dt.Rows[0][11].ToString() != "")
+            {
+                dd_ciekart.Text = dt.Rows[0][11].ToString();
+            }
+
+
+
             lbl_cigyer.Text = dt.Rows[0][12].ToString();
-            lbl_cigtar.Text = row.Cells[14].Text;
-            txt_ciack.Text = row.Cells[15].Text;
+            lbl_cigtar.Text = dt.Rows[0][13].ToString();
+            txt_ciack.Text = dt.Rows[0][14].ToString();
 
             txt_ciyis.Text = dt.Rows[0][16].ToString();
 
-            txt_ciyistar.Text = row.Cells[16].Text;
+            txt_ciyistar.Text = dt.Rows[0][15].ToString();
 
             if (dt.Rows[0][17].ToString() != "")
             {
@@ -394,24 +405,66 @@ namespace WebAriza3
                 {
                     if (dd_cidrm.SelectedItem.Text != "Seçiniz")
                     {
-                        string sorgu = " UPDATE tbl_chz SET chz_ad = '" + txt_ciad.Text
-                                       + "', chz_ip = '" + txt_ciipno.Text
-                                       + "', chz_hdd = '" + dd_cihdd.SelectedItem.Text
-                                        + "', chz_shdd = '" + txthdds.Text
-                                       + "', chz_ssd = '" + dd_cissd.SelectedItem.Text
-                                        + "', chz_sssd = '" + txtssds.Text
-                                       + "', chz_ram = '" + dd_ciram.SelectedItem.Text
-                                       + "', chz_ek = '" + dd_ciekart.SelectedItem.Text
-                                       + "', chz_yi = '" + txt_ciyis.Text
+                        string sb = "UPDATE tbl_chz SET chz_ad = '" + txt_ciad.Text+"'";
+
+                        if (txt_ciipno.Text !="")
+                        {
+                            sb += ", chz_ip = '" + txt_ciipno.Text+"'";
+                        }
+
+                        if (dd_cihdd.SelectedItem.Text !="Seçiniz")
+                        {
+                            sb += ", chz_hdd = '" + dd_cihdd.SelectedItem.Text+"', chz_shdd = '" + txthdds.Text+"'";
+
+                        }
+
+                        if (dd_cissd.SelectedItem.Text != "Seçiniz")
+                        {
+                            sb += ", chz_ssd = '" + dd_cissd.SelectedItem.Text+"', chz_sssd = '" + txtssds.Text+"'";
+                        }
+
+                        if (dd_ciram.SelectedItem.Text != "Seçiniz")
+                        {
+                            sb += ", chz_ram = '" + dd_ciram.SelectedItem.Text+"'";
+                        }
+
+                        if (dd_ciekart.SelectedItem.Text !="Seçiniz")
+                        {
+                            sb += ", chz_ek = '" + dd_ciekart.SelectedItem.Text+"'";
+                        }
+                        
+
+
+                         sb += ", chz_yi = '" + txt_ciyis.Text 
                                        + "', chz_itar = #" + txt_ciyistar.Text
                                        + "#, chz_drm = '" + dd_cidrm.Text
                                        + "', chz_iper = '" + Session["k_sicil"].ToString()
                                        + "' WHERE (tbl_chz.id = " + lbl_cidd.Text + ") ";
 
+                        //string sorgu = " UPDATE tbl_chz SET chz_ad = '" + txt_ciad.Text
+
+
+                        //              + "', chz_ip = '" + txt_ciipno.Text
+
+                        //              + "', chz_hdd = '" + dd_cihdd.SelectedItem.Text
+                        //              + "', chz_shdd = '" + txthdds.Text
+                        //              + "', chz_ssd = '" + dd_cissd.SelectedItem.Text
+                        //              + "', chz_sssd = '" + txtssds.Text
+                        //              + "', chz_ram = '" + dd_ciram.SelectedItem.Text
+                        //              + "', chz_ek = '" + dd_ciekart.SelectedItem.Text
+
+                        //              + "', chz_yi = '" + txt_ciyis.Text
+                        //              + "', chz_itar = #" + txt_ciyistar.Text
+                        //              + "#, chz_drm = '" + dd_cidrm.Text
+                        //              + "', chz_iper = '" + Session["k_sicil"].ToString()
+                        //              + "' WHERE (tbl_chz.id = " + lbl_cidd.Text + ") ";
+
                         OleDbConnection con = db_baglanti();
                         OleDbCommand cmd;
 
-                        cmd = new OleDbCommand(sorgu.ToString(), con);
+
+
+                        cmd = new OleDbCommand(sb.ToString(), con);
 
                         con.Open();
 
@@ -425,9 +478,8 @@ namespace WebAriza3
                             }
                             catch (OleDbException ex)
                             {
-                                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                               "toastr.error('Kayıt sırasında hata oluştu...', ' ')", true);
-                              
+                                MessageBox.Show(ex.ToString());
+
                             }
                         }
                         else
@@ -436,19 +488,22 @@ namespace WebAriza3
                         }
                         con.Close();
                     }
+                    else
+                    {
+                        lbl_imsj0.Text = "Cihaz durumu seçiniz.";
+                    }
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                               "toastr.error('İşlem tarihi seçiniz.', ' ')", true);
-                  
+                    lbl_imsj0.Text = "Yapılan işlem tarihini giriniz.";
+
                 }
             }
             else
             {
                 lbl_imsj0.Text = "Yapılan işlemleri detaylı yazınız.";
             }
-
+            GridView5.DataBind();
         }
 
         protected void LinkButton8_Click(object sender, EventArgs e)
@@ -559,12 +614,27 @@ namespace WebAriza3
                 }
             }
 
+            //txtctkpno
+            if (txtctkpno.Text != "")
+
+            {
+                if (sorgu.ToString() == "")
+                {
+                    sorgu += " WHERE (id = " + txtctkpno.Text.ToString() + ") ";
+                }
+                else
+                {
+                    sorgu += " AND  (id = " + txtctkpno.Text.ToString() + ") ";
+                }
+
+            }
+
             srg_select += sorgu.ToString() + " ORDER BY id DESC";
             DataTable dt = dataClass.get_tbl(srg_select.ToString());
 
             GridView5.DataSource = dt;
             GridView5.DataBind();
-     
+
         }
         protected void LinkButton7_Click(object sender, EventArgs e)
         {
@@ -576,7 +646,7 @@ namespace WebAriza3
 
         protected void dd_cozllk_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dd_cozllk.SelectedItem.ToString() =="Yazıcı")
+            if (dd_cozllk.SelectedItem.ToString() == "Yazıcı")
             {
                 dd_chdd.Enabled = false;
                 txt_chdds.Enabled = false;
@@ -595,10 +665,25 @@ namespace WebAriza3
 
                 dd_ram.Enabled = true;
                 dd_ekart.Enabled = true;
-            } 
-          
-          
+            }
 
+
+
+        }
+
+        protected void Button9_Click(object sender, EventArgs e)
+        {
+            SqlDataSource12.Insert();
+        }
+
+        protected void Button7_Click(object sender, EventArgs e)
+        {
+            SqlDataSource11.Insert();
+        }
+
+        protected void Button8_Click(object sender, EventArgs e)
+        {
+            SqlDataSource13.Insert();
         }
     }
 }
