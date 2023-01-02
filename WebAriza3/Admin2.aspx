@@ -348,7 +348,11 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                         Geldiği Tarih:<h2><asp:Label ID="lbl_cigtar" runat="server"></asp:Label></h2>
                                                         <br />
                                                         <br />
-                                                        Cihaz Seri No:<h2><asp:Label ID="lbl_ciserin" runat="server"></asp:Label></h2>
+                                                        Cihaz Seri No:<br />
+                                                        <asp:TextBox class="form-control" ID="txt_ciserin" runat="server"></asp:TextBox>
+                                                        <h2>&nbsp;</h2>
+                                                        <p>
+                                                            &nbsp;</p>
                                                         <br />
                                                         <br />
                                                         Özellikleri:<h2><asp:Label ID="lbl_ciozllk" runat="server"></asp:Label></h2>

@@ -13,7 +13,7 @@
                         Şifre Talepleri
                     </HeaderTemplate>
                     <ContentTemplate>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT TOP 10 id AS [Takip No], birim AS Birim, sicil AS Sicil, adisoyadi AS [Ad Soyad], nevi AS Nevi, ariza AS [Arıza Açıklama], tlptar AS [Talep Tarihi], isl_aciklama AS [Yapılan İşlem], durumu AS [Arıza Durumu], isl_bitis AS [Tamamlanma Tarihi] FROM tbl_ariza WHERE (sicil = ?) ORDER BY id DESC">
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT TOP 10 id AS [Takip No], birim AS Birim, sicil AS Sicil, adisoyadi AS [Ad Soyad], nevi AS Nevi, ariza AS [Arıza Açıklama], tlptar AS [Talep Tarihi], isl_aciklama AS [Yapılan İşlem], durumu AS [Arıza Durumu],format(isl_bitis, 'dd.mm.yyyy')  AS [Tamamlanma Tarihi] FROM tbl_ariza WHERE (sicil = ?) ORDER BY id DESC">
                             <SelectParameters>
                                 <asp:SessionParameter Name="?" SessionField="k_sicil" />
                             </SelectParameters>
@@ -47,7 +47,7 @@
                         Cihaz Arıza Talepleri
                     </HeaderTemplate>
                     <ContentTemplate>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT id, chz_sn AS [Seri No], chz_ad AS [Cihazın Adı], chz_ip AS [İp No], chz_ozl AS Özellik, chz_mrk AS Marka, chz_gtar AS [Geldiği Tarih], chz_ack AS Açıklama, chz_yi AS [Yapılan İşlem], chz_itar AS [İşlem Tarihi], chz_drm AS Durumu, chz_ebys AS EBYS FROM tbl_chz WHERE (chz_tscl = ?) ORDER BY id DESC">
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT id, chz_sn AS [Seri No], chz_ad AS [Cihazın Adı], chz_ip AS [İp No], chz_ozl AS Özellik, chz_mrk AS Marka,format(chz_gtar, 'dd.mm.yyyy')   AS [Geldiği Tarih], chz_ack AS Açıklama, chz_yi AS [Yapılan İşlem],format(chz_itar, 'dd.mm.yyyy')   AS [İşlem Tarihi], chz_drm AS Durumu, chz_ebys AS EBYS FROM tbl_chz WHERE (chz_tscl = ?) ORDER BY id DESC">
                             <SelectParameters>
                                 <asp:SessionParameter Name="?" SessionField="k_sicil" />
                             </SelectParameters>

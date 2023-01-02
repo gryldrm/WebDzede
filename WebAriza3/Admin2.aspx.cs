@@ -40,6 +40,8 @@ namespace WebAriza3
                     
 
                     datayukle();
+
+                    LinkButton7_Click(null,null);
                 }
                 else
                 {
@@ -51,18 +53,12 @@ namespace WebAriza3
         OleDbConnection baglanti;
         private void datayukle()
         {
-
-            baglanti = db_baglanti();
-            OleDbDataAdapter adaptor;
-            DataTable dt = new DataTable();
-
-            adaptor = new OleDbDataAdapter("SELECT top 20 id as ID, birim AS Birim, adisoyadi AS [Adı Soyadı], sicil AS Sicil, nevi AS Nevi, ariza AS Açıklama, ebys AS [EBYS No], tlptar AS [Talep Tarihi], durumu AS Durumu, isl_alanper AS [İşlem Yapan], isl_aciklama AS [Yapılan İşlem], isl_bitis AS [İşlem Bitiş] FROM tbl_ariza order by id desc", baglanti);
-
-            adaptor.Fill(dt);
-
+             
+            DataTable dt = dataClass.get_tbl("SELECT top 20 id as ID, birim AS Birim, adisoyadi AS [Adı Soyadı], sicil AS Sicil, nevi AS Nevi, ariza AS Açıklama, ebys AS [EBYS No], tlptar AS [Talep Tarihi], durumu AS Durumu, isl_alanper AS [İşlem Yapan], isl_aciklama AS [Yapılan İşlem], isl_bitis AS [İşlem Bitiş] FROM tbl_ariza order by id desc");
+                        
             GridView1.DataSource = dt;
             GridView1.DataBind();
-            baglanti.Close();
+            
 
         }
 
@@ -348,7 +344,7 @@ namespace WebAriza3
             lbl_cidd.Text = row.Cells[1].Text;
             DataTable dt = dataClass.get_tbl(" SELECT id, chz_sn, chz_ad, chz_ip, chz_ozl, chz_mrk, chz_hdd, chz_shdd,  chz_ssd,chz_sssd, chz_ram, chz_ek, chz_gy, chz_gtar, chz_ack, chz_yi, chz_itar, chz_drm, chz_cbrm, chz_ctar, chz_iper, chz_ibtar, chz_ebys FROM tbl_chz WHERE (id = " + row.Cells[1].Text.ToString() + ") ORDER BY id DESC ");
 
-            lbl_ciserin.Text = dt.Rows[0][1].ToString();
+            txt_ciserin.Text = dt.Rows[0][1].ToString();
             txt_ciad.Text = dt.Rows[0][2].ToString();
 
             txt_ciipno.Text = dt.Rows[0][3].ToString();
@@ -448,29 +444,14 @@ namespace WebAriza3
 
 
 
-                        sb += ", chz_yi = '" + txt_ciyis.Text
-                                      + "', chz_itar = #" + txt_ciyistar.Text
+                        sb += ", chz_yi = '" + txt_ciyis.Text 
+                            + "',chz_sn='"+ txt_ciserin.Text
+                            + "', chz_itar = #" + txt_ciyistar.Text
                                       + "#, chz_drm = '" + dd_cidrm.Text
                                       + "', chz_iper = '" + Session["k_sicil"].ToString()
                                       + "' WHERE (tbl_chz.id = " + lbl_cidd.Text + ") ";
 
-                        //string sorgu = " UPDATE tbl_chz SET chz_ad = '" + txt_ciad.Text
-
-
-                        //              + "', chz_ip = '" + txt_ciipno.Text
-
-                        //              + "', chz_hdd = '" + dd_cihdd.SelectedItem.Text
-                        //              + "', chz_shdd = '" + txthdds.Text
-                        //              + "', chz_ssd = '" + dd_cissd.SelectedItem.Text
-                        //              + "', chz_sssd = '" + txtssds.Text
-                        //              + "', chz_ram = '" + dd_ciram.SelectedItem.Text
-                        //              + "', chz_ek = '" + dd_ciekart.SelectedItem.Text
-
-                        //              + "', chz_yi = '" + txt_ciyis.Text
-                        //              + "', chz_itar = #" + txt_ciyistar.Text
-                        //              + "#, chz_drm = '" + dd_cidrm.Text
-                        //              + "', chz_iper = '" + Session["k_sicil"].ToString()
-                        //              + "' WHERE (tbl_chz.id = " + lbl_cidd.Text + ") ";
+                       
 
                         OleDbConnection con = db_baglanti();
                         OleDbCommand cmd;
@@ -491,13 +472,13 @@ namespace WebAriza3
                             }
                             catch (OleDbException ex)
                             {
-                                MessageBox.Show(ex.ToString());
+                                lbl_imsj0.Text = "Kayıt sırasında hata oluştu...";
 
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Connection Failed");
+                            lbl_imsj0.Text = "Bağlantı hatası...";
                         }
                         con.Close();
                     }

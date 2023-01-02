@@ -582,13 +582,13 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.Label lbl_cigtar;
 
         /// <summary>
-        /// lbl_ciserin control.
+        /// txt_ciserin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_ciserin;
+        protected global::System.Web.UI.WebControls.TextBox txt_ciserin;
 
         /// <summary>
         /// lbl_ciozllk control.
