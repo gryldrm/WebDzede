@@ -41,7 +41,7 @@ namespace WebAriza3
 
                     datayukle();
 
-                    LinkButton7_Click(null,null);
+                   LinkButton7_Click(null,null);
                 }
                 else
                 {
@@ -403,6 +403,9 @@ namespace WebAriza3
             txt_ciyistar.Text =dt.Rows[0][16].ToString();
             txt_ciebys0.Text = dt.Rows[0][22].ToString();
 
+            //DataTable dts = dataClass.get_tbl("SELECT   id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_shdd AS [Hdd Seri], chz_ssd AS SSD, chz_sssd AS [Ssd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu FROM tbl_chz   WHERE (chz_sn = '"+ txt_ciserin.Text + "') ORDER BY id DESC");
+            //GridView5.DataSource= dts;  
+            //GridView5.DataBind();
         }
 
         protected void btn_cikyt_Click(object sender, EventArgs e)
@@ -444,12 +447,12 @@ namespace WebAriza3
 
 
 
-                        sb += ", chz_yi = '" + txt_ciyis.Text 
-                            + "',chz_sn='"+ txt_ciserin.Text
+                        sb += ", chz_yi = '"    + txt_ciyis.Text 
+                            + "',chz_sn='"      + txt_ciserin.Text
                             + "', chz_itar = #" + txt_ciyistar.Text
-                                      + "#, chz_drm = '" + dd_cidrm.Text
-                                      + "', chz_iper = '" + Session["k_sicil"].ToString()
-                                      + "' WHERE (tbl_chz.id = " + lbl_cidd.Text + ") ";
+                            + "#, chz_drm = '"  + dd_cidrm.Text
+                            + "', chz_iper = '" + Session["k_sicil"].ToString()
+                            + "' WHERE (tbl_chz.id = " + lbl_cidd.Text + ") ";
 
                        
 
@@ -497,7 +500,7 @@ namespace WebAriza3
             {
                 lbl_imsj0.Text = "Yapılan işlemleri detaylı yazınız.";
             }
-            GridView5.DataBind();
+            //GridView5.DataBind();
         }
 
         protected void LinkButton8_Click(object sender, EventArgs e)
@@ -632,8 +635,8 @@ namespace WebAriza3
         }
         protected void LinkButton7_Click(object sender, EventArgs e)
         {
-            //
-            DataTable dt = dataClass.get_tbl(" SELECT id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_shdd AS [Hdd Seri], chz_ssd AS SSD, chz_sssd AS [Ssd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu  FROM tbl_chz WHERE (chz_drm = 'İşlem Bekliyor') OR (chz_drm IS NULL) order by id desc");
+            //WHERE (chz_drm = 'İşlem Bekliyor') OR (chz_drm IS NULL)
+            DataTable dt = dataClass.get_tbl(" SELECT id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_islemci as [İşlemci], chz_hdd AS HDD, chz_shdd AS [Hdd Seri], chz_ssd AS SSD, chz_sssd AS [Ssd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu  FROM tbl_chz  order by id desc");
             GridView5.DataSource = dt;
             GridView5.DataBind();
         }

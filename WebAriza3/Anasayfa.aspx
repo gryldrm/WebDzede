@@ -47,14 +47,14 @@
                         Cihaz Arıza Talepleri
                     </HeaderTemplate>
                     <ContentTemplate>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT id, chz_sn AS [Seri No], chz_ad AS [Cihazın Adı], chz_ip AS [İp No], chz_ozl AS Özellik, chz_mrk AS Marka,format(chz_gtar, 'dd.mm.yyyy')   AS [Geldiği Tarih], chz_ack AS Açıklama, chz_yi AS [Yapılan İşlem],format(chz_itar, 'dd.mm.yyyy')   AS [İşlem Tarihi], chz_drm AS Durumu, chz_ebys AS EBYS FROM tbl_chz WHERE (chz_tscl = ?) ORDER BY id DESC">
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT id as [Takip No], chz_sn AS [Seri No], chz_ad AS [Cihazın Adı], chz_ip AS [İp No], chz_ozl AS Özellik, chz_mrk AS Marka,format(chz_gtar, 'dd.mm.yyyy')   AS [Geldiği Tarih], chz_ack AS Açıklama, chz_yi AS [Yapılan İşlem],format(chz_itar, 'dd.mm.yyyy')   AS [İşlem Tarihi], chz_drm AS Durumu, chz_ebys AS EBYS FROM tbl_chz WHERE (chz_tscl = ?) ORDER BY id DESC">
                             <SelectParameters>
                                 <asp:SessionParameter Name="?" SessionField="k_sicil" />
                             </SelectParameters>
                         </asp:SqlDataSource>
-                        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="id" DataSourceID="SqlDataSource2" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" Width="100%" AllowPaging="True" AllowSorting="True">
+                        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" class="table table-striped" DataKeyNames="Takip No" DataSourceID="SqlDataSource2" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" Width="100%" AllowPaging="True" AllowSorting="True">
                             <Columns>
-                                <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                                <asp:BoundField DataField="Takip No" HeaderText="Takip No" InsertVisible="False" ReadOnly="True" SortExpression="Takip No" />
                                 <asp:BoundField DataField="Seri No" HeaderText="Seri No" SortExpression="Seri No" />
                                 <asp:BoundField DataField="Cihazın Adı" HeaderText="Cihazın Adı" SortExpression="Cihazın Adı" />
                                 <asp:BoundField DataField="İp No" HeaderText="İp No" SortExpression="İp No" />

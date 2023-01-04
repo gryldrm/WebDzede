@@ -2,17 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  
-    <style type="text/css">
-        .auto-style1 {
-            width: 798px;
-        }
-        .auto-style2 {
-            width: 217px;
-        }
-        .auto-style3 {
-            width: 134px;
-        }
-    </style>
+    
  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -278,7 +268,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                         <br />
                                         <asp:LinkButton ID="LinkButton8" runat="server" CssClass="btn btn-secondary btn-smy" OnClick="LinkButton8_Click" Width="100%">Arama</asp:LinkButton>
                                         <br />
-                                        <asp:Panel ID="pnl_ciara" runat="server" Visible="False">
+                                        <asp:Panel ID="pnl_ciara" runat="server">
                                             <table style="width:100%">
                                                 <tr>
                                                     <td>Takip No:<br />
@@ -349,7 +339,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                         <br />
                                                         <br />
                                                         Cihaz Seri No:<br />
-                                                        <asp:TextBox class="form-control" ID="txt_ciserin" runat="server"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" ID="txt_ciserin" runat="server" Enabled="False"></asp:TextBox>
                                                         <h2>&nbsp;</h2>
                                                         <p>
                                                             &nbsp;</p>
@@ -376,6 +366,9 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                         <br />
                                                     </td>
                                                     <td  style="vertical-align: top">
+                                                        İşlemci:<br />
+                                                        <asp:TextBox ID="txt_cislemci" class="form-control" runat="server" placeholder="i5 3450"></asp:TextBox>
+                                                        <br />
                                                         HDD:<asp:DropDownList ID="dd_cihdd" runat="server" class="form-control" placeholder="">
                                                             <asp:ListItem>Seçiniz</asp:ListItem>
                                                             <asp:ListItem>200 GB</asp:ListItem>
@@ -443,6 +436,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                 <asp:BoundField DataField="Cihaz İp" HeaderText="Cihaz İp" SortExpression="Cihaz İp" />
                                                 <asp:BoundField DataField="Tip" HeaderText="Tip" SortExpression="Tip" />
                                                 <asp:BoundField DataField="Marka" HeaderText="Marka" SortExpression="Marka" />
+                                                  <asp:BoundField DataField="İşlemci" HeaderText="İşlemci" SortExpression="İşlemci" />
                                                 <asp:BoundField DataField="HDD" HeaderText="HDD" SortExpression="HDD" />
                                                 <asp:BoundField DataField="SSD" HeaderText="SSD" SortExpression="SSD" />
                                                 <asp:BoundField DataField="RAM" HeaderText="RAM" SortExpression="RAM" />

@@ -645,6 +645,15 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.TextBox txt_ciack;
 
         /// <summary>
+        /// txt_cislemci control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_cislemci;
+
+        /// <summary>
         /// dd_cihdd control.
         /// </summary>
         /// <remarks>
@@ -742,6 +751,24 @@ namespace WebAriza3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_cikyt;
+
+        /// <summary>
+        /// btn_cikyt0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_cikyt0;
+
+        /// <summary>
+        /// SqlDataSource15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource15;
 
         /// <summary>
         /// lbl_cidd control.
