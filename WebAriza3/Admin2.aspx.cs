@@ -409,9 +409,9 @@ namespace WebAriza3
             lbl_tadsad.Text = dt.Rows[0][24].ToString();
             txt_cislemci.Text = dt.Rows[0][25].ToString();
 
-            //DataTable dts = dataClass.get_tbl("SELECT   id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_shdd AS [Hdd Seri], chz_ssd AS SSD, chz_sssd AS [Ssd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu FROM tbl_chz   WHERE (chz_sn = '"+ txt_ciserin.Text + "') ORDER BY id DESC");
-            //GridView5.DataSource= dts;  
-            //GridView5.DataBind();
+            DataTable dts = dataClass.get_tbl("SELECT   id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_islemci as [İşlemci] , chz_hdd AS HDD, chz_shdd AS [Hdd Seri], chz_ssd AS SSD, chz_sssd AS [Ssd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu FROM tbl_chz   WHERE (chz_sn = '" + txt_ciserin.Text + "') ORDER BY id DESC");
+            GridView5.DataSource = dts;
+            GridView5.DataBind();
         }
 
         protected void btn_cikyt_Click(object sender, EventArgs e)
