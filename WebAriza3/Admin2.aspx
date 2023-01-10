@@ -339,7 +339,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                         <br />
                                                         <br />
                                                         Cihaz Seri No:<br />
-                                                        <asp:TextBox class="form-control" ID="txt_ciserin" runat="server" Enabled="False"></asp:TextBox>
+                                                        <asp:TextBox class="form-control" ID="txt_ciserin" runat="server"></asp:TextBox>
                                                         <h2>&nbsp;</h2>
                                                         <p>
                                                             &nbsp;</p>
@@ -413,12 +413,77 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                         <br />
                                                         İşlem Tarihi:<asp:TextBox ID="txt_ciyistar" runat="server" class="form-control" placeholder="" TextMode="Date"></asp:TextBox>
                                                         <br />
-                                                        <asp:Button ID="btn_cikyt" runat="server" OnClick="btn_cikyt_Click" Text="Kaydet" class="form-control" />
+                                                        <asp:Button ID="btn_cikyt" runat="server" OnClick="btn_cikyt_Click" Text="Güncelle" class="form-control" />
+                                                        <br />
+                                                        <asp:Button ID="btn_cikyt0" runat="server" class="form-control" OnClick="btn_cikyt0_Click" Text="Kaydet" />
+                                                        <asp:SqlDataSource ID="SqlDataSource15" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_chz] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_chz] ( [chz_sn], [chz_ad], [chz_ip], [chz_ozl], [chz_mrk], [chz_hdd], [chz_shdd], [chz_ssd], [chz_sssd], [chz_ram], [chz_ek], [chz_gy], [chz_gtar], [chz_ack], [chz_yi], [chz_itar], [chz_drm], [chz_iper], [chz_ibtar], [chz_ebys], [chz_tscl], [chz_tadsoyad], [chz_tkp], [chz_islemci]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_shdd] = ?, [chz_ssd] = ?, [chz_sssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ?, [chz_ebys] = ?, [chz_tscl] = ?, [chz_tadsoyad] = ?, [chz_tkp] = ?, [chz_islemci] = ? WHERE [id] = ?">
+                                                            <DeleteParameters>
+                                                                <asp:Parameter Name="id" Type="Int32" />
+                                                            </DeleteParameters>
+                                                            <InsertParameters>
+                                                                <asp:ControlParameter ControlID="txt_ciserin" Name="chz_sn" PropertyName="Text" Type="String" />
+                                                                <asp:ControlParameter ControlID="txt_ciad" Name="chz_ad" PropertyName="Text" Type="String" />
+                                                                <asp:ControlParameter ControlID="txt_ciipno" Name="chz_ip" PropertyName="Text" Type="String" />
+                                                                <asp:ControlParameter ControlID="lbl_ciozllk" Name="chz_ozl" PropertyName="Text" Type="String" />
+                                                                <asp:ControlParameter ControlID="lbl_cimrk" Name="chz_mrk" PropertyName="Text" Type="String" />
+                                                                <asp:ControlParameter ControlID="dd_cihdd" Name="chz_hdd" PropertyName="SelectedValue" Type="String" />
+                                                                <asp:ControlParameter ControlID="txthdds" Name="chz_shdd" PropertyName="Text" Type="String" />
+                                                                <asp:ControlParameter ControlID="dd_cissd" Name="chz_ssd" PropertyName="SelectedValue" Type="String" />
+                                                                <asp:ControlParameter ControlID="txtssds" Name="chz_sssd" PropertyName="Text" Type="String" />
+                                                                <asp:ControlParameter ControlID="dd_ciram" Name="chz_ram" PropertyName="SelectedValue" Type="String" />
+                                                                <asp:ControlParameter ControlID="dd_ciekart" Name="chz_ek" PropertyName="SelectedValue" Type="String" />
+                                                                <asp:ControlParameter ControlID="lbl_cigyer" Name="chz_gy" PropertyName="Text" Type="String" />
+                                                                <asp:ControlParameter ControlID="lbl_cigtar" Name="chz_gtar" PropertyName="Text" Type="DateTime" />
+                                                                <asp:ControlParameter ControlID="txt_ciack" Name="chz_ack" PropertyName="Text" Type="String" />
+                                                                <asp:ControlParameter ControlID="txt_ciyis" Name="chz_yi" PropertyName="Text" Type="String" />
+                                                                <asp:ControlParameter ControlID="txt_ciyistar" Name="chz_itar" PropertyName="Text" Type="DateTime" />
+                                                                <asp:ControlParameter ControlID="dd_cidrm" Name="chz_drm" PropertyName="SelectedValue" Type="String" />
+                                                                <asp:SessionParameter Name="chz_iper" SessionField="k_sicil" Type="String" />
+                                                                <asp:Parameter Name="chz_ibtar" Type="DateTime" />
+                                                                <asp:ControlParameter ControlID="txt_ciebys0" Name="chz_ebys" PropertyName="Text" Type="String" />
+                                                                <asp:ControlParameter ControlID="lbl_tsicil" Name="chz_tscl" PropertyName="Text" Type="Int32" />
+                                                                <asp:ControlParameter ControlID="lbl_tadsad" Name="chz_tadsoyad" PropertyName="Text" Type="String" />
+                                                                <asp:Parameter Name="chz_tkp" Type="Int32" />
+                                                                <asp:ControlParameter ControlID="txt_cislemci" Name="chz_islemci" PropertyName="Text" Type="String" />
+                                                            </InsertParameters>
+                                                            <UpdateParameters>
+                                                                <asp:Parameter Name="chz_sn" Type="String" />
+                                                                <asp:Parameter Name="chz_ad" Type="String" />
+                                                                <asp:Parameter Name="chz_ip" Type="String" />
+                                                                <asp:Parameter Name="chz_ozl" Type="String" />
+                                                                <asp:Parameter Name="chz_mrk" Type="String" />
+                                                                <asp:Parameter Name="chz_hdd" Type="String" />
+                                                                <asp:Parameter Name="chz_shdd" Type="String" />
+                                                                <asp:Parameter Name="chz_ssd" Type="String" />
+                                                                <asp:Parameter Name="chz_sssd" Type="String" />
+                                                                <asp:Parameter Name="chz_ram" Type="String" />
+                                                                <asp:Parameter Name="chz_ek" Type="String" />
+                                                                <asp:Parameter Name="chz_gy" Type="String" />
+                                                                <asp:Parameter Name="chz_gtar" Type="DateTime" />
+                                                                <asp:Parameter Name="chz_ack" Type="String" />
+                                                                <asp:Parameter Name="chz_yi" Type="String" />
+                                                                <asp:Parameter Name="chz_itar" Type="DateTime" />
+                                                                <asp:Parameter Name="chz_drm" Type="String" />
+                                                                <asp:Parameter Name="chz_cbrm" Type="String" />
+                                                                <asp:Parameter Name="chz_ctar" Type="DateTime" />
+                                                                <asp:Parameter Name="chz_iper" Type="String" />
+                                                                <asp:Parameter Name="chz_ibtar" Type="DateTime" />
+                                                                <asp:Parameter Name="chz_ebys" Type="String" />
+                                                                <asp:Parameter Name="chz_tscl" Type="Int32" />
+                                                                <asp:Parameter Name="chz_tadsoyad" Type="String" />
+                                                                <asp:Parameter Name="chz_tkp" Type="Int32" />
+                                                                <asp:Parameter Name="chz_islemci" Type="String" />
+                                                                <asp:Parameter Name="id" Type="Int32" />
+                                                            </UpdateParameters>
+                                                        </asp:SqlDataSource>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="4" style="vertical-align: top">
                                                         Takip No:<asp:Label ID="lbl_cidd" runat="server"></asp:Label>
+                                                        <asp:Label ID="lbl_tsicil" runat="server"></asp:Label>
+                                                        <asp:Label ID="lbl_tadsad" runat="server"></asp:Label>
+                                                        <br />
                                                         <asp:Label ID="lbl_imsj0" runat="server" ForeColor="Red"></asp:Label>
                                                     </td>
                                                 </tr>

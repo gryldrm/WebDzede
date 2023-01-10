@@ -13,10 +13,10 @@
 
 
                 <!-- Button trigger modal -->
-                <button type="button" ID="btn_kaydet2"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" id="btn_kaydet2" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Şifre Talep Çağrı
                 </button>
-              
+
                 <!-- Modal -->
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -26,6 +26,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
+                                <%--//////////////////////////////////--%>
                                 <table>
                                     <tr>
                                         <td>TALEP EDEN BİRİM ADI</td>
@@ -59,9 +60,9 @@
                                         <td>
                                             <asp:DropDownList required="" runat="server" AppendDataBoundItems="True" DataTextField="nevi" DataValueField="nevi" DataSourceID="AccessDataSource2" ID="dd_nevi" class="form-select">
                                             </asp:DropDownList>
-                                            <asp:AccessDataSource runat="server" 
-                                                DataFile="~/App_Data/aydinbth1.accdb" 
-                                                SelectCommand="SELECT * FROM [tbl_nevi]" 
+                                            <asp:AccessDataSource runat="server"
+                                                DataFile="~/App_Data/aydinbth1.accdb"
+                                                SelectCommand="SELECT * FROM [tbl_nevi]"
                                                 ID="AccessDataSource2"></asp:AccessDataSource>
                                         </td>
                                     </tr>
@@ -81,7 +82,7 @@
                                         <td>TALEP YAZISI EBYS NO</td>
                                         <td>:</td>
                                         <td>
-                                            <asp:TextBox required=""  runat="server"  ID="txt_ebys" class="form-control" ></asp:TextBox>
+                                            <asp:TextBox required="" runat="server" ID="txt_ebys" class="form-control"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr>
@@ -99,7 +100,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-                                <asp:Button  runat="server" Text="KAYDET" ID="btn_kaydet"  class="btn btn-primary" data-bs-target="#myModal" data-bs-toggle="modal" OnClick="btn_kaydet_Click"></asp:Button>
+                                <asp:Button runat="server" Text="KAYDET" ID="btn_kaydet" class="btn btn-primary" data-bs-target="#myModal" data-bs-toggle="modal" OnClick="btn_kaydet_Click"></asp:Button>
 
                             </div>
                         </div>
@@ -112,7 +113,7 @@
                 </button>
 
                 <!-- Modal -->
-                <div class="modal " id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+                <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -120,7 +121,8 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <table>
+                                <%--///////////////////--%>
+<table>
                                     <tr>
                                         <td style="vertical-align: top">Cihaz Seri No:<asp:TextBox required="" runat="server" ID="txt_cseri" class="form-control" placeholder="Seri No"></asp:TextBox>
 
@@ -130,8 +132,7 @@
                                         </td>
                                         <td style="vertical-align: top"></td>
                                         <td style="vertical-align: top"></td>
-                                        <td  style="vertical-align: top">Geldiği Yer:<asp:DropDownList required="Seçiniz" runat="server" DataTextField="birim" DataValueField="birim" DataSourceID="SqlDataSource9" ID="dd_cgyer" class="form-control" placeholder="">
-                                           
+                                        <td style="vertical-align: top">Geldiği Yer:<asp:DropDownList required="Seçiniz" runat="server" DataTextField="birim" DataValueField="birim" DataSourceID="SqlDataSource9" ID="dd_cgyer" class="form-control" placeholder="">
                                         </asp:DropDownList>
 
                                             <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_birim]" ID="SqlDataSource9"></asp:SqlDataSource>
@@ -141,8 +142,7 @@
                                     <tr>
                                         <td style="vertical-align: top">
                                             <br />
-                                            Özellikleri:<asp:DropDownList required="Seçiniz" runat="server" AppendDataBoundItems="true" DataTextField="tbl_ozl" DataValueField="tbl_ozl" DataSourceID="SqlDataSource7" ID="dd_cozllk" class="form-control" >
-                                              
+                                            Özellikleri:<asp:DropDownList required="Seçiniz" runat="server" AppendDataBoundItems="true" DataTextField="tbl_ozl" DataValueField="tbl_ozl" DataSourceID="SqlDataSource7" ID="dd_cozllk" class="form-control">
                                             </asp:DropDownList>
 
                                             <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_cozl]" ID="SqlDataSource7"></asp:SqlDataSource>
@@ -152,7 +152,6 @@
                                         <td style="vertical-align: top">
                                             <br />
                                             Cihaz Marka:<asp:DropDownList required="Seçin" runat="server" AppendDataBoundItems="true" DataTextField="tbl_cmrk" DataValueField="tbl_cmrk" DataSourceID="SqlDataSource8" ID="dd_marka" class="form-control" placeholder="Cihaz Adı">
-                                                
                                             </asp:DropDownList>
 
                                             <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_mrk]" ID="SqlDataSource8"></asp:SqlDataSource>
@@ -162,54 +161,9 @@
                                             <br />
                                             <br />
                                         </td>
-                                        <td style="vertical-align: top">
-                                           <%-- <br />
-                                            HDD:<asp:DropDownList required="Seçiniz" runat="server" ID="dd_chdd" class="form-control" placeholder="">
-                                                <asp:ListItem>Seçiniz</asp:ListItem>
-                                                <asp:ListItem>200 GB</asp:ListItem>
-                                                <asp:ListItem>300 GB</asp:ListItem>
-                                                <asp:ListItem>500 GB</asp:ListItem>
-                                                <asp:ListItem>1 TB</asp:ListItem>
-                                                <asp:ListItem>2 TB</asp:ListItem>
-                                            </asp:DropDownList>
-
-                                            <br />
-                                            SSD:<asp:DropDownList required="Seçiniz" runat="server" ID="dd_cssd" class="form-control" placeholder="">
-                                                <asp:ListItem>Seçiniz</asp:ListItem>
-                                                <asp:ListItem>240 GB</asp:ListItem>
-                                                <asp:ListItem>480 GB</asp:ListItem>
-                                                <asp:ListItem>500 GB</asp:ListItem>
-                                                <asp:ListItem>1 TB</asp:ListItem>
-                                            </asp:DropDownList>
-
-                                            <br />
-                                            RAM:<asp:DropDownList required="Seçiniz" runat="server" ID="dd_ram" class="form-control" placeholder="">
-                                                <asp:ListItem>Seçiniz</asp:ListItem>
-                                                <asp:ListItem>4 GB</asp:ListItem>
-                                                <asp:ListItem>8 GB</asp:ListItem>
-                                                <asp:ListItem>16 GB</asp:ListItem>
-                                            </asp:DropDownList>
-
-                                            <br />
-                                            Ekran Kartı:<asp:DropDownList required="Seçiniz" runat="server" ID="dd_ekart" class="form-control" placeholder="">
-                                                <asp:ListItem>Seçiniz</asp:ListItem>
-                                                <asp:ListItem>Onboard</asp:ListItem>
-                                                <asp:ListItem>256 GB</asp:ListItem>
-                                                <asp:ListItem>512 GB</asp:ListItem>
-                                                <asp:ListItem>1024 GB</asp:ListItem>
-                                                <asp:ListItem>2048 GB</asp:ListItem>
-                                            </asp:DropDownList>--%>
-
-                                        </td>
-                                        <td style="vertical-align: top">
-                                           <%-- <br />
-                                            -HDD-Seri No:<asp:TextBox required="" runat="server" ID="txt_chdds" class="form-control" placeholder=""></asp:TextBox>
-
-                                            <br />
-                                            -SSD-Seri No:<asp:TextBox required="" runat="server" ID="txt_ssds" class="form-control" placeholder=""></asp:TextBox>--%>
-
-                                        </td>
-                                        <td  style="vertical-align: top" >Tarih:<asp:TextBox required="" runat="server" TextMode="Date" ID="dt_cgtar" class="form-control" placeholder=""></asp:TextBox>
+                                        <td></td>
+                                        <td style="vertical-align: top"></td>
+                                        <td style="vertical-align: top">Tarih:<asp:TextBox required="" runat="server" TextMode="Date" ID="dt_cgtar" class="form-control" placeholder=""></asp:TextBox>
 
                                             <br />
                                             Arıza Açıklama:<asp:TextBox required="" runat="server" TextMode="MultiLine" Height="84px" ID="txt_cariza" class="form-control" placeholder=""></asp:TextBox>
@@ -275,23 +229,25 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?)"
                                             <asp:Label runat="server" ID="lbl_ckmsj"></asp:Label>
 
                                         </td>
-                                        <td style="vertical-align: top">&nbsp;</td>
-                                        <td style="vertical-align: top">&nbsp;</td>
-                                        <td style="vertical-align: top">&nbsp;</td>
-                                        <td class="auto-style1" style="vertical-align: top; text-align: center;">&nbsp;</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                 </table>
-
+                             
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <asp:Button runat="server" Text="Kaydet" ID="btn_ckayit" class="btn btn-lg btn-primary" OnClick="btn_ckayit_Click"></asp:Button>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
+   
+
+
 
             </fieldset>
         </div>

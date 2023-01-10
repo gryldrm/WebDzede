@@ -342,7 +342,7 @@ namespace WebAriza3
 
             GridViewRow row = GridView5.Rows[secili];
             lbl_cidd.Text = row.Cells[1].Text;
-            DataTable dt = dataClass.get_tbl(" SELECT id, chz_sn, chz_ad, chz_ip, chz_ozl, chz_mrk, chz_hdd, chz_shdd,  chz_ssd,chz_sssd, chz_ram, chz_ek, chz_gy, chz_gtar, chz_ack, chz_yi, chz_itar, chz_drm, chz_cbrm, chz_ctar, chz_iper, chz_ibtar, chz_ebys FROM tbl_chz WHERE (id = " + row.Cells[1].Text.ToString() + ") ORDER BY id DESC ");
+            DataTable dt = dataClass.get_tbl(" SELECT id, chz_sn, chz_ad, chz_ip, chz_ozl, chz_mrk, chz_hdd, chz_shdd,  chz_ssd,chz_sssd, chz_ram, chz_ek, chz_gy, chz_gtar, chz_ack, chz_yi, chz_itar, chz_drm, chz_cbrm, chz_ctar, chz_iper, chz_ibtar, chz_ebys,chz_tscl,chz_tadsoyad,chz_islemci FROM tbl_chz WHERE (id = " + row.Cells[1].Text.ToString() + ") ORDER BY id DESC ");
 
             txt_ciserin.Text = dt.Rows[0][1].ToString();
             txt_ciad.Text = dt.Rows[0][2].ToString();
@@ -352,6 +352,8 @@ namespace WebAriza3
             lbl_ciozllk.Text = dt.Rows[0][4].ToString();
             lbl_cimrk.Text = dt.Rows[0][5].ToString();
 
+           
+           
             if (dt.Rows[0][6].ToString() != "")
             {
                 dd_cihdd.Text = dt.Rows[0][6].ToString();
@@ -403,6 +405,10 @@ namespace WebAriza3
             txt_ciyistar.Text =dt.Rows[0][16].ToString();
             txt_ciebys0.Text = dt.Rows[0][22].ToString();
 
+            lbl_tsicil.Text = dt.Rows[0][23].ToString();    
+            lbl_tadsad.Text = dt.Rows[0][24].ToString();
+            txt_cislemci.Text = dt.Rows[0][25].ToString();
+
             //DataTable dts = dataClass.get_tbl("SELECT   id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_shdd AS [Hdd Seri], chz_ssd AS SSD, chz_sssd AS [Ssd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu FROM tbl_chz   WHERE (chz_sn = '"+ txt_ciserin.Text + "') ORDER BY id DESC");
             //GridView5.DataSource= dts;  
             //GridView5.DataBind();
@@ -449,6 +455,7 @@ namespace WebAriza3
 
                         sb += ", chz_yi = '"    + txt_ciyis.Text 
                             + "',chz_sn='"      + txt_ciserin.Text
+                            + "',chz_islemci='" + txt_cislemci.Text
                             + "', chz_itar = #" + txt_ciyistar.Text
                             + "#, chz_drm = '"  + dd_cidrm.Text
                             + "', chz_iper = '" + Session["k_sicil"].ToString()
@@ -512,7 +519,7 @@ namespace WebAriza3
         protected void Button6_Click(object sender, EventArgs e)
         {
             string sorgu = "";
-            string srg_select = "SELECT   id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_hdd AS HDD, chz_shdd AS [Hdd Seri], chz_ssd AS SSD, chz_sssd AS [Ssd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu FROM tbl_chz  ";
+            string srg_select = "SELECT   id AS TakipNo, chz_sn AS SeriNo, chz_ad AS [Cihaz Adı], chz_ip AS [Cihaz İp], chz_ozl AS Tip, chz_mrk AS Marka, chz_islemci as [İşlemci], chz_hdd AS HDD, chz_shdd AS [Hdd Seri], chz_ssd AS SSD, chz_sssd AS [Ssd Seri], chz_ram AS RAM, chz_ek AS [Ekran Kartı], chz_gy AS Birim, format(chz_gtar, 'dd.mm.yyyy') AS [Geldiği Tarih], chz_ack AS Açıklama, format(chz_itar, 'dd.mm.yyyy') AS [İşlem Tarihi], chz_yi AS [Yapılan İşlem], chz_iper AS Personel, chz_drm AS Durumu FROM tbl_chz  ";
 
             if (txt_caseri.Text != "")
             {
@@ -681,6 +688,12 @@ namespace WebAriza3
         protected void Button8_Click(object sender, EventArgs e)
         {
             SqlDataSource13.Insert();
+        }
+
+        protected void btn_cikyt0_Click(object sender, EventArgs e)
+        {
+            SqlDataSource15.Insert();
+            GridView5.DataBind();
         }
     }
 }

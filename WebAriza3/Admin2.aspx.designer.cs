@@ -780,6 +780,24 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.Label lbl_cidd;
 
         /// <summary>
+        /// lbl_tsicil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_tsicil;
+
+        /// <summary>
+        /// lbl_tadsad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_tadsad;
+
+        /// <summary>
         /// lbl_imsj0 control.
         /// </summary>
         /// <remarks>

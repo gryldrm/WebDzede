@@ -47,7 +47,7 @@ namespace WebAriza3
 
 
             baglanti = new OleDbConnection("Provider=Microsoft.ACE.Oledb.12.0; Data Source=|DataDirectory|\\aydinbth1.accdb");
-           
+
             return baglanti;
         }
         protected void btn_kaydet_Click(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace WebAriza3
                         }
                         catch (OleDbException ex)
                         {
-                           
+
                             ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
                                      "toastr.error('Kayıt edilirken hata oluştu...', ' ')", true);
 
@@ -109,7 +109,7 @@ namespace WebAriza3
             }
             else
             {
-                
+
                 ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
                                 "toastr.error('Arıza/Talep Nevi seçmelisiniz.', ' ')", true);
             }
@@ -120,18 +120,73 @@ namespace WebAriza3
         {
             try
             {
-                if (txt_cseri.Text !="")
+                if (txt_cseri.Text != "")
                 {
-                SqlDataSource6.Insert();
-                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                                "toastr.success('Kayıt başarılı...', ' ')", true);
+                    DataTable dt = dataClass.get_tbl("SELECT TOP 1 chz_sn, chz_hdd, chz_shdd, chz_ssd, chz_sssd, chz_ram, chz_ek, chz_islemci FROM tbl_chz WHERE (chz_sn = '" + txt_cseri.Text + "') ORDER BY id DESC");
+
+                    string hdd = "";
+                    string hdds = "";
+                    string ssd = "";
+                    string ssds = "";
+                    string ram = "";
+                    string ekarti = "";
+                    string islemci = "";
+
+                    if (dt.Rows.Count >0)
+                    {
+                          hdd = dt.Rows[0][1].ToString();
+                          hdds = dt.Rows[0][2].ToString();
+                          ssd = dt.Rows[0][3].ToString();
+                          ssds = dt.Rows[0][4].ToString();
+                          ram = dt.Rows[0][5].ToString();
+                          ekarti = dt.Rows[0][6].ToString();
+                          islemci = dt.Rows[0][7].ToString();
+
+                    }
+
+                    
+
+
+                    OleDbConnection con = db_baglanti();
+                    OleDbCommand cmd;
+
+                    con.Open();
+                    cmd = new OleDbCommand("INSERT INTO tbl_chz (chz_sn, chz_ad, chz_ip, chz_ozl, chz_mrk,chz_hdd, chz_shdd, chz_ssd, chz_sssd, chz_ram, chz_ek, chz_islemci, chz_gy, chz_gtar, chz_ack, chz_ebys, chz_tscl, chz_tadsoyad) VALUES('" +
+                       txt_cseri.Text + "','" +
+                       txt_cad.Text + "','" +
+                       txt_cip.Text + "','" +
+                       dd_cozllk.SelectedItem.Text + "','" +
+                       dd_marka.SelectedItem.Text + "','" +
+                       hdd.ToString() + "','" +
+                       hdds.ToString() + "','" +
+                       ssd.ToString() + "','" +
+                       ssds.ToString() + "','" +
+                       ram.ToString() + "','" +
+                       ekarti.ToString() + "','" +
+                       islemci.ToString() +"','"+
+
+
+                       dd_cgyer.SelectedItem.Text + "','" +
+                       dt_cgtar.Text + "','" +
+                       txt_cariza.Text + "','" +
+                       txt_ciebys.Text + "','" +
+                       Session["k_sicil"].ToString() + "','" +
+                       Session["k_adsoyad"].ToString() + "')", con);
+
+
+
+                    cmd.ExecuteNonQuery();
+
+                   // SqlDataSource6.Insert();
+                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                                                    "toastr.success('Kayıt başarılı...', ' ')", true);
                 }
                 else
                 {
                     ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
                                    "toastr.error('Cihaz seri no girmelisiniz...', ' ')", true);
                 }
-              
+
 
 
             }
@@ -170,6 +225,6 @@ namespace WebAriza3
 
         //}
 
-      
+
     }
 }
