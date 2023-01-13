@@ -132,10 +132,12 @@
                                         </td>
                                         <td style="vertical-align: top"></td>
                                         <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top">Geldiği Yer:<asp:DropDownList required="Seçiniz" runat="server" DataTextField="birim" DataValueField="birim" DataSourceID="SqlDataSource9" ID="dd_cgyer" class="form-control" placeholder="">
+                                        <td style="vertical-align: top">Birim:<asp:Label ID="lbl_cbirim" runat="server" Text=""></asp:Label>
+                                            
+                                           <%-- <asp:DropDownList required="Seçiniz" runat="server" DataTextField="birim" Enabled="false" DataValueField="birim" DataSourceID="SqlDataSource9" ID="dd_cgyer" class="form-control" placeholder="">
                                         </asp:DropDownList>
 
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_birim]" ID="SqlDataSource9"></asp:SqlDataSource>
+                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_birim]" ID="SqlDataSource9"></asp:SqlDataSource>--%>
 
                                         </td>
                                     </tr>

@@ -32,7 +32,7 @@ namespace WebAriza3
                     txt_scl.Text = Session["k_sicil"].ToString();
                     txt_adsad.Text = Session["k_adsoyad"].ToString();
                     lblbirim.Text = Session["k_birim"].ToString();
-
+                    lbl_cbirim.Text = Session["k_birim"].ToString();
 
                 }
                 else
@@ -166,7 +166,7 @@ namespace WebAriza3
                        islemci.ToString() +"','"+
 
 
-                       dd_cgyer.SelectedItem.Text + "','" +
+                       lbl_cbirim.Text + "','" +
                        dt_cgtar.Text + "','" +
                        txt_cariza.Text + "','" +
                        txt_ciebys.Text + "','" +
