@@ -430,25 +430,25 @@ namespace WebAriza3
                             sb += ", chz_ip = '" + txt_ciipno.Text + "'";
                         }
 
-                        if (dd_cihdd.SelectedItem.Text != "Seçiniz")
+                        if (txt_cihdd.Text != "")
                         {
-                            sb += ", chz_hdd = '" + dd_cihdd.SelectedItem.Text + "', chz_shdd = '" + txthdds.Text + "'";
+                            sb += ", chz_hdd = '" + txt_cihdd.Text + "', chz_shdd = '" + txthdds.Text + "'";
 
                         }
 
-                        if (dd_cissd.SelectedItem.Text != "Seçiniz")
+                        if (txt_cissd.Text != "")
                         {
-                            sb += ", chz_ssd = '" + dd_cissd.SelectedItem.Text + "', chz_sssd = '" + txtssds.Text + "'";
+                            sb += ", chz_ssd = '" + txt_cissd.Text + "', chz_sssd = '" + txtssds.Text + "'";
                         }
 
-                        if (dd_ciram.SelectedItem.Text != "Seçiniz")
+                        if (txt_ciram.Text != "")
                         {
-                            sb += ", chz_ram = '" + dd_ciram.SelectedItem.Text + "'";
+                            sb += ", chz_ram = '" + txt_ciram.Text + "'";
                         }
 
-                        if (dd_ciekart.SelectedItem.Text != "Seçiniz")
+                        if (txt_ciekart.Text != "")
                         {
-                            sb += ", chz_ek = '" + dd_ciekart.SelectedItem.Text + "'";
+                            sb += ", chz_ek = '" + txt_ciekart.Text + "'";
                         }
 
 
@@ -692,6 +692,39 @@ namespace WebAriza3
 
         protected void btn_cikyt0_Click(object sender, EventArgs e)
         {
+            if (txt_ciyis.Text !="")
+            {
+
+                //INSERT INTO [tbl_chz] ( [chz_sn], [chz_ad], [chz_ip], [chz_ozl], [chz_mrk], [chz_hdd], [chz_shdd], [chz_ssd], [chz_sssd], [chz_ram], [chz_ek], [chz_gy], [chz_gtar], [chz_ack], [chz_yi], [chz_itar], [chz_drm], [chz_iper], [chz_ebys], [chz_tscl], [chz_tadsoyad], [chz_islemci]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+              
+                // < asp:ControlParameter ControlID = "txt_ciserin" Name = "chz_sn" PropertyName = "Text" Type = "String" />
+                // < asp:ControlParameter ControlID = "txt_ciad" Name = "chz_ad" PropertyName = "Text" Type = "String" />
+                // < asp:ControlParameter ControlID = "txt_ciipno" Name = "chz_ip" PropertyName = "Text" Type = "String" />
+                //< asp:ControlParameter ControlID = "lbl_ciozllk" Name = "chz_ozl" PropertyName = "Text" Type = "String" />
+                //< asp:ControlParameter ControlID = "lbl_cimrk" Name = "chz_mrk" PropertyName = "Text" Type = "String" />
+                //< asp:ControlParameter ControlID = "dd_cihdd" Name = "chz_hdd" PropertyName = "SelectedValue" Type = "String" />
+                //< asp:ControlParameter ControlID = "txthdds" Name = "chz_shdd" PropertyName = "Text" Type = "String" />
+                //< asp:ControlParameter ControlID = "dd_cissd" Name = "chz_ssd" PropertyName = "SelectedValue" Type = "String" />
+                //< asp:ControlParameter ControlID = "txtssds" Name = "chz_sssd" PropertyName = "Text" Type = "String" />
+                //< asp:ControlParameter ControlID = "dd_ciram" Name = "chz_ram" PropertyName = "SelectedValue" Type = "String" />
+                //< asp:ControlParameter ControlID = "dd_ciekart" Name = "chz_ek" PropertyName = "SelectedValue" Type = "String" />
+                //< asp:ControlParameter ControlID = "lbl_cigyer" Name = "chz_gy" PropertyName = "Text" Type = "String" />
+                //< asp:ControlParameter ControlID = "lbl_cigtar" Name = "chz_gtar" PropertyName = "Text" Type = "DateTime" />
+                //< asp:ControlParameter ControlID = "txt_ciack" Name = "chz_ack" PropertyName = "Text" Type = "String" />
+                //< asp:ControlParameter ControlID = "txt_ciyis" Name = "chz_yi" PropertyName = "Text" Type = "String" />
+                //< asp:ControlParameter ControlID = "txt_ciyistar" Name = "chz_itar" PropertyName = "Text" Type = "DateTime" />
+                //< asp:ControlParameter ControlID = "dd_cidrm" Name = "chz_drm" PropertyName = "SelectedValue" Type = "String" />
+                //< asp:SessionParameter Name = "chz_iper" SessionField = "k_sicil" Type = "String" />
+                //< asp:ControlParameter ControlID = "txt_ciebys0" Name = "chz_ebys" PropertyName = "Text" Type = "String" />
+                //< asp:ControlParameter ControlID = "lbl_tsicil" Name = "chz_tscl" PropertyName = "Text" Type = "Int32" />
+                //< asp:ControlParameter ControlID = "lbl_tadsad" Name = "chz_tadsoyad" PropertyName = "Text" Type = "String" />
+                //< asp:ControlParameter ControlID = "txt_cislemci" Name = "chz_islemci" PropertyName = "Text" Type = "String" />
+
+            }
+            else
+            {
+                lbl_imsj0.Text = "Yapılan işlem hakkında kısa bilgi yazınız...";
+            }
             SqlDataSource15.Insert();
             GridView5.DataBind();
         }

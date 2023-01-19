@@ -654,13 +654,13 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.TextBox txt_cislemci;
 
         /// <summary>
-        /// dd_cihdd control.
+        /// txt_cihdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dd_cihdd;
+        protected global::System.Web.UI.WebControls.TextBox txt_cihdd;
 
         /// <summary>
         /// txthdds control.
@@ -672,13 +672,13 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.TextBox txthdds;
 
         /// <summary>
-        /// dd_cissd control.
+        /// txt_cissd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dd_cissd;
+        protected global::System.Web.UI.WebControls.TextBox txt_cissd;
 
         /// <summary>
         /// txtssds control.
@@ -690,22 +690,22 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.TextBox txtssds;
 
         /// <summary>
-        /// dd_ciram control.
+        /// txt_ciram control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dd_ciram;
+        protected global::System.Web.UI.WebControls.TextBox txt_ciram;
 
         /// <summary>
-        /// dd_ciekart control.
+        /// txt_ciekart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dd_ciekart;
+        protected global::System.Web.UI.WebControls.TextBox txt_ciekart;
 
         /// <summary>
         /// txt_ciyis control.
@@ -814,6 +814,15 @@ namespace WebAriza3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView5;
+
+        /// <summary>
+        /// TabPanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.TabPanel TabPanel1;
 
         /// <summary>
         /// TabPanel33 control.

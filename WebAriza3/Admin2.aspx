@@ -369,41 +369,23 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                         İşlemci:<br />
                                                         <asp:TextBox ID="txt_cislemci" class="form-control" runat="server" placeholder="i5 3450"></asp:TextBox>
                                                         <br />
-                                                        HDD:<asp:DropDownList ID="dd_cihdd" runat="server" class="form-control" placeholder="">
-                                                            <asp:ListItem>Seçiniz</asp:ListItem>
-                                                            <asp:ListItem>200 GB</asp:ListItem>
-                                                            <asp:ListItem>300 GB</asp:ListItem>
-                                                            <asp:ListItem>500 GB</asp:ListItem>
-                                                            <asp:ListItem>1 TB</asp:ListItem>
-                                                            <asp:ListItem>2 TB</asp:ListItem>
-                                                        </asp:DropDownList>
+                                                        HDD:<br />
+                                                        <asp:TextBox ID="txt_cihdd" runat="server" class="form-control" placeholder="500 GB"></asp:TextBox>
                                                         <asp:TextBox ID="txthdds" runat="server"></asp:TextBox>
                                                         <br />
-                                                        SSD:<asp:DropDownList ID="dd_cissd" runat="server" class="form-control" placeholder="">
-                                                            <asp:ListItem>Seçiniz</asp:ListItem>
-                                                            <asp:ListItem>240 GB</asp:ListItem>
-                                                            <asp:ListItem>256 GB</asp:ListItem>
-                                                            <asp:ListItem>480 GB</asp:ListItem>
-                                                            <asp:ListItem>500 GB</asp:ListItem>
-                                                            <asp:ListItem>512 GB</asp:ListItem>
-                                                            <asp:ListItem>1 TB</asp:ListItem>
-                                                        </asp:DropDownList>
+                                                        SSD:<br />
+                                                        <asp:TextBox ID="txt_cissd" runat="server" class="form-control" placeholder="256 GB"></asp:TextBox>
                                                         <asp:TextBox ID="txtssds" runat="server"></asp:TextBox>
                                                         <br />
-                                                        RAM:<asp:DropDownList ID="dd_ciram" runat="server" class="form-control" placeholder="">
+                                                          RAM:    <asp:TextBox ID="txt_ciram" runat="server" class="form-control" placeholder="8 GB"></asp:TextBox>
+                                                       
+                                                      <%--  <asp:DropDownList ID="dd_ciram" runat="server" class="form-control" placeholder="">
                                                             <asp:ListItem>Seçiniz</asp:ListItem>
                                                             <asp:ListItem>4 GB</asp:ListItem>
                                                             <asp:ListItem>8 GB</asp:ListItem>
                                                             <asp:ListItem>16 GB</asp:ListItem>
-                                                        </asp:DropDownList>
-                                                        Ekran Kartı:<asp:DropDownList ID="dd_ciekart" runat="server" class="form-control" placeholder="">
-                                                            <asp:ListItem>Seçiniz</asp:ListItem>
-                                                            <asp:ListItem>Onboard</asp:ListItem>
-                                                            <asp:ListItem>256 GB</asp:ListItem>
-                                                            <asp:ListItem>512 GB</asp:ListItem>
-                                                            <asp:ListItem>1024 GB</asp:ListItem>
-                                                            <asp:ListItem>2048 GB</asp:ListItem>
-                                                        </asp:DropDownList>
+                                                        </asp:DropDownList>--%>
+                                                        &nbsp;<asp:TextBox ID="txt_ciekart" runat="server" class="form-control" placeholder="Onboard/256 GB"></asp:TextBox>
                                                     </td>
                                                     <td style="vertical-align: top; background-color: #CCCCCC;">Yapılan İşlem<asp:TextBox ID="txt_ciyis" runat="server" class="form-control" placeholder="" TextMode="MultiLine" ></asp:TextBox>
                                                         <br />
@@ -416,7 +398,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                         <asp:Button ID="btn_cikyt" runat="server" OnClick="btn_cikyt_Click" Text="Güncelle" class="form-control" />
                                                         <br />
                                                         <asp:Button ID="btn_cikyt0" runat="server" class="form-control" OnClick="btn_cikyt0_Click" Text="Kaydet" />
-                                                        <asp:SqlDataSource ID="SqlDataSource15" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_chz] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_chz] ( [chz_sn], [chz_ad], [chz_ip], [chz_ozl], [chz_mrk], [chz_hdd], [chz_shdd], [chz_ssd], [chz_sssd], [chz_ram], [chz_ek], [chz_gy], [chz_gtar], [chz_ack], [chz_yi], [chz_itar], [chz_drm], [chz_iper], [chz_ibtar], [chz_ebys], [chz_tscl], [chz_tadsoyad], [chz_tkp], [chz_islemci]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_shdd] = ?, [chz_ssd] = ?, [chz_sssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ?, [chz_ebys] = ?, [chz_tscl] = ?, [chz_tadsoyad] = ?, [chz_tkp] = ?, [chz_islemci] = ? WHERE [id] = ?">
+                                                        <asp:SqlDataSource ID="SqlDataSource15" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_chz] WHERE [id] = ?" InsertCommand="INSERT INTO [tbl_chz] ( [chz_sn], [chz_ad], [chz_ip], [chz_ozl], [chz_mrk], [chz_hdd], [chz_shdd], [chz_ssd], [chz_sssd], [chz_ram], [chz_ek], [chz_gy], [chz_gtar], [chz_ack], [chz_yi], [chz_itar], [chz_drm], [chz_iper], [chz_ebys], [chz_tscl], [chz_tadsoyad], [chz_islemci]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_shdd] = ?, [chz_ssd] = ?, [chz_sssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ?, [chz_ebys] = ?, [chz_tscl] = ?, [chz_tadsoyad] = ?, [chz_tkp] = ?, [chz_islemci] = ? WHERE [id] = ?">
                                                             <DeleteParameters>
                                                                 <asp:Parameter Name="id" Type="Int32" />
                                                             </DeleteParameters>
@@ -426,12 +408,12 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                                 <asp:ControlParameter ControlID="txt_ciipno" Name="chz_ip" PropertyName="Text" Type="String" />
                                                                 <asp:ControlParameter ControlID="lbl_ciozllk" Name="chz_ozl" PropertyName="Text" Type="String" />
                                                                 <asp:ControlParameter ControlID="lbl_cimrk" Name="chz_mrk" PropertyName="Text" Type="String" />
-                                                                <asp:ControlParameter ControlID="dd_cihdd" Name="chz_hdd" PropertyName="SelectedValue" Type="String" />
+                                                                <asp:ControlParameter ControlID="txt_cihdd" Name="chz_hdd" PropertyName="Text" Type="String" />
                                                                 <asp:ControlParameter ControlID="txthdds" Name="chz_shdd" PropertyName="Text" Type="String" />
-                                                                <asp:ControlParameter ControlID="dd_cissd" Name="chz_ssd" PropertyName="SelectedValue" Type="String" />
+                                                                <asp:ControlParameter ControlID="txt_cissd" Name="chz_ssd" PropertyName="Text" Type="String" />
                                                                 <asp:ControlParameter ControlID="txtssds" Name="chz_sssd" PropertyName="Text" Type="String" />
-                                                                <asp:ControlParameter ControlID="dd_ciram" Name="chz_ram" PropertyName="SelectedValue" Type="String" />
-                                                                <asp:ControlParameter ControlID="dd_ciekart" Name="chz_ek" PropertyName="SelectedValue" Type="String" />
+                                                                <asp:ControlParameter ControlID="txt_ciram" Name="chz_ram" PropertyName="Text" Type="String" />
+                                                                <asp:ControlParameter ControlID="txt_ciekart" Name="chz_ek" PropertyName="Text" Type="String" />
                                                                 <asp:ControlParameter ControlID="lbl_cigyer" Name="chz_gy" PropertyName="Text" Type="String" />
                                                                 <asp:ControlParameter ControlID="lbl_cigtar" Name="chz_gtar" PropertyName="Text" Type="DateTime" />
                                                                 <asp:ControlParameter ControlID="txt_ciack" Name="chz_ack" PropertyName="Text" Type="String" />
@@ -439,11 +421,9 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                                 <asp:ControlParameter ControlID="txt_ciyistar" Name="chz_itar" PropertyName="Text" Type="DateTime" />
                                                                 <asp:ControlParameter ControlID="dd_cidrm" Name="chz_drm" PropertyName="SelectedValue" Type="String" />
                                                                 <asp:SessionParameter Name="chz_iper" SessionField="k_sicil" Type="String" />
-                                                                <asp:Parameter Name="chz_ibtar" Type="DateTime" />
                                                                 <asp:ControlParameter ControlID="txt_ciebys0" Name="chz_ebys" PropertyName="Text" Type="String" />
                                                                 <asp:ControlParameter ControlID="lbl_tsicil" Name="chz_tscl" PropertyName="Text" Type="Int32" />
                                                                 <asp:ControlParameter ControlID="lbl_tadsad" Name="chz_tadsoyad" PropertyName="Text" Type="String" />
-                                                                <asp:Parameter Name="chz_tkp" Type="Int32" />
                                                                 <asp:ControlParameter ControlID="txt_cislemci" Name="chz_islemci" PropertyName="Text" Type="String" />
                                                             </InsertParameters>
                                                             <UpdateParameters>
@@ -524,6 +504,11 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                             </table>
 
                         </ContentTemplate>
+                    </ajaxToolkit:TabPanel>
+                    <ajaxToolkit:TabPanel ID="TabPanel1" runat="server" HeaderText="TabPanel1">
+                        <HeaderTemplate>
+                            Cihaz Özellik Güncelle
+                        </HeaderTemplate>
                     </ajaxToolkit:TabPanel>
                 </ajaxToolkit:TabContainer>
             </ContentTemplate>
