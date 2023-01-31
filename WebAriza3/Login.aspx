@@ -8,7 +8,7 @@
     <meta charset="utf-8"/>
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
    
-    <title>Sign In | AdminKit Demo</title>
+    <title>AYDIN-BTH</title>
     <link href="../css/app.css" rel="stylesheet"/>
    
 </head>

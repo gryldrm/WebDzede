@@ -356,25 +356,25 @@ namespace WebAriza3
            
             if (dt.Rows[0][6].ToString() != "")
             {
-                dd_cihdd.Text = dt.Rows[0][6].ToString();
+                txt_cihdd.Text = dt.Rows[0][6].ToString();
             }
 
             txthdds.Text = dt.Rows[0][7].ToString();
             if (dt.Rows[0][8].ToString() != "")
             {
-                dd_cissd.Text = dt.Rows[0][8].ToString();
+                txt_cissd.Text = dt.Rows[0][8].ToString();
             }
             txtssds.Text = dt.Rows[0][9].ToString();
 
             if (dt.Rows[0][10].ToString() != "")
             {
-                dd_ciram.Text = dt.Rows[0][10].ToString();
+                txt_ciram.Text = dt.Rows[0][10].ToString();
             }
 
 
             if (dt.Rows[0][11].ToString() != "")
             {
-                dd_ciekart.Text = dt.Rows[0][11].ToString();
+                txt_ciekart.Text = dt.Rows[0][11].ToString();
             }
 
 

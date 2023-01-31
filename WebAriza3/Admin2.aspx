@@ -505,7 +505,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
 
                         </ContentTemplate>
                     </ajaxToolkit:TabPanel>
-                    <ajaxToolkit:TabPanel ID="TabPanel1" runat="server" HeaderText="TabPanel1">
+                    <ajaxToolkit:TabPanel ID="TabPanel11" runat="server" HeaderText="TabPanel1">
                         <HeaderTemplate>
                             Cihaz Özellik Güncelle
                         </HeaderTemplate>
