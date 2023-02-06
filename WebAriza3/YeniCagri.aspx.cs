@@ -23,6 +23,9 @@ namespace WebAriza3
                     dd_nevi.Items.Insert(0, new ListItem("Seçin", String.Empty));
                     dd_nevi.SelectedIndex = 0;
 
+                    dd_tlpnevi.Items.Insert(0, new ListItem("Seçiniz", String.Empty));
+                    dd_tlpnevi.SelectedIndex = 0;
+
                     dd_cozllk.Items.Insert(0, new ListItem("Seçin", String.Empty));
                     dd_cozllk.SelectedIndex = 0;
 
@@ -33,7 +36,7 @@ namespace WebAriza3
                     txt_adsad.Text = Session["k_adsoyad"].ToString();
                     lblbirim.Text = Session["k_birim"].ToString();
                     lbl_cbirim.Text = Session["k_birim"].ToString();
-
+                    lbl_sifrebirim0.Text= Session["k_birim"].ToString();
                 }
                 else
                 {
@@ -196,6 +199,123 @@ namespace WebAriza3
                 ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
                                     "toastr.error('Kayıt edilirken hata oluştu...', ' ')", true);
             }
+
+        }
+
+        protected void dd_tlpnevi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dd_tlpnevi.SelectedItem.Text== "POLNET ŞİFRE SIFIRLAMA")
+            {
+                pnl_polnetsifre.Visible = true;
+                pnl_polceputp.Visible = false;
+                pnl_pol5.Visible= false;
+                pnl_pol4.Visible= false;
+                pnl_intyetki.Visible= false;
+                pnl_intsifre.Visible= false;
+                pnl_etmysyetki.Visible= false;
+            }
+            else
+            {
+                pnl_polnetsifre.Visible=false;
+            }
+
+            if (dd_tlpnevi.SelectedItem.Text == "POLNET4 / PTS YETKİ ŞİFRE İŞLEMLERİ")
+            {
+
+                pnl_polnetsifre.Visible = false;
+                pnl_polceputp.Visible = false;
+                pnl_pol5.Visible = false;
+                pnl_pol4.Visible = true;
+                pnl_intyetki.Visible = false;
+                pnl_intsifre.Visible = false;
+                pnl_etmysyetki.Visible = false;
+            }
+            else
+            {
+                pnl_pol4.Visible = false;
+            }
+
+            if (dd_tlpnevi.SelectedItem.Text == "İNTERNET YETKİ TALEBİ")
+            {
+
+                pnl_polnetsifre.Visible = false;
+                pnl_polceputp.Visible = false;
+                pnl_pol5.Visible = false;
+                pnl_pol4.Visible = false;
+                pnl_intyetki.Visible = true;
+                pnl_intsifre.Visible = false;
+                pnl_etmysyetki.Visible = false;
+            }
+            else
+            {
+                pnl_intyetki.Visible = false;
+            }
+
+            if (dd_tlpnevi.SelectedItem.Text== "İNTERNET ŞİFRE SIFIRLAMA")
+            {
+
+                pnl_polnetsifre.Visible = false;
+                pnl_polceputp.Visible = false;
+                pnl_pol5.Visible = false;
+                pnl_pol4.Visible = false;
+                pnl_intyetki.Visible = false;
+                pnl_intsifre.Visible = true;
+                pnl_etmysyetki.Visible = false;
+            }
+            else
+            {
+                pnl_intsifre.Visible = false;
+            }
+
+         
+            if (dd_tlpnevi.SelectedItem.Text == "ETMYS YETKİ TALEBİ")
+            {
+
+                pnl_polnetsifre.Visible = false;
+                pnl_polceputp.Visible = false;
+                pnl_pol5.Visible = false;
+                pnl_pol4.Visible = false;
+                pnl_intyetki.Visible = false;
+                pnl_intsifre.Visible = false;
+                pnl_etmysyetki.Visible = true;
+            }
+            else
+            {
+                pnl_etmysyetki.Visible = false;
+            }
+
+            if (dd_tlpnevi.SelectedItem.Text == "POLCEP / UTP MODÜLÜ")
+            {
+
+                pnl_polnetsifre.Visible = false;
+                pnl_polceputp.Visible = true;
+                pnl_pol5.Visible = false;
+                pnl_pol4.Visible = false;
+                pnl_intyetki.Visible = false;
+                pnl_intsifre.Visible = false;
+                pnl_etmysyetki.Visible = false;
+            }
+            else
+            {
+                pnl_polceputp.Visible = false;
+            }
+
+            if (dd_tlpnevi.SelectedItem.Text == "POLNET5 WEB NESNE TAKİP")
+            {
+
+                pnl_polnetsifre.Visible = false;
+                pnl_polceputp.Visible = false;
+                pnl_pol5.Visible = true;
+                pnl_pol4.Visible = false;
+                pnl_intyetki.Visible = false;
+                pnl_intsifre.Visible = false;
+                pnl_etmysyetki.Visible = false;
+            }
+            else
+            {
+                pnl_pol5.Visible = false;
+            }
+
 
         }
         //protected void dd_cozllk_SelectedIndexChanged(object sender, EventArgs e)

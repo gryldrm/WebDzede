@@ -33,13 +33,13 @@
 	font-family:"Calibri",sans-serif;
 	}
         
-        .auto-style3 {
+        
+        
+        .auto-style2 {
             font-weight: bold;
         }
         
-        .auto-style5 {
-            width: 294px;
-        }
+        
         
     </style>
 </asp:Content>
@@ -299,121 +299,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?)"
                             </div>
                             <div class="modal-body">
                                 <%--///////////////////--%>statik 33333333333
-<table>
-                                    <tr>
-                                        <td style="vertical-align: top">Cihaz Seri No:<asp:TextBox required="" runat="server" ID="TextBox11" class="form-control" placeholder="Seri No"></asp:TextBox>
 
-                                        </td>
-                                        <td style="vertical-align: top">Cihaz Adı:<asp:TextBox required="" runat="server" ID="TextBox12" class="form-control" placeholder="Cihaz Adı"></asp:TextBox>
-
-                                        </td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top">Birim:<asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-                                            
-                                           <%-- <asp:DropDownList required="Seçiniz" runat="server" DataTextField="birim" Enabled="false" DataValueField="birim" DataSourceID="SqlDataSource9" ID="dd_cgyer" class="form-control" placeholder="">
-                                        </asp:DropDownList>
-
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_birim]" ID="SqlDataSource9"></asp:SqlDataSource>--%>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top">
-                                            <br />
-                                            Özellikleri:<asp:DropDownList required="Seçiniz" runat="server" AppendDataBoundItems="true" DataTextField="tbl_ozl" DataValueField="tbl_ozl" DataSourceID="SqlDataSource7" ID="DropDownList8" class="form-control">
-                                            </asp:DropDownList>
-
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_cozl]" ID="SqlDataSource1"></asp:SqlDataSource>
-
-
-                                        </td>
-                                        <td style="vertical-align: top">
-                                            <br />
-                                            Cihaz Marka:<asp:DropDownList required="Seçin" runat="server" AppendDataBoundItems="true" DataTextField="tbl_cmrk" DataValueField="tbl_cmrk" DataSourceID="SqlDataSource8" ID="DropDownList10" class="form-control" placeholder="Cihaz Adı">
-                                            </asp:DropDownList>
-
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_mrk]" ID="SqlDataSource2"></asp:SqlDataSource>
-
-                                            İp No:<asp:TextBox required="" runat="server" ID="TextBox18" class="form-control" placeholder="İp No"></asp:TextBox>
-
-                                            <br />
-                                            <br />
-                                        </td>
-                                        <td></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top">Tarih:<asp:TextBox required="" runat="server" TextMode="Date" ID="TextBox19" class="form-control" placeholder=""></asp:TextBox>
-
-                                            <br />
-                                            Arıza Açıklama:<asp:TextBox required="" runat="server" TextMode="MultiLine" Height="84px" ID="TextBox20" class="form-control" placeholder=""></asp:TextBox>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top">Ebys No:<asp:TextBox required="" runat="server" Width="288px" ID="TextBox21" class="form-control" placeholder=""></asp:TextBox>
-
-                                        </td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td class="auto-style1" style="vertical-align: top; text-align: center;">
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_chz] WHERE [id] = ?" InsertCommand="INSERT INTO tbl_chz
-                         (chz_sn, chz_ad, chz_ip, chz_ozl,chz_mrk,  chz_gy, chz_gtar, chz_ack,chz_ebys,chz_tscl,chz_tadsoyad)
-VALUES        (?,?,?,?,?,?,?,?,?,?,?)"
-                                                ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?" ID="SqlDataSource3">
-                                                <DeleteParameters>
-                                                    <asp:Parameter Name="id" Type="Int32"></asp:Parameter>
-                                                </DeleteParameters>
-                                                <InsertParameters>
-                                                    <asp:ControlParameter ControlID="txt_cseri" PropertyName="Text" Name="chz_sn" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_cad" PropertyName="Text" Name="chz_ad" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_cip" PropertyName="Text" Name="chz_ip" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_cozllk" PropertyName="SelectedValue" Name="chz_ozl" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_marka" PropertyName="SelectedValue" Name="chz_mrk" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_cgyer" PropertyName="SelectedValue" Name="chz_gy" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dt_cgtar" PropertyName="Text" Name="chz_gtar" Type="DateTime"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_cariza" PropertyName="Text" Name="chz_ack"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_ciebys" PropertyName="Text" Name="chz_ebys"></asp:ControlParameter>
-                                                    <asp:SessionParameter SessionField="k_sicil" Name="chz_tscl"></asp:SessionParameter>
-                                                    <asp:SessionParameter Name="chz_tadsoyad" SessionField="k_adsoyad" />
-                                                </InsertParameters>
-                                                <UpdateParameters>
-                                                    <asp:Parameter Name="chz_sn" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ad" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ip" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ozl" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_mrk" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_hdd" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ssd" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ram" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ek" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_gy" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_gtar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ack" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_yi" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_itar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_drm" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_cbrm" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ctar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_iper" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ibtar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="id" Type="Int32"></asp:Parameter>
-                                                </UpdateParameters>
-                                            </asp:SqlDataSource>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top">
-                                            <asp:Label runat="server" ID="Label2"></asp:Label>
-
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </table>
                              
                             </div>
                             <div class="modal-footer">
@@ -436,121 +322,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?)"
                             </div>
                             <div class="modal-body">
                                 <%--///////////////////--%>statik 44444444444
-<table>
-                                    <tr>
-                                        <td style="vertical-align: top">Cihaz Seri No:<asp:TextBox required="" runat="server" ID="TextBox22" class="form-control" placeholder="Seri No"></asp:TextBox>
 
-                                        </td>
-                                        <td style="vertical-align: top">Cihaz Adı:<asp:TextBox required="" runat="server" ID="TextBox23" class="form-control" placeholder="Cihaz Adı"></asp:TextBox>
-
-                                        </td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top">Birim:<asp:Label ID="Label3" runat="server" Text=""></asp:Label>
-                                            
-                                           <%-- <asp:DropDownList required="Seçiniz" runat="server" DataTextField="birim" Enabled="false" DataValueField="birim" DataSourceID="SqlDataSource9" ID="dd_cgyer" class="form-control" placeholder="">
-                                        </asp:DropDownList>
-
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_birim]" ID="SqlDataSource9"></asp:SqlDataSource>--%>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top">
-                                            <br />
-                                            Özellikleri:<asp:DropDownList required="Seçiniz" runat="server" AppendDataBoundItems="true" DataTextField="tbl_ozl" DataValueField="tbl_ozl" DataSourceID="SqlDataSource7" ID="DropDownList11" class="form-control">
-                                            </asp:DropDownList>
-
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_cozl]" ID="SqlDataSource4"></asp:SqlDataSource>
-
-
-                                        </td>
-                                        <td style="vertical-align: top">
-                                            <br />
-                                            Cihaz Marka:<asp:DropDownList required="Seçin" runat="server" AppendDataBoundItems="true" DataTextField="tbl_cmrk" DataValueField="tbl_cmrk" DataSourceID="SqlDataSource8" ID="DropDownList12" class="form-control" placeholder="Cihaz Adı">
-                                            </asp:DropDownList>
-
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_mrk]" ID="SqlDataSource5"></asp:SqlDataSource>
-
-                                            İp No:<asp:TextBox required="" runat="server" ID="TextBox24" class="form-control" placeholder="İp No"></asp:TextBox>
-
-                                            <br />
-                                            <br />
-                                        </td>
-                                        <td></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top">Tarih:<asp:TextBox required="" runat="server" TextMode="Date" ID="TextBox25" class="form-control" placeholder=""></asp:TextBox>
-
-                                            <br />
-                                            Arıza Açıklama:<asp:TextBox required="" runat="server" TextMode="MultiLine" Height="84px" ID="TextBox26" class="form-control" placeholder=""></asp:TextBox>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top">Ebys No:<asp:TextBox required="" runat="server" Width="288px" ID="TextBox27" class="form-control" placeholder=""></asp:TextBox>
-
-                                        </td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td class="auto-style1" style="vertical-align: top; text-align: center;">
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_chz] WHERE [id] = ?" InsertCommand="INSERT INTO tbl_chz
-                         (chz_sn, chz_ad, chz_ip, chz_ozl,chz_mrk,  chz_gy, chz_gtar, chz_ack,chz_ebys,chz_tscl,chz_tadsoyad)
-VALUES        (?,?,?,?,?,?,?,?,?,?,?)"
-                                                ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?" ID="SqlDataSource9">
-                                                <DeleteParameters>
-                                                    <asp:Parameter Name="id" Type="Int32"></asp:Parameter>
-                                                </DeleteParameters>
-                                                <InsertParameters>
-                                                    <asp:ControlParameter ControlID="txt_cseri" PropertyName="Text" Name="chz_sn" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_cad" PropertyName="Text" Name="chz_ad" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_cip" PropertyName="Text" Name="chz_ip" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_cozllk" PropertyName="SelectedValue" Name="chz_ozl" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_marka" PropertyName="SelectedValue" Name="chz_mrk" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_cgyer" PropertyName="SelectedValue" Name="chz_gy" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dt_cgtar" PropertyName="Text" Name="chz_gtar" Type="DateTime"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_cariza" PropertyName="Text" Name="chz_ack"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_ciebys" PropertyName="Text" Name="chz_ebys"></asp:ControlParameter>
-                                                    <asp:SessionParameter SessionField="k_sicil" Name="chz_tscl"></asp:SessionParameter>
-                                                    <asp:SessionParameter Name="chz_tadsoyad" SessionField="k_adsoyad" />
-                                                </InsertParameters>
-                                                <UpdateParameters>
-                                                    <asp:Parameter Name="chz_sn" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ad" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ip" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ozl" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_mrk" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_hdd" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ssd" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ram" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ek" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_gy" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_gtar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ack" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_yi" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_itar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_drm" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_cbrm" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ctar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_iper" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ibtar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="id" Type="Int32"></asp:Parameter>
-                                                </UpdateParameters>
-                                            </asp:SqlDataSource>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top">
-                                            <asp:Label runat="server" ID="Label4"></asp:Label>
-
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </table>
                              
                             </div>
                             <div class="modal-footer">
@@ -575,121 +347,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?)"
                             </div>
                             <div class="modal-body">
                                 <%--///////////////////--%>statik 555555555555
-<table>
-                                    <tr>
-                                        <td style="vertical-align: top">Cihaz Seri No:<asp:TextBox required="" runat="server" ID="TextBox28" class="form-control" placeholder="Seri No"></asp:TextBox>
 
-                                        </td>
-                                        <td style="vertical-align: top">Cihaz Adı:<asp:TextBox required="" runat="server" ID="TextBox29" class="form-control" placeholder="Cihaz Adı"></asp:TextBox>
-
-                                        </td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top">Birim:<asp:Label ID="Label5" runat="server" Text=""></asp:Label>
-                                            
-                                           <%-- <asp:DropDownList required="Seçiniz" runat="server" DataTextField="birim" Enabled="false" DataValueField="birim" DataSourceID="SqlDataSource9" ID="dd_cgyer" class="form-control" placeholder="">
-                                        </asp:DropDownList>
-
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_birim]" ID="SqlDataSource9"></asp:SqlDataSource>--%>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top">
-                                            <br />
-                                            Özellikleri:<asp:DropDownList required="Seçiniz" runat="server" AppendDataBoundItems="true" DataTextField="tbl_ozl" DataValueField="tbl_ozl" DataSourceID="SqlDataSource7" ID="DropDownList13" class="form-control">
-                                            </asp:DropDownList>
-
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_cozl]" ID="SqlDataSource10"></asp:SqlDataSource>
-
-
-                                        </td>
-                                        <td style="vertical-align: top">
-                                            <br />
-                                            Cihaz Marka:<asp:DropDownList required="Seçin" runat="server" AppendDataBoundItems="true" DataTextField="tbl_cmrk" DataValueField="tbl_cmrk" DataSourceID="SqlDataSource8" ID="DropDownList14" class="form-control" placeholder="Cihaz Adı">
-                                            </asp:DropDownList>
-
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_mrk]" ID="SqlDataSource11"></asp:SqlDataSource>
-
-                                            İp No:<asp:TextBox required="" runat="server" ID="TextBox30" class="form-control" placeholder="İp No"></asp:TextBox>
-
-                                            <br />
-                                            <br />
-                                        </td>
-                                        <td></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top">Tarih:<asp:TextBox required="" runat="server" TextMode="Date" ID="TextBox31" class="form-control" placeholder=""></asp:TextBox>
-
-                                            <br />
-                                            Arıza Açıklama:<asp:TextBox required="" runat="server" TextMode="MultiLine" Height="84px" ID="TextBox32" class="form-control" placeholder=""></asp:TextBox>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top">Ebys No:<asp:TextBox required="" runat="server" Width="288px" ID="TextBox33" class="form-control" placeholder=""></asp:TextBox>
-
-                                        </td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td class="auto-style1" style="vertical-align: top; text-align: center;">
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_chz] WHERE [id] = ?" InsertCommand="INSERT INTO tbl_chz
-                         (chz_sn, chz_ad, chz_ip, chz_ozl,chz_mrk,  chz_gy, chz_gtar, chz_ack,chz_ebys,chz_tscl,chz_tadsoyad)
-VALUES        (?,?,?,?,?,?,?,?,?,?,?)"
-                                                ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?" ID="SqlDataSource12">
-                                                <DeleteParameters>
-                                                    <asp:Parameter Name="id" Type="Int32"></asp:Parameter>
-                                                </DeleteParameters>
-                                                <InsertParameters>
-                                                    <asp:ControlParameter ControlID="txt_cseri" PropertyName="Text" Name="chz_sn" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_cad" PropertyName="Text" Name="chz_ad" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_cip" PropertyName="Text" Name="chz_ip" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_cozllk" PropertyName="SelectedValue" Name="chz_ozl" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_marka" PropertyName="SelectedValue" Name="chz_mrk" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_cgyer" PropertyName="SelectedValue" Name="chz_gy" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dt_cgtar" PropertyName="Text" Name="chz_gtar" Type="DateTime"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_cariza" PropertyName="Text" Name="chz_ack"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_ciebys" PropertyName="Text" Name="chz_ebys"></asp:ControlParameter>
-                                                    <asp:SessionParameter SessionField="k_sicil" Name="chz_tscl"></asp:SessionParameter>
-                                                    <asp:SessionParameter Name="chz_tadsoyad" SessionField="k_adsoyad" />
-                                                </InsertParameters>
-                                                <UpdateParameters>
-                                                    <asp:Parameter Name="chz_sn" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ad" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ip" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ozl" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_mrk" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_hdd" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ssd" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ram" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ek" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_gy" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_gtar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ack" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_yi" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_itar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_drm" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_cbrm" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ctar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_iper" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ibtar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="id" Type="Int32"></asp:Parameter>
-                                                </UpdateParameters>
-                                            </asp:SqlDataSource>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top">
-                                            <asp:Label runat="server" ID="Label6"></asp:Label>
-
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </table>
                              
                             </div>
                             <div class="modal-footer">
@@ -713,121 +371,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?)"
                             </div>
                             <div class="modal-body">
                                 <%--///////////////////--%>statik 666666666666
-<table>
-                                    <tr>
-                                        <td style="vertical-align: top">Cihaz Seri No:<asp:TextBox required="" runat="server" ID="TextBox34" class="form-control" placeholder="Seri No"></asp:TextBox>
 
-                                        </td>
-                                        <td style="vertical-align: top">Cihaz Adı:<asp:TextBox required="" runat="server" ID="TextBox35" class="form-control" placeholder="Cihaz Adı"></asp:TextBox>
-
-                                        </td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top">Birim:<asp:Label ID="Label7" runat="server" Text=""></asp:Label>
-                                            
-                                           <%-- <asp:DropDownList required="Seçiniz" runat="server" DataTextField="birim" Enabled="false" DataValueField="birim" DataSourceID="SqlDataSource9" ID="dd_cgyer" class="form-control" placeholder="">
-                                        </asp:DropDownList>
-
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_birim]" ID="SqlDataSource9"></asp:SqlDataSource>--%>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top">
-                                            <br />
-                                            Özellikleri:<asp:DropDownList required="Seçiniz" runat="server" AppendDataBoundItems="true" DataTextField="tbl_ozl" DataValueField="tbl_ozl" DataSourceID="SqlDataSource7" ID="DropDownList15" class="form-control">
-                                            </asp:DropDownList>
-
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_cozl]" ID="SqlDataSource13"></asp:SqlDataSource>
-
-
-                                        </td>
-                                        <td style="vertical-align: top">
-                                            <br />
-                                            Cihaz Marka:<asp:DropDownList required="Seçin" runat="server" AppendDataBoundItems="true" DataTextField="tbl_cmrk" DataValueField="tbl_cmrk" DataSourceID="SqlDataSource8" ID="DropDownList16" class="form-control" placeholder="Cihaz Adı">
-                                            </asp:DropDownList>
-
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_mrk]" ID="SqlDataSource14"></asp:SqlDataSource>
-
-                                            İp No:<asp:TextBox required="" runat="server" ID="TextBox36" class="form-control" placeholder="İp No"></asp:TextBox>
-
-                                            <br />
-                                            <br />
-                                        </td>
-                                        <td></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top">Tarih:<asp:TextBox required="" runat="server" TextMode="Date" ID="TextBox37" class="form-control" placeholder=""></asp:TextBox>
-
-                                            <br />
-                                            Arıza Açıklama:<asp:TextBox required="" runat="server" TextMode="MultiLine" Height="84px" ID="TextBox38" class="form-control" placeholder=""></asp:TextBox>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top">Ebys No:<asp:TextBox required="" runat="server" Width="288px" ID="TextBox39" class="form-control" placeholder=""></asp:TextBox>
-
-                                        </td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td style="vertical-align: top"></td>
-                                        <td class="auto-style1" style="vertical-align: top; text-align: center;">
-                                            <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tbl_chz] WHERE [id] = ?" InsertCommand="INSERT INTO tbl_chz
-                         (chz_sn, chz_ad, chz_ip, chz_ozl,chz_mrk,  chz_gy, chz_gtar, chz_ack,chz_ebys,chz_tscl,chz_tadsoyad)
-VALUES        (?,?,?,?,?,?,?,?,?,?,?)"
-                                                ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_chz]" UpdateCommand="UPDATE [tbl_chz] SET [chz_sn] = ?, [chz_ad] = ?, [chz_ip] = ?, [chz_ozl] = ?, [chz_mrk] = ?, [chz_hdd] = ?, [chz_ssd] = ?, [chz_ram] = ?, [chz_ek] = ?, [chz_gy] = ?, [chz_gtar] = ?, [chz_ack] = ?, [chz_yi] = ?, [chz_itar] = ?, [chz_drm] = ?, [chz_cbrm] = ?, [chz_ctar] = ?, [chz_iper] = ?, [chz_ibtar] = ? WHERE [id] = ?" ID="SqlDataSource15">
-                                                <DeleteParameters>
-                                                    <asp:Parameter Name="id" Type="Int32"></asp:Parameter>
-                                                </DeleteParameters>
-                                                <InsertParameters>
-                                                    <asp:ControlParameter ControlID="txt_cseri" PropertyName="Text" Name="chz_sn" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_cad" PropertyName="Text" Name="chz_ad" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_cip" PropertyName="Text" Name="chz_ip" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_cozllk" PropertyName="SelectedValue" Name="chz_ozl" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_marka" PropertyName="SelectedValue" Name="chz_mrk" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dd_cgyer" PropertyName="SelectedValue" Name="chz_gy" Type="String"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="dt_cgtar" PropertyName="Text" Name="chz_gtar" Type="DateTime"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_cariza" PropertyName="Text" Name="chz_ack"></asp:ControlParameter>
-                                                    <asp:ControlParameter ControlID="txt_ciebys" PropertyName="Text" Name="chz_ebys"></asp:ControlParameter>
-                                                    <asp:SessionParameter SessionField="k_sicil" Name="chz_tscl"></asp:SessionParameter>
-                                                    <asp:SessionParameter Name="chz_tadsoyad" SessionField="k_adsoyad" />
-                                                </InsertParameters>
-                                                <UpdateParameters>
-                                                    <asp:Parameter Name="chz_sn" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ad" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ip" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ozl" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_mrk" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_hdd" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ssd" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ram" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ek" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_gy" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_gtar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ack" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_yi" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_itar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_drm" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_cbrm" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ctar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_iper" Type="String"></asp:Parameter>
-                                                    <asp:Parameter Name="chz_ibtar" Type="DateTime"></asp:Parameter>
-                                                    <asp:Parameter Name="id" Type="Int32"></asp:Parameter>
-                                                </UpdateParameters>
-                                            </asp:SqlDataSource>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="vertical-align: top">
-                                            <asp:Label runat="server" ID="Label8"></asp:Label>
-
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </table>
                              
                             </div>
                             <div class="modal-footer">
@@ -908,211 +452,276 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?)"
                     <tr __designer:mapid="e74">
                         <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e75">Talep Şifre/Yetki</td>
                         <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e76" colspan="3">
-                            <asp:DropDownList class="form-control" required="" ID="DropDownList26" runat="server" DataSourceID="SqlDataSource16" DataTextField="nevi" DataValueField="nevi">
+                            <asp:DropDownList class="form-control" required="" ID="dd_tlpnevi" runat="server" DataSourceID="SqlDataSource16" DataTextField="nevi" DataValueField="nevi" AppendDataBoundItems="True" AutoPostBack="True" OnSelectedIndexChanged="dd_tlpnevi_SelectedIndexChanged">
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource16" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_nevi]"></asp:SqlDataSource>
                         </td>
                     </tr>
                     </table>
                 <br />
-                <br />
-                <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; width:600px; background-color: #99FFCC;" >
-                    <tr __designer:mapid="cee">
-                        <td colspan="4" style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #CCFFCC;" __designer:mapid="cef">
-                            <br __designer:mapid="cf0" /><strong __designer:mapid="cf1">POLNET(Bilgisayar Açılış) / İNTERNET ŞİFRE İŞLEMLERİ</strong></td>
-                    </tr>
-                    <tr __designer:mapid="cf2">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #CCFFCC;" __designer:mapid="cf3">
-                            <asp:CheckBox runat="server" Text="PolNet" ID="CheckBox70"></asp:CheckBox>
-                            <br />
-                            <asp:CheckBox runat="server" Text="İnternet" ID="CheckBox71"></asp:CheckBox>
-                        </td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #CCFFCC;" __designer:mapid="cf7">
-                            <asp:CheckBox runat="server" Text="Yeni Şifre" ID="CheckBox72"></asp:CheckBox>
-                        </td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #CCFFCC;" __designer:mapid="cf9">
-                            <asp:CheckBox runat="server" Text="Şifre İptali" ID="CheckBox73"></asp:CheckBox>
-                        </td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #CCFFCC; " __designer:mapid="cfb">
-                            <asp:CheckBox runat="server" Text="Şifre Dğişikliği" ID="CheckBox74"></asp:CheckBox>
-                        </td>
-                    </tr>
+                <asp:Panel ID="pnl_polnetsifre" runat="server" Visible="False">
+                    <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; width:600px; " >
+                        <tr>
+                            <td colspan="3" style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <br />
+                                <strong>POLNET(Bilgisayar Açılış) ŞİFRE İŞLEMLERİ</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <asp:CheckBox runat="server" Text="Yeni Şifre" ID="CheckBox72">
+                                </asp:CheckBox>
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <asp:CheckBox runat="server" Text="Şifre İptali" ID="CheckBox73">
+                                </asp:CheckBox>
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px;  ">
+                                <asp:CheckBox runat="server" Text="Şifre Dğişikliği" ID="CheckBox74">
+                                </asp:CheckBox>
+                            </td>
+                        </tr>
                     </table>
+                </asp:Panel>
                 <br />
-                <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; width:600px"" >
-                    <tr __designer:mapid="cee">
-                        <td colspan="2" style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #CCFFCC;" __designer:mapid="cef">
-                            İ<span class="auto-style3">nternet Yetki Talebi</span></td>
-                    </tr>
-                    <tr __designer:mapid="cf2">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #CCFFCC;" __designer:mapid="cf3">
-                            <asp:CheckBox runat="server" Text="Standart Kullanıcı" ID="CheckBox75"></asp:CheckBox>
-                        </td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #CCFFCC;" __designer:mapid="cf5">
-                            <asp:CheckBox runat="server" Text="Araştırmacı Kullanıcı" ID="CheckBox76"></asp:CheckBox>
-                        </td>
-                    </tr>
+                <asp:Panel ID="pnl_intsifre" runat="server" Visible="False">
+                    <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; width:600px; " >
+                        <tr>
+                            <td colspan="3" style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <br />
+                                <strong>İNTERNET ŞİFRE İŞLEMLERİ</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <asp:CheckBox runat="server" Text="Yeni Şifre" ID="CheckBox86">
+                                </asp:CheckBox>
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <asp:CheckBox runat="server" Text="Şifre İptali" ID="CheckBox87">
+                                </asp:CheckBox>
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <asp:CheckBox runat="server" Text="Şifre Dğişikliği" ID="CheckBox88">
+                                </asp:CheckBox>
+                            </td>
+                        </tr>
                     </table>
+                </asp:Panel>
+                <br />
+                <asp:Panel ID="pnl_intyetki" runat="server" Visible="False">
+                    <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; width:600px"" >
+                        <tr>
+                            <td colspan="2" style="border-collapse: collapse; border-color: #000000; border-width: 1px; "><strong>İNTERNET YETKİ </strong>İ<span class="auto-style2">ŞLEMLERİ</span></td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <asp:CheckBox runat="server" Text="Standart Kullanıcı" ID="CheckBox75">
+                                </asp:CheckBox>
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <asp:CheckBox runat="server" Text="Araştırmacı Kullanıcı" ID="CheckBox76">
+                                </asp:CheckBox>
+                            </td>
+                        </tr>
+                    </table>
+                </asp:Panel>
+                <br />
+                <asp:Panel ID="pnl_etmysyetki" runat="server" Visible="False">
+                    <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; ; width:600px;" >
+                        <tr >
+                            <td colspan="3" style="border-collapse: collapse; border-color: #000000; border-width: 1px" ><strong >ETMYS KULLANICI HESABI TALEP FORMU</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px"><strong>Kullanıcı Bilgileri</strong></td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">&nbsp;</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" class="auto-style5"><strong>Görevi</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">TC No</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">
+                                <asp:TextBox ID="TextBox59" runat="server"></asp:TextBox>
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" class="auto-style5">
+                                <asp:CheckBox runat="server" Text="Birim Harcama Yetkilisi" ID="CheckBox1">
+                                </asp:CheckBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">Değişiklik Sebebi</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">
+                                <asp:TextBox runat="server" ID="TextBox8"></asp:TextBox>
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" class="auto-style5">
+                                <asp:CheckBox runat="server" Text="Taşınır Mal Saymanı" ID="CheckBox2">
+                                </asp:CheckBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">Asil / Yedek</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">
+                                <asp:DropDownList runat="server" ID="DropDownList4">
+                                    <asp:ListItem>Se&#231;iniz</asp:ListItem>
+                                    <asp:ListItem>Asil</asp:ListItem>
+                                    <asp:ListItem>Yedek</asp:ListItem>
+                                </asp:DropDownList>
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" class="auto-style5">
+                                <asp:CheckBox runat="server" Text="Taşınır Mal Hesap Sorumlusu" ID="CheckBox3">
+                                </asp:CheckBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px"><strong>İşlem Tipi</strong></td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">
+                                <asp:CheckBox runat="server" Text="Yeni Kayıt" ID="CheckBox9">
+                                </asp:CheckBox>
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" class="auto-style5">
+                                <asp:CheckBox runat="server" Text="Taşınır Mal Sorumlusu" ID="CheckBox4">
+                                </asp:CheckBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">&nbsp;</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">&nbsp;</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" class="auto-style5">
+                                <asp:CheckBox runat="server" Text="Kullanıcı Birim Taşınır Mal Sorumlusu" ID="CheckBox5">
+                                </asp:CheckBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">&nbsp;</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">&nbsp;</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" class="auto-style5">
+                                <asp:CheckBox runat="server" Text="ETMYS Bilgi İşlem Y&#246;neticisi" ID="CheckBox6">
+                                </asp:CheckBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">&nbsp;</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">&nbsp;</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" class="auto-style5">
+                                <asp:CheckBox runat="server" Text="Taşınır Mal Saymanlığı Birim Amiri" ID="CheckBox7">
+                                </asp:CheckBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">&nbsp;</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px">&nbsp;</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" class="auto-style5">
+                                <asp:CheckBox runat="server" Text="ETMYS Kullanıcı Birim Amiri" ID="CheckBox8">
+                                </asp:CheckBox>
+                            </td>
+                        </tr>
+                    </table>
+                </asp:Panel>
+                <br />
+                <asp:Panel ID="pnl_polceputp" runat="server" Visible="False">
+                    <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; width:600px"" >
+                        <tr>
+                            <td colspan="2" style="border-collapse: collapse; border-color: #000000; border-width: 1px"><strong>POLCEP/UTP YETKİ / ŞİFRE TALEP FORMU</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <br />
+                                <strong>POLCEP/UTP MODÜLÜ (Uygulama Takip Projesi)</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">Mobil İşlemler Yetkisi Asayiş Şube Müdürlüğü tarafından tanımlanmaktadır.</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <asp:CheckBox runat="server" Text="UTP G&#246;rev İşlemleri" ID="CheckBox44">
+                                </asp:CheckBox>
+                            </td>
+                        </tr>
+                    </table>
+                </asp:Panel>
+                <br />
+                <asp:Panel ID="pnl_pol4" runat="server" Visible="False">
+                    <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; width:600px; " >
+                        <tr>
+                            <td colspan="3" style="border-collapse: collapse; border-color: #000000; border-width: 1px"><strong>POLNET-4 / PTS / YETKİ VE ŞİFRE İŞLEMLERİ</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <br />
+                                <strong>Plaka Takip Sistemi Şifre / Yetki İşlemleri</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <asp:CheckBox runat="server" Text="Yeni Kayıt" ID="CheckBox65">
+                                </asp:CheckBox>
+                                <br />
+                                <asp:CheckBox runat="server" Text="Yetki İptali" ID="CheckBox66">
+                                </asp:CheckBox>
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <asp:CheckBox runat="server" Text="Polnet4 Şifre Sıfırlama" ID="CheckBox67">
+                                </asp:CheckBox>
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; ">
+                                <asp:CheckBox runat="server" Text="PTS Takip İl Kullanıcısı-Adli Birim" ID="CheckBox68">
+                                </asp:CheckBox>
+                                <br />
+                                <asp:CheckBox runat="server" Text="PTS Takip İl Kullanıcısı-Haberleşme" ID="CheckBox69">
+                                </asp:CheckBox>
+                            </td>
+                        </tr>
+                    </table>
+                </asp:Panel>
+                <br />
+                <asp:Panel ID="pnl_pol5" runat="server" Visible="False">
+                    <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; width:600px" >
+                        <tr>
+                            <td colspan="3" style="border-collapse: collapse; border-color: #000000; border-width: 1px"><strong>POLNET5 WEB NESNE TAKİP PROJESİ KULLANICI YETKİLENDİRME </strong>İ<span class="auto-style2">ŞLEMLERİ</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;">
+                                <br />
+                                <strong>Plaka Takip Sistemi Şifre / Yetki İşlemleri</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;">
+                                Yapılacak İşlem<br />
+                                <br />
+                                <br />
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;">
+                                <asp:CheckBox ID="CheckBox83" runat="server" Text="Yeni Kayıt" />
+                                <br />
+                                <asp:CheckBox ID="CheckBox84" runat="server" Text="İptal" />
+                                <br />
+                                <br />
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;">
+                                <asp:CheckBox ID="CheckBox80" runat="server" Text="İl İzleyici Rolü" />
+                                <br />
+                                <asp:CheckBox ID="CheckBox82" runat="server" Text="Birim İzleyici Rolü" />
+                                <br />
+                                <asp:CheckBox runat="server" Text="İlçe İzleyici Rolü" ID="CheckBox81">
+                                </asp:CheckBox>
+                                <br />
+                                <asp:CheckBox ID="CheckBox79" runat="server" Text="Nesne Takip Birim Yöneticisi" />
+                                <br />
+                                <asp:CheckBox ID="CheckBox78" runat="server" Text="Nesne Takip İlçe Yöneticisi" />
+                                <br />
+                                <asp:CheckBox ID="CheckBox77" runat="server" Text="Grup İzleyici Rolü" />
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;">
+                                &nbsp;</td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;">
+                                <br />
+                            </td>
+                            <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;">
+                                <br />
+                            </td>
+                        </tr>
+                    </table>
+                </asp:Panel>
                 <br />
                 <br />
-                <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; background-color: #FFCCFF; width:600px;" >
-                    <tr >
-                        <td colspan="3" style="border-collapse: collapse; border-color: #000000; border-width: 1px" ><strong >EMNİYET TAŞINIR MAL YÖNETİM SİSTEMİ İÇİN KULLANICI HESABI TALEP FORMU</strong></td>
-                    </tr>
-                    <tr __designer:mapid="e50">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e51"><strong __designer:mapid="e52">Kullanıcı Bilgileri</strong></td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e53">&nbsp;</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e54" class="auto-style5"><strong __designer:mapid="e55">Görevi</strong></td>
-                    </tr>
-                    <tr __designer:mapid="e56">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e57">TC No</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e58">
-                            <asp:TextBox ID="TextBox59" runat="server"></asp:TextBox>
-                        </td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e5a" class="auto-style5">
-                            <asp:CheckBox runat="server" Text="Birim Harcama Yetkilisi" ID="CheckBox1"></asp:CheckBox>
-                        </td>
-                    </tr>
-                    <tr __designer:mapid="e5c">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e5d">Değişiklik Sebebi</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e5e">
-                            <asp:TextBox runat="server" ID="TextBox8"></asp:TextBox>
-                        </td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e60" class="auto-style5">
-                            <asp:CheckBox runat="server" Text="Taşınır Mal Saymanı" ID="CheckBox2"></asp:CheckBox>
-                        </td>
-                    </tr>
-                    <tr __designer:mapid="e62">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e63">Asil / Yedek</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e64">
-                            <asp:DropDownList runat="server" ID="DropDownList4">
-                                <asp:ListItem>Se&#231;iniz</asp:ListItem>
-                                <asp:ListItem>Asil</asp:ListItem>
-                                <asp:ListItem>Yedek</asp:ListItem>
-                            </asp:DropDownList>
-                        </td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e72" class="auto-style5">
-                            <asp:CheckBox runat="server" Text="Taşınır Mal Hesap Sorumlusu" ID="CheckBox3"></asp:CheckBox>
-                        </td>
-                    </tr>
-                    <tr __designer:mapid="e74">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e75"><strong __designer:mapid="e9c">İşlem Tipi</strong></td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e76">
-                            <asp:CheckBox runat="server" Text="Yeni Kayıt" ID="CheckBox9"></asp:CheckBox>
-                        </td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e78" class="auto-style5">
-                            <asp:CheckBox runat="server" Text="Taşınır Mal Sorumlusu" ID="CheckBox4"></asp:CheckBox>
-                        </td>
-                    </tr>
-                    <tr __designer:mapid="e7a">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e7b">&nbsp;</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e7c">&nbsp;</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e7e" class="auto-style5">
-                            <asp:CheckBox runat="server" Text="Kullanıcı Birim Taşınır Mal Sorumlusu" ID="CheckBox5"></asp:CheckBox>
-                        </td>
-                    </tr>
-                    <tr __designer:mapid="e80">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e81">&nbsp;</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e82">&nbsp;</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e84" class="auto-style5">
-                            <asp:CheckBox runat="server" Text="ETMYS Bilgi İşlem Y&#246;neticisi" ID="CheckBox6"></asp:CheckBox>
-                        </td>
-                    </tr>
-                    <tr __designer:mapid="e86">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e87">&nbsp;</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e88">&nbsp;</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e8a" class="auto-style5">
-                            <asp:CheckBox runat="server" Text="Taşınır Mal Saymanlığı Birim Amiri" ID="CheckBox7"></asp:CheckBox>
-                        </td>
-                    </tr>
-                    <tr __designer:mapid="e8c">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e8d">&nbsp;</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e8e">&nbsp;</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="e90" class="auto-style5">
-                            <asp:CheckBox runat="server" Text="ETMYS Kullanıcı Birim Amiri" ID="CheckBox8"></asp:CheckBox>
-                        </td>
-                    </tr>
-                </table>
-                <br />
-                <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; width:600px"" >
-                    <tr __designer:mapid="ed0">
-                        <td colspan="2" style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="ed1"><strong __designer:mapid="ed2">POLCEP/PTS YETKİ / ŞİFRE TALEP FORMU</strong></td>
-                    </tr>
-                    <tr __designer:mapid="efe">
-                        <td colspan="2" style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFCCCC;" __designer:mapid="eff">
-                            <br __designer:mapid="f00" /><strong __designer:mapid="f01">PolCep/UTP Modülü (Uygulama Takip Projesi)</strong></td>
-                    </tr>
-                    <tr __designer:mapid="f02">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFCCCC;" __designer:mapid="f03">Mobil İşlemler Yetkisi Asayiş Şube Müdürlüğü tarafından tanımlanmaktadır.</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFCCCC;" __designer:mapid="f04">
-                            <asp:CheckBox runat="server" Text="UTP G&#246;rev İşlemleri" ID="CheckBox44"></asp:CheckBox>
-                        </td>
-                    </tr>
-                </table>
-                <br />
-                <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; width:600px; background-color: #FFFFCC;" >
-                    <tr __designer:mapid="f2a">
-                        <td colspan="3" style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="f2b"><strong __designer:mapid="f2c">POLNET-4/PTS YETKİ / ŞİFRE TALEP FORMU</strong></td>
-                    </tr>
-                    <tr __designer:mapid="f58">
-                        <td colspan="3" style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFCC;" __designer:mapid="f59">
-                            <br __designer:mapid="f5a" /><strong __designer:mapid="f5b">Plaka Takip Sistemi Şifre / Yetki İşlemleri</strong></td>
-                    </tr>
-                    <tr __designer:mapid="f5c">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFCC;" __designer:mapid="f5d">
-                            <asp:CheckBox runat="server" Text="Yeni Kayıt" ID="CheckBox65"></asp:CheckBox>
-                            <br />
-                            <asp:CheckBox runat="server" Text="Yetki İptali" ID="CheckBox66"></asp:CheckBox>
-                        </td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFCC;" __designer:mapid="f5f">
-                            <asp:CheckBox runat="server" Text="Polnet4 Şifre Sıfırlama" ID="CheckBox67"></asp:CheckBox>
-                        </td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFCC;" __designer:mapid="f63">
-                            <asp:CheckBox runat="server" Text="PTS Takip İl Kullanıcısı-Adli Birim" ID="CheckBox68"></asp:CheckBox>
-                            <br />
-                            <asp:CheckBox runat="server" Text="PTS Takip İl Kullanıcısı-Haberleşme" ID="CheckBox69"></asp:CheckBox>
-                        </td>
-                    </tr>
-                </table>
-                <br />
-                <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse; width:600px" >
-                    <tr __designer:mapid="f2a">
-                        <td colspan="3" style="border-collapse: collapse; border-color: #000000; border-width: 1px" __designer:mapid="f2b">POL-NET5 WEB NESNE TAKİP PROJESİ KULLANICI YETKİLENDİRME TALEP FORMU</td>
-                    </tr>
-                    <tr __designer:mapid="f58">
-                        <td colspan="3" style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;" __designer:mapid="f59">
-                            <br __designer:mapid="f5a" /><strong __designer:mapid="f5b">Plaka Takip Sistemi Şifre / Yetki İşlemleri</strong></td>
-                    </tr>
-                    <tr __designer:mapid="f5c">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;" __designer:mapid="f5d">
-                            <asp:CheckBox runat="server" Text="İl Admin" ID="CheckBox77"></asp:CheckBox>
-                            <br />
-                            <asp:CheckBox runat="server" Text="İlçe Admin" ID="CheckBox78"></asp:CheckBox>
-                        </td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;" __designer:mapid="f61">
-                            <asp:CheckBox runat="server" Text="Birim Admin" ID="CheckBox79"></asp:CheckBox>
-                            <br />
-                            <asp:CheckBox runat="server" Text="İl İzleyici" ID="CheckBox80"></asp:CheckBox>
-                        </td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;" __designer:mapid="f63">
-                            <asp:CheckBox runat="server" Text="İlçe İzleyici" ID="CheckBox81"></asp:CheckBox>
-                            <br />
-                            <asp:CheckBox runat="server" Text="Birim İzleyici" ID="CheckBox82"></asp:CheckBox>
-                        </td>
-                    </tr>
-                    <tr __designer:mapid="f5c">
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;" __designer:mapid="f5d">
-                            Yapılacak İşlem</td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;" __designer:mapid="f61">
-                            <asp:CheckBox runat="server" Text="Yeni Kayıt" ID="CheckBox83"></asp:CheckBox>
-                        </td>
-                        <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; background-color: #FFFFFF;" __designer:mapid="f63">
-                            <asp:CheckBox runat="server" Text="İptal" ID="CheckBox84"></asp:CheckBox>
-                        </td>
-                    </tr>
-                </table>
-                <br />
-                <br />
+             
                 <table border="1" style="border-style: solid; border-color: #000000; border-collapse: collapse;" >
                     <tr __designer:mapid="d47">
                         <td style="border-collapse: collapse; border-color: #000000; border-width: 1px; " __designer:mapid="d48">

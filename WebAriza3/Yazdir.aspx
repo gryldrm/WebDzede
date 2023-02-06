@@ -6,30 +6,7 @@
 <head runat="server">
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
-    
-  
-    
-    <style type="text/css">
-        .auto-style1 {
-            height: 24px;
-        }
-        .auto-style2 {
-            height: 78px;
-        }
-        .auto-style3 {
-            height: 49px;
-            text-align: center;
-        }
-        .auto-style4 {
-            height: 25px;
-        }
-        .auto-style5 {
-            height: 26px;
-        }
-        .auto-style7 {
-            height: 98px;
-        }
-    </style>
+   
     
   
     
