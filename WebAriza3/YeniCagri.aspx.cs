@@ -20,8 +20,8 @@ namespace WebAriza3
             {
                 if (Session["k_sicil"] != null)
                 {
-                    dd_nevi.Items.Insert(0, new ListItem("Seçin", String.Empty));
-                    dd_nevi.SelectedIndex = 0;
+                    //dd_nevi.Items.Insert(0, new ListItem("Seçin", String.Empty));
+                    //dd_nevi.SelectedIndex = 0;
 
                     dd_tlpnevi.Items.Insert(0, new ListItem("Seçiniz", String.Empty));
                     dd_tlpnevi.SelectedIndex = 0;
@@ -48,7 +48,6 @@ namespace WebAriza3
         private OleDbConnection db_baglanti()
         {
 
-
             baglanti = new OleDbConnection("Provider=Microsoft.ACE.Oledb.12.0; Data Source=|DataDirectory|\\aydinbth1.accdb");
 
             return baglanti;
@@ -56,17 +55,17 @@ namespace WebAriza3
         protected void btn_kaydet_Click(object sender, EventArgs e)
         {
 
-            if (dd_nevi.SelectedItem.Text != "Seçin")
-            {
-                if (txt_ariza.Text == "" && txt_ebys.Text == "")
-                {
+            //if (dd_nevi.SelectedItem.Text != "Seçin")
+            //{
+            //    if (txt_ariza.Text == "" && txt_ebys.Text == "")
+            //    {
 
-                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                "toastr.warning('Arıza açıklama veya ebys numarası girmelisiniz... ', 'Uyarı')", true);
+            //        ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+            //                    "toastr.warning('Arıza açıklama veya ebys numarası girmelisiniz... ', 'Uyarı')", true);
 
-                }
-                else
-                {
+            //    }
+            //    else
+            //    {
 
                     OleDbConnection con = db_baglanti();
                     OleDbCommand cmd;
@@ -75,8 +74,8 @@ namespace WebAriza3
                         lblbirim.Text.ToString() + "','"
                         + txt_adsad.Text.ToString() + "'," +
                         txt_scl.Text.ToString() + ",'" +
-                        dd_nevi.SelectedItem.ToString() + "','" +
-                        txt_ariza.Text.ToString() + "','" +
+                       // dd_nevi.SelectedItem.ToString() + "','" +
+                       // txt_ariza.Text.ToString() + "','" +
                         txt_ebys.Text.ToString() + "')", con);
 
 
@@ -108,14 +107,14 @@ namespace WebAriza3
 
 
                     con.Close();
-                }
-            }
-            else
-            {
+                //}
+            //}
+            //else
+            //{
 
-                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                "toastr.error('Arıza/Talep Nevi seçmelisiniz.', ' ')", true);
-            }
+            //    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+            //                    "toastr.error('Arıza/Talep Nevi seçmelisiniz.', ' ')", true);
+            //}
 
         }
 
@@ -180,14 +179,16 @@ namespace WebAriza3
 
                     cmd.ExecuteNonQuery();
 
-                   // SqlDataSource6.Insert();
-                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                                    "toastr.success('Kayıt başarılı...', ' ')", true);
+                    // SqlDataSource6.Insert();
+                    MessageBox.Show("Kayıt başarılı...","Cihaz Kayıt İşlemi");
+                    //ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                    //                                "toastr.success('Kayıt başarılı...', ' ')", true);
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                   "toastr.error('Cihaz seri no girmelisiniz...', ' ')", true);
+                    MessageBox.Show("Cihaz seri no girmelisiniz...", "Cihaz Kayıt İşlemi");
+                    //ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                    //               "toastr.error('', ' ')", true);
                 }
 
 
@@ -195,9 +196,9 @@ namespace WebAriza3
             }
             catch (Exception)
             {
-
-                ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
-                                    "toastr.error('Kayıt edilirken hata oluştu...', ' ')", true);
+                MessageBox.Show("Kayıt edilirken hata oluştu...", "Cihaz Kayıt İşlemi");
+                //ScriptManager.RegisterStartupScript(this.Page, typeof(Page), Guid.NewGuid().ToString(),
+                //                    "toastr.error('Kayıt edilirken hata oluştu...', ' ')", true);
             }
 
         }
@@ -266,8 +267,7 @@ namespace WebAriza3
             {
                 pnl_intsifre.Visible = false;
             }
-
-         
+                     
             if (dd_tlpnevi.SelectedItem.Text == "ETMYS YETKİ TALEBİ")
             {
 
@@ -317,6 +317,84 @@ namespace WebAriza3
             }
 
 
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            DataTable dtt_ = dataClass.get_tbl("select * from win32");
+         
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            if (dd_tlpnevi.SelectedItem.Text == "POLNET ŞİFRE SIFIRLAMA")
+            {
+               
+            }
+            else
+            {
+                
+            }
+
+            if (dd_tlpnevi.SelectedItem.Text == "POLNET4 / PTS YETKİ ŞİFRE İŞLEMLERİ")
+            {
+
+               
+            }
+            else
+            {
+                
+            }
+
+            if (dd_tlpnevi.SelectedItem.Text == "İNTERNET YETKİ TALEBİ")
+            {
+
+               
+            }
+            else
+            {
+                pnl_intyetki.Visible = false;
+            }
+
+            if (dd_tlpnevi.SelectedItem.Text == "İNTERNET ŞİFRE SIFIRLAMA")
+            {
+
+                
+            }
+            else
+            {
+                pnl_intsifre.Visible = false;
+            }
+
+            if (dd_tlpnevi.SelectedItem.Text == "ETMYS YETKİ TALEBİ")
+            {
+
+               
+            }
+            else
+            {
+                pnl_etmysyetki.Visible = false;
+            }
+
+            if (dd_tlpnevi.SelectedItem.Text == "POLCEP / UTP MODÜLÜ")
+            {
+
+                
+            }
+            else
+            {
+                pnl_polceputp.Visible = false;
+            }
+
+            if (dd_tlpnevi.SelectedItem.Text == "POLNET5 WEB NESNE TAKİP")
+            {
+
+               
+            }
+            else
+            {
+                
+            }
         }
         //protected void dd_cozllk_SelectedIndexChanged(object sender, EventArgs e)
         //{

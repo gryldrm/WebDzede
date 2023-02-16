@@ -37,7 +37,11 @@ namespace WebAriza3
                     dd_cidrm0.Items.Insert(0, new ListItem("Seçiniz", String.Empty));
                     dd_cidrm0.SelectedIndex = 0;
 
-                    
+                    dd_aracozllk.Items.Insert(0, new ListItem("Seçiniz", String.Empty));
+                    dd_aracozllk.SelectedIndex = 0;
+                    //
+                    dd_cagyer.Items.Insert(0, new ListItem("Seçiniz", String.Empty));
+                    dd_cagyer.SelectedIndex = 0;
 
                     datayukle();
 
@@ -562,6 +566,18 @@ namespace WebAriza3
                 else
                 {
                     sorgu += " AND  (chz_gy = '" + dd_cagyer.SelectedItem.Text.ToString() + "') ";
+                }
+            }
+
+            if (dd_aracozllk.SelectedItem.Text != "Seçiniz")
+            {
+                if (sorgu.ToString() == "")
+                {
+                    sorgu += " WHERE (chz_ozl = '" + dd_aracozllk.SelectedItem.Text.ToString() + "') ";
+                }
+                else
+                {
+                    sorgu += " AND  (chz_ozl = '" + dd_aracozllk.SelectedItem.Text.ToString() + "') ";
                 }
             }
 

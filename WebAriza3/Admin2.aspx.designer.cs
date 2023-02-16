@@ -492,6 +492,24 @@ namespace WebAriza3
         protected global::System.Web.UI.WebControls.TextBox txt_caad;
 
         /// <summary>
+        /// dd_aracozllk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dd_aracozllk;
+
+        /// <summary>
+        /// SqlDataSource16 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource16;
+
+        /// <summary>
         /// dd_cagyer control.
         /// </summary>
         /// <remarks>
@@ -499,6 +517,15 @@ namespace WebAriza3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dd_cagyer;
+
+        /// <summary>
+        /// SqlDataSource17 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource17;
 
         /// <summary>
         /// dd_cidrm0 control.
@@ -814,15 +841,6 @@ namespace WebAriza3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView5;
-
-        /// <summary>
-        /// TabPanel11 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel TabPanel11;
 
         /// <summary>
         /// TabPanel33 control.

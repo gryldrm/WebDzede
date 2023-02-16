@@ -104,7 +104,7 @@
                             Cihaz Kayıt
                         </HeaderTemplate>
                         <ContentTemplate>
-                            <table>
+                            <table style="width:100%">
                                 <tr>
                                     <td style="vertical-align: top">Cihaz Seri No:<asp:TextBox ID="txt_cseri" runat="server" class="form-control" placeholder="Seri No"></asp:TextBox>
                                     </td>
@@ -286,13 +286,18 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Birim<br />
-                                                        <asp:DropDownList class="form-control" placeholder="" ID="dd_cagyer" runat="server">
-                                                            <asp:ListItem>Seçiniz</asp:ListItem>
-                                                            <asp:ListItem>Diğer</asp:ListItem>
-                                                            <asp:ListItem>Efeler İlçe Emniyet</asp:ListItem>
-                                                            <asp:ListItem>Asayiş Şube Müdürlüğü</asp:ListItem>
+                                                    <td>Cihaz Özellik<br />
+                                                        <asp:DropDownList class="form-control" placeholder="" ID="dd_aracozllk" runat="server" DataSourceID="SqlDataSource16" DataTextField="tbl_ozl" DataValueField="tbl_ozl" AppendDataBoundItems="True">
                                                         </asp:DropDownList>
+                                                        <br />
+                                                        <asp:SqlDataSource ID="SqlDataSource16" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_cozl]"></asp:SqlDataSource>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Birim<br />
+                                                        <asp:DropDownList class="form-control" placeholder="" ID="dd_cagyer" runat="server" DataSourceID="SqlDataSource17" DataTextField="birim" DataValueField="birim" AppendDataBoundItems="True">
+                                                        </asp:DropDownList>
+                                                        <asp:SqlDataSource ID="SqlDataSource17" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tbl_birim]"></asp:SqlDataSource>
                                                         <br />
                                                     </td>
                                                 </tr>
@@ -379,13 +384,7 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                                                         <br />
                                                           RAM:    <asp:TextBox ID="txt_ciram" runat="server" class="form-control" placeholder="8 GB"></asp:TextBox>
                                                        
-                                                      <%--  <asp:DropDownList ID="dd_ciram" runat="server" class="form-control" placeholder="">
-                                                            <asp:ListItem>Seçiniz</asp:ListItem>
-                                                            <asp:ListItem>4 GB</asp:ListItem>
-                                                            <asp:ListItem>8 GB</asp:ListItem>
-                                                            <asp:ListItem>16 GB</asp:ListItem>
-                                                        </asp:DropDownList>--%>
-                                                        &nbsp;<asp:TextBox ID="txt_ciekart" runat="server" class="form-control" placeholder="Onboard/256 GB"></asp:TextBox>
+                                                        <asp:TextBox ID="txt_ciekart" runat="server" class="form-control" placeholder="Onboard/256 GB"></asp:TextBox>
                                                     </td>
                                                     <td style="vertical-align: top; background-color: #CCCCCC;">Yapılan İşlem<asp:TextBox ID="txt_ciyis" runat="server" class="form-control" placeholder="" TextMode="MultiLine" ></asp:TextBox>
                                                         <br />
@@ -504,11 +503,6 @@ VALUES        (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ProviderName="<%$ ConnectionStr
                             </table>
 
                         </ContentTemplate>
-                    </ajaxToolkit:TabPanel>
-                    <ajaxToolkit:TabPanel ID="TabPanel11" runat="server" HeaderText="TabPanel1">
-                        <HeaderTemplate>
-                            Cihaz Özellik Güncelle
-                        </HeaderTemplate>
                     </ajaxToolkit:TabPanel>
                 </ajaxToolkit:TabContainer>
             </ContentTemplate>
