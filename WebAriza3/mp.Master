@@ -78,7 +78,7 @@
             <nav class="navbar navbar-expand-lg bg-light rounded" aria-label="Eleventh navbar example">
 
                 <div class="container">
-                    <a class="navbar-brand" href="#">BTH</a>
+                    <a class="navbar-brand" href="Anasayfa.aspx">DEPREMZEDE TAKİP</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -86,16 +86,20 @@
                     <div class="collapse navbar-collapse" id="navbarsExample09">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="Anasayfa.aspx">Çağrı Takip</a>
+                                <a class="nav-link active" aria-current="page" href="DKayit.aspx">Depremzede Kayıt</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="YeniCagri.aspx">Yeni Çağrı</a>
+                             <li class="nav-item">
+                                <a class="nav-link" href="Ihtiyaclar.aspx">İhtiyaç Kayıt</a>
+                            </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="Sorgulama.aspx">Sorgulama</a>
                             </li>
 
                         </ul>
 
                         <asp:Label ID="lblkullanici" runat="server"></asp:Label>
-                        <asp:LinkButton ID="btnadmin" runat="server" CssClass="btn btn-primary" Visible="False" PostBackUrl="~/Admin2.aspx">Yönetim</asp:LinkButton>
+                        <asp:LinkButton ID="btnadmin" runat="server" CssClass="btn btn-primary" Visible="False" PostBackUrl="~/Admin.aspx">Yönetim</asp:LinkButton>
+                        &nbsp;
                         <asp:LinkButton ID="btncik" runat="server" CssClass="btn btn-primary" Visible="true" PostBackUrl="~/login.aspx">Çıkış</asp:LinkButton>
 
                     </div>
@@ -111,7 +115,7 @@
                     <div class="col-sm-16 mx-auto">
                         
 
-                            <h1 class="text-center">ARIZA / TALEP BİLDİRİM İŞLEMLERİ </h1>
+                            <h1 class="text-center">DEPREMZEDE İŞLEMLERİ </h1>
                     
 
                         <br />

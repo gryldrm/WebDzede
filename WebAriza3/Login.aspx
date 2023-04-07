@@ -22,10 +22,9 @@
                         <div class="d-table-cell align-middle">
 
                             <div class="text-center mt-4">
-                                <h1 class="h2">ARIZA / TALEP BİLDİRİM FORMU GİRİŞ EKRANI</h1>
+                                <h1 class="h2">DEPREMZEDE TAKİP GİRİŞ EKRANI</h1>
                                 <p class="lead">
-                                    <asp:Label ID="Label1" runat="server" Text="Şifre almak için 6583 arayınız."></asp:Label>
-                                </p>
+                                    &nbsp;</p>
                             </div>
 
                             <div class="card">
@@ -69,6 +68,8 @@
         </main>
 
         <script src="../js/app.js"></script>
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_depremzedeCs %>" SelectCommand="SELECT * FROM [tbl_users]"></asp:SqlDataSource>
 
     </form>
 </body>

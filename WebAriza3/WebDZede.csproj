@@ -118,9 +118,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin2.aspx" />
+    <Content Include="Admin.aspx" />
     <Content Include="Anasayfa.aspx" />
     <Content Include="App_Data\aydinbth1.accdb" />
+    <Content Include="App_Data\db.sql" />
     <Content Include="assets\brand\bootstrap-logo-white.svg" />
     <Content Include="assets\brand\bootstrap-logo.svg" />
     <Content Include="assets\dist\css\bootstrap.min.css" />
@@ -201,9 +202,10 @@
     <Content Include="toastr\toastr.css" />
     <Content Include="toastr\toastr.min.css" />
     <Content Include="toastr\toastr.min.js" />
-    <Content Include="WebForm1.aspx" />
     <Content Include="Yazdir.aspx" />
-    <Content Include="YeniCagri.aspx" />
+    <Content Include="Ihtiyaclar.aspx" />
+    <Content Include="Sorgulama.aspx" />
+    <Content Include="DKayit.aspx" />
     <None Include="packages.config" />
     <Content Include="toastr\toastr.js.map" />
     <None Include="Web.Debug.config">
@@ -233,12 +235,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin2.aspx.cs">
-      <DependentUpon>Admin2.aspx</DependentUpon>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin2.aspx.designer.cs">
-      <DependentUpon>Admin2.aspx</DependentUpon>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Anasayfa.aspx.cs">
       <DependentUpon>Anasayfa.aspx</DependentUpon>
@@ -264,13 +266,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Yazdir.aspx.cs">
       <DependentUpon>Yazdir.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -278,12 +273,26 @@
     <Compile Include="Yazdir.aspx.designer.cs">
       <DependentUpon>Yazdir.aspx</DependentUpon>
     </Compile>
-    <Compile Include="YeniCagri.aspx.cs">
-      <DependentUpon>YeniCagri.aspx</DependentUpon>
+    <Compile Include="Ihtiyaclar.aspx.cs">
+      <DependentUpon>Ihtiyaclar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="YeniCagri.aspx.designer.cs">
-      <DependentUpon>YeniCagri.aspx</DependentUpon>
+    <Compile Include="Ihtiyaclar.aspx.designer.cs">
+      <DependentUpon>Ihtiyaclar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sorgulama.aspx.cs">
+      <DependentUpon>Sorgulama.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sorgulama.aspx.designer.cs">
+      <DependentUpon>Sorgulama.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DKayit.aspx.cs">
+      <DependentUpon>DKayit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DKayit.aspx.designer.cs">
+      <DependentUpon>DKayit.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

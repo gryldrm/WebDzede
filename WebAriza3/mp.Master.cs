@@ -12,10 +12,10 @@ namespace WebAriza3
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["k_sicil"] != null)
+            if (Session["k_ad"] != null)
             {
-                lblkullanici.Text = Session["k_sicil"].ToString() + "-" + Session["k_adsoyad"].ToString() + "-" + Session["k_birim"].ToString();
-                if (Session["k_rol"].ToString() == "1")
+                lblkullanici.Text = Session["k_ad"].ToString() +"-"+Session["k_rol"].ToString();
+                if (Session["k_rol"].ToString() == "Admin")
                 {
                     btnadmin.Visible = true;
                 }

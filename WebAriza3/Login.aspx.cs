@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
 
 namespace WebAriza3
 {
@@ -12,45 +15,38 @@ namespace WebAriza3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
-        OleDbConnection baglanti;
-        private OleDbConnection db_baglanti()
-        {
-            baglanti = new OleDbConnection("Provider=Microsoft.ACE.Oledb.12.0; Data Source=|DataDirectory|\\aydinbth1.accdb");
-            return baglanti;
-        }
+
         protected void btnGiris_Click(object sender, EventArgs e)
         {
-            if (txtAd.Text !="" && txtSifre.Text!="" )
+            if (txtAd.Text != "" && txtSifre.Text != "")
             {
 
-          
-            string kscl, ksifre;
-            kscl = txtAd.Text;
-            ksifre = txtSifre.Text;
+                string kad, ksifre;
+                kad = txtAd.Text;
+                ksifre = txtSifre.Text;
 
-            baglanti = db_baglanti();
-            OleDbCommand komut = new OleDbCommand();
-            string sorgu = "SELECT        k_scl, k_adsad, k_sifre, k_rol, k_birim FROM            tbl_per WHERE        (k_scl = " + kscl.ToString() + ") AND (k_sifre = '" + ksifre.ToString() + "')";
-            komut = new OleDbCommand(sorgu, baglanti);
+                SqlCommand komut = new SqlCommand();
 
-            baglanti.Open();
-            OleDbDataReader oku = komut.ExecuteReader();
-            if (oku.Read())
-            {
-                Session.Add("k_sicil", oku["k_scl"].ToString());
-                Session.Add("k_adsoyad", oku["k_adsad"].ToString());
-                Session.Add("k_birim", oku["k_birim"].ToString());
-                Session.Add("k_rol", oku["k_rol"].ToString());
+                DataTable dt = dataClass.get_tbl("SELECT k_ad, k_sifre, k_rol FROM tbl_users WHERE (k_ad = '" + kad.ToString() + "') AND (k_sifre = '" + ksifre.ToString() + "')");
 
-                Response.Redirect("Anasayfa.aspx");
+
+
+                if (dt.Rows.Count > 0)
+                {
+                    Session.Add("k_ad", dt.Rows[0]["k_ad"].ToString());
+                    Session.Add("k_sifre", dt.Rows[0]["k_sifre"].ToString());
+                    Session.Add("k_rol", dt.Rows[0]["k_rol"].ToString());
+
+                    Response.Redirect("Anasayfa.aspx");
+                }
+                else
+                {
+                    lblDurum.Text = "Giriş Başarısız";
+                }
+
             }
-            else
-            {
-                lblDurum.Text = "Giriş Başarısız";
-            }
-            baglanti.Close();
-        }  }
+        }
     }
 }
